@@ -1,0 +1,56 @@
+"use client";
+import Image from "next/image";
+import React, { useState } from "react";
+import CopyTextButton from "./CopyButton";
+
+const PromotionBanner = () => {
+  return (
+    <section className="mt-10">
+    <h1 className="text-center text-2xl font-bold">Promotion Banner</h1>
+      <div className="grid grid-cols-4 max-md:grid-cols-1 px-5 mx-auto gap-4 mt-10 justify-center">
+        <div className="bg-white flex flex-col justify-center items-center shadow-md rounded-4xl p-3 gap-2">
+          <Image
+            src="/assets/promobanner/bagan.jpg"
+            className="rounded-4xl"
+            alt="#"
+            height={300}
+            width={300}
+          />
+          <CopyTextButton text="BLACKFRIDAY2025" />
+        </div>
+        <div className="bg-white flex flex-col justify-center items-center shadow-md rounded-4xl p-5 gap-2">
+          <Image
+            src="/assets/promobanner/bagan.jpg"
+            className="rounded-4xl"
+            alt="#"
+            height={300}
+            width={300}
+          />
+          <CopyTextButton text="BLACKFRIDAY2025" />
+        </div>
+        <div className="bg-white flex flex-col justify-center items-center shadow-md rounded-4xl p-5 gap-2">
+          <Image
+            src="/assets/promobanner/bagan.jpg"
+            className="rounded-4xl"
+            alt="#"
+            height={300}
+            width={300}
+          />
+          <CopyTextButton text="BLACKFRIDAY2025" />
+        </div>
+        <div className="bg-white flex flex-col justify-center items-center shadow-md rounded-4xl p-5 gap-2">
+          <Image
+            src="/assets/promobanner/bagan.jpg"
+            className="rounded-4xl"
+            alt="#"
+            height={300}
+            width={300}
+          />
+          <CopyTextButton text="BLACKFRIDAY2025" />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default PromotionBanner;
