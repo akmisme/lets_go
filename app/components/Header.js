@@ -23,15 +23,15 @@ const headerData = [
     title: "Experiences",
     href: "#",
     dropdown: [
-      { title: "Cement, Sand & Stone Distribution", href: "/cement" },
-      { title: "Food Distribution", href: "/food" },
-      { title: "Trading", href: "/trading" },
-      { title: "Real Estate", href: "/estate" },
-      { title: "Employment Recruitment (Overseas Agency)", href: "/osagency" },
-      { title: "Digital Marketing", href: "/digitalmarketing" },
-      { title: "Event Management", href: "/eventmanage" },
-      { title: "Travel & Tours", href: "/travel&tour" },
-      { title: "Education", href: "/education" },
+      { title: "Bagan", href: "#" },
+      { title: "Mandalay", href: "#" },
+      { title: "Yangon", href: "#" },
+      { title: "Taunggyi", href: "#" },
+      { title: "Kalaw", href: "#" },
+      { title: "Hpa-an", href: "#" },
+      { title: "Inle Lake", href: "#" },
+      { title: "Ngwesaung", href: "#" },
+      { title: "Chaung Thar", href: "#" },
     ],
   },
   { title: "About Us", href: "#" },
@@ -90,7 +90,7 @@ export default function Header() {
                     <Link
                       href={item.href}
                       className={`transition-all duration-200 ${
-                        isActive ? "text-blue-400" : "hover:text-blue-400"
+                        isActive ? "text-[#936521]" : "hover:text-[#D8AF53]"
                       }`}
                     >
                       {item.title}
@@ -101,7 +101,7 @@ export default function Header() {
                   <Link
                     href={item.href}
                     className={`transition-all duration-200 ${
-                      isActive ? "text-blue-400" : "hover:text-blue-500"
+                      isActive ? "text-[#936521]" : "hover:text-[#D8AF53]"
                     }`}
                   >
                     {item.title}
@@ -115,7 +115,7 @@ export default function Header() {
                       <Link
                         key={i}
                         href={sub.href}
-                        className="px-4 py-2 hover:bg-gray-100 hover:text-blue-500 transition-all duration-200"
+                        className="px-4 py-2 hover:bg-gray-100 hover:text-[#D8AF53] transition-all duration-200"
                       >
                         {sub.title}
                       </Link>
@@ -192,7 +192,7 @@ export default function Header() {
                         <ChevronDown
                           className={`w-4 h-6 transition-transform duration-300 ${
                             openDropdown === item.title
-                              ? "rotate-180 text-blue-400"
+                              ? "rotate-180 text-[#936521]"
                               : ""
                           }`}
                         />

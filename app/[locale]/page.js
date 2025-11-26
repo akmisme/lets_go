@@ -5,6 +5,7 @@ import SearchSection from "../components/SearchSection";
 import Hero from "../components/Hero";
 import PromotionBanner from "../components/Promotionbanner";
 import Popularexp from "../components/Popularexp";
+import TrandingNow from "../components/TrandingNow";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <SearchSection/>
       <PromotionBanner/>
       <Popularexp/>
+      <TrandingNow/>
     </section>
   );
 }

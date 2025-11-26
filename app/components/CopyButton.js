@@ -20,7 +20,7 @@ export default function CopyTextButton({ text = "" }) {
   return (
     <button
       onClick={handleCopy}
-      className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+      className="bg-[#936521] text-white px-4 py-2 rounded hover:bg-[#D8AF53] cursor-pointer"
     >
       {copied ? "Copied!" : "Copy Code"}
     </button>

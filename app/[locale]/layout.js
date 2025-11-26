@@ -13,7 +13,7 @@ const poppins = Poppins({
 
 
 export const metadata = {
-  title: "Let's Go Travel & Tour",
+  title: "Golden Yellow International Travel",
   // description: "Hotel booking and information site",
 };
 

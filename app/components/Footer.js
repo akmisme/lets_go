@@ -12,10 +12,10 @@ const Footer = () => {
             type="email"
             placeholder="Your Email Address"
             required
-            className="p-2 pr-50 border border-gray-300 rounded-4xl max-xl:pr-0 outline-none focus:border-[#B30602] px-5"
+            className="p-2 pr-50 border border-gray-300 rounded-4xl max-xl:pr-0 outline-none focus:border-[#936521] px-5"
           />
           <button
-            className="bg-[#B30602] p-2 rounded-4xl text-white cursor-pointer"
+            className="bg-[#936521] p-2 rounded-4xl text-white cursor-pointer hover:bg-[#D8AF53]"
             value="submit"
           >
             <span className="text-sm">
@@ -24,7 +24,7 @@ const Footer = () => {
           </button>
         </form>
       </div>
-      <section className="bg-[#B30602] p-8">
+      <section className="bg-[#936521] p-8">
         <div className="container grid xl:grid-cols-3 content-center gap-4 max-xl:grid-cols-1">
           <div className="container flex flex-col items-center justify-center gap-3 xl:border-r border-white max-xl:border-r-0 max-xl:border-b border-white">
             <h1 className="text-white font-bold text-2xl">Group Affiliation</h1>

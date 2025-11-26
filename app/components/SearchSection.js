@@ -8,14 +8,14 @@ const SearchSection = () => {
         <input
           type="text"
           placeholder="City, airport, region, landmark or property name"
-          className="col-span-2 border p-3 rounded-md"
+          className="col-span-2 border p-3 rounded-md cursor-pointer"
         />
-        <input type="date" defaultValue="2025-11-26" className="border p-3 rounded-md" />
-        <select className="border p-3 rounded-md">
+        <input type="date" defaultValue="xxxx-xx-xx" className="border p-3 rounded-md cursor-pointer" />
+        <select className="border p-3 rounded-md cursor-pointer">
           <option>2 adults</option>
           <option>4 adults</option>
         </select>
-        <button className="bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700">Search</button>
+        <button className="bg-[#936521] text-white px-6 py-3 rounded-md hover:bg-[#D8AF53] cursor-pointer">Search</button>
       </form>
   );
 }
