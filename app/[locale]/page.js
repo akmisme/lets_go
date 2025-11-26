@@ -9,7 +9,7 @@ import TrandingNow from "../components/TrandingNow";
 
 export default function Home() {
   return (
-    <section className="min-h-screen bg-gray-100">
+    <section className="min-h-screen bg-gray-100 pb-10">
       <Hero/>
       <SearchSection/>
       <PromotionBanner/>

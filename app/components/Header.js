@@ -28,7 +28,7 @@ const headerData = [
       { title: "Yangon", href: "#" },
       { title: "Taunggyi", href: "#" },
       { title: "Kalaw", href: "#" },
-      { title: "Hpa-an", href: "#" },
+      { title: "Hpa-An", href: "#" },
       { title: "Inle Lake", href: "#" },
       { title: "Ngwesaung", href: "#" },
       { title: "Chaung Thar", href: "#" },

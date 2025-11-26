@@ -7,7 +7,7 @@ const PromotionBanner = () => {
   return (
     <section className="mt-10">
     <h1 className="text-center text-2xl font-bold">Promotion Banner</h1>
-      <div className="grid grid-cols-4 max-md:grid-cols-1 px-5 mx-auto gap-4 mt-10 justify-center">
+      <div className="grid grid-cols-4 max-md:grid-cols-1 max-[1025px]:grid-cols-2 px-5 mx-auto gap-4 mt-10 justify-center">
         <div className="bg-white flex flex-col justify-center items-center shadow-md rounded-4xl p-3 gap-2">
           <Image
             src="/assets/promobanner/bagan.jpg"
