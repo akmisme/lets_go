@@ -11,7 +11,7 @@ export default function Home() {
     <section className="min-h-screen bg-gray-100">
       <Hero/>
       <SearchSection/>
-      <PromotionBanner text="မြန်မာ Black Friday Promotion!"/>
+      <PromotionBanner/>
       <Popularexp/>
     </section>
   );
