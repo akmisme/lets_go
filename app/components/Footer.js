@@ -148,8 +148,8 @@ const Footer = () => {
               <img
                 src="https://play-lh.googleusercontent.com/4HoG6Isj_iLTKyJEOLZgu0_kjWyPV2yQrubgQvcx2rWo8NyEOZRuQ_xAzZkUUopm4ak=w480-h960-rw"
                 alt="#"
-                height={35}
-                width={35}
+                height={10}
+                width={45}
               />
               <img
                 src="https://myanmarpay.com.mm/frontend/assets/images/logo_512.png"

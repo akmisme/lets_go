@@ -14,9 +14,9 @@ import LanguageSwitcher from "./LanguageSwitch";
 import Image from "next/image";
 
 const headerData = [
-  { title: "HOME", href: "/" },
+  { title: "Home", href: "/" },
   {
-    title: "Package",
+    title: "Packages",
     href: "#",
   },
   {
@@ -34,7 +34,7 @@ const headerData = [
       { title: "Chaung Thar", href: "#" },
     ],
   },
-  { title: "About Us", href: "#" },
+  { title: "About Us", href: "/aboutus" },
   { title: "Contact Us", href: "#" },
   { title: "Vlogger", href: "#" }
 ];

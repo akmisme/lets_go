@@ -10,15 +10,15 @@ const SearchSection = () => {
   const [selectedDestination, setSelectedDestination] = useState("");
 
   const destinations = [
-      "Bagan, Myanmar",
-      "Mandalay, Myanmar",
-      "Yangon, Myanmar",
-      "Taunggyi, Myanmar",
-      "Kalaw, Myanmar",
-      "Hpa-an, Myanmar",
-      "Inle Lake, Myanmar",
-      "Ngwesaung, Myanmar",
-      "Chaung Thar, Myanmar"
+    "Bagan, Myanmar",
+    "Mandalay, Myanmar",
+    "Yangon, Myanmar",
+    "Taunggyi, Myanmar",
+    "Kalaw, Myanmar",
+    "Hpa-an, Myanmar",
+    "Inle Lake, Myanmar",
+    "Ngwesaung, Myanmar",
+    "Chaung Thar, Myanmar",
   ];
 
   const handleSelect = (destination) => {

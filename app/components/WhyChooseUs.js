@@ -9,6 +9,7 @@ const WhyChooseUs = () => {
           <img
             src="/assets/whychooseus/heart.svg"
             alt="#"
+            className="bg-gray-100"
             width={60}
             height={60}
           />
