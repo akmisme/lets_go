@@ -6,6 +6,8 @@ import Hero from "../components/Hero";
 import PromotionBanner from "../components/Promotionbanner";
 import Popularexp from "../components/Popularexp";
 import TrandingNow from "../components/TrandingNow";
+import AndIOS from "../components/AndriodIOS";
+import WhyChooseUs from "../components/WhyChooseUs";
 
 export default function Home() {
   return (
@@ -15,6 +17,8 @@ export default function Home() {
       <PromotionBanner/>
       <Popularexp/>
       <TrandingNow/>
+      <AndIOS/>
+      <WhyChooseUs/>
     </section>
   );
 }

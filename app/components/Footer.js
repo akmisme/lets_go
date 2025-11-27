@@ -139,12 +139,112 @@ const Footer = () => {
           <div className="flex flex-col gap-2 text-white">
             <h1 className="text-white font-bold text-md">Payment Methods</h1>
             <div className="flex gap-5">
-              <Image src="/assets/visa.svg" alt="#" height={50} width={50}/>
-              <Image src="/assets/mastercard.svg" alt="#" height={35} width={35}/>
-              <Image src="/assets/UnionPay_logo.svg" alt="#" height={35} width={35}/>
+              <Image
+                src="/assets/payments/visa.svg"
+                alt="#"
+                height={50}
+                width={50}
+              />
+              <img
+                src="https://play-lh.googleusercontent.com/4HoG6Isj_iLTKyJEOLZgu0_kjWyPV2yQrubgQvcx2rWo8NyEOZRuQ_xAzZkUUopm4ak=w480-h960-rw"
+                alt="#"
+                height={35}
+                width={35}
+              />
+              <img
+                src="https://myanmarpay.com.mm/frontend/assets/images/logo_512.png"
+                alt="#"
+                height={40}
+                width={40}
+              />
+              <img
+                src="https://www.global.jcb/en/common/images/svg/jcb_emblem_logo.svg"
+                alt="#"
+                height={50}
+                width={50}
+              />
+               <img
+                src="https://www.myanmarpaymentunion.com/storage/images/logo/NwmqOfkCylSwGTP59aLZ3Rkk4zgdFO2S4CEf2pVh.png"
+                alt="#"
+                height={10}
+                width={50}
+              />
             </div>
             <div className="flex gap-5">
-              <Image src="/assets/JCB_logo.svg" alt="#" height={35} width={35}/>
+              <img
+                src="https://play-lh.googleusercontent.com/Lgulng3ncFuuFVYTmT-JQxuZ_IQ9-iPCojY5lM6c3wK9uvSx_ZRqLGcq8dTQcez1HDvQiSvfmJHZN1EHg1oWfLk"
+                alt="#"
+                width={35}
+                height={35}
+              />
+              <img
+                src="https://play-lh.googleusercontent.com/cnKJYzzHFAE5ZRepCsGVhv7ZnoDfK8Wu5z6lMefeT-45fTNfUblK_gF3JyW5VZsjFc4=w480-h960-rw"
+                alt="#"
+                height={35}
+                width={35}
+              />
+              <img
+                src="https://play-lh.googleusercontent.com/P_6K82rdGqEB-m4lO5hIoebg0Jv5LwHnOqI2HsfzQfZUlkm1Z3ek4K5iG42gXeWJfoPL=w240-h480-rw"
+                alt="#"
+                height={35}
+                width={35}
+              />
+              <img
+                src="https://play-lh.googleusercontent.com/ErPz7wvjl-tmKkfsTDtxz4XepVocji0Mo0k9Somq7ydxA7y49JHU9EnGMUGDUY9Nveq-=w480-h960-rw"
+                alt="#"
+                height={35}
+                width={35}
+              />
+              <img
+                src="https://play-lh.googleusercontent.com/j1ZiQVB8jFi2sZslkh1vN419gvRIN5VGif6749zljhWldRjmC7_dOF_y1jcuq3rwnQ=w480-h960-rw"
+                alt="#"
+                height={35}
+                width={35}
+              />
+              <img
+                src="https://play-lh.googleusercontent.com/rPq4GMCZy12WhwTlanEu7RzxihYCgYevQHVHLNha1VcY5SU1uLKHMd060b4VEV1r-OQ=s96-rw"
+                alt="#"
+                height={35}
+                width={35}
+              />
+            </div>
+            <div className="flex gap-5">
+              <img
+                src="https://images.sftcdn.net/images/t_app-icon-m/p/51f8a011-69a7-45d5-a04d-6a04b2b614f4/201761240/citizens-pay-logo"
+                alt="#"
+                width={35}
+                height={35}
+              />
+              <img
+                src="https://cdn.aptoide.com/imgs/4/9/d/49ddd43ae89ab8eae49a835868f292af_icon.png?w=128"
+                alt="#"
+                height={35}
+                width={35}
+              />
+              <img
+                src="https://play-lh.googleusercontent.com/ANWthn072I2hrYpIPClF3T-vrMAZS8JQuoJv1-0yjyLcqiEe1h1sqMI0AmRdJR9f6KI=w480-h960-rw"
+                alt="#"
+                height={35}
+                width={35}
+              />
+              <img
+                src="https://play-lh.googleusercontent.com/sId6g1OxER7SOf5q_8cZbd_cR74bAWNVkIUS_v9e8mYUnLudtSy-jCCjJihN57CIqB9r3uYTJkQdtYMEpsQb=w480-h960-rw"
+                alt="#"
+                height={35}
+                width={35}
+              />
+              <img
+                src="https://images.sftcdn.net/images/t_app-icon-m/p/eabe484a-bd06-4653-8542-0be4332d91e2/400613827/yoma-bank-nextgen-logo"
+                alt="#"
+                height={35}
+                width={35}
+              />
+              <img
+                src="https://play-lh.googleusercontent.com/QABgyscEJFK7a0nPJNbB2T4IvWJnO-GCjks20NFPJzfj9iUCq905nySoLrxfksNJwVew=w480-h960-rw"
+                alt="#"
+                height={35}
+                width={35}
+              />
             </div>
           </div>
         </div>
