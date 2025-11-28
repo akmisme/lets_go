@@ -1,5 +1,8 @@
 import React from "react";
 import SearchSection from "@/app/components/SearchSection";
+import OurValue from "@/app/components/ourvalues";
+import VisionMission from "@/app/components/Vision&Mission";
+import ExecutiveTeam from "@/app/components/ExecutiveTeam";
 
 export default function AboutUs() {
   return (
@@ -27,7 +30,7 @@ export default function AboutUs() {
           Golden Yellow.
         </p>
       </div>
-      <div className="grid grid-cols-2 mx-30 text-justify gap-10 mt-10 max-lg:mx-5">
+      <div className="grid grid-cols-2 max-lg:grid-cols-1 mx-30 text-justify gap-10 mt-10 max-lg:mx-5">
         <div>
           <img
             src="/assets/chaungthar.jpg"
@@ -58,6 +61,10 @@ export default function AboutUs() {
           </p>
         </div>
       </div>
+      {/* End About Us */}
+      <OurValue/>
+      <VisionMission/>
+      <ExecutiveTeam/>
     </section>
   );
 }
