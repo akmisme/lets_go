@@ -19,7 +19,7 @@ const ExecutiveTeam = () => {
             15 years and has called Vienna, Austria home for over a decade. In
             2010, together with his brother Shawn, he founded TourRadar to help
             connect people to life-enriching travel experiences.{" "}
-            <Link href="#" className="text-blue-400">
+            <Link href="#" className="text-[#936521] hover:text-[#D8AF53] transition-all ease-in-out duration-300">
               see more
             </Link>
           </p>
@@ -37,7 +37,7 @@ const ExecutiveTeam = () => {
             15 years and has called Vienna, Austria home for over a decade. In
             2010, together with his brother Shawn, he founded TourRadar to help
             connect people to life-enriching travel experiences.{" "}
-            <Link href="#" className="text-blue-400">
+            <Link href="#" className="text-[#936521] hover:text-[#D8AF53] transition-all ease-in-out duration-300">
               see more
             </Link>
           </p>
@@ -55,7 +55,7 @@ const ExecutiveTeam = () => {
             15 years and has called Vienna, Austria home for over a decade. In
             2010, together with his brother Shawn, he founded TourRadar to help
             connect people to life-enriching travel experiences.{" "}
-            <Link href="#" className="text-blue-400">
+            <Link href="#" className="text-[#936521] hover:text-[#D8AF53] transition-all ease-in-out duration-300">
               see more
             </Link>
           </p>
@@ -73,7 +73,7 @@ const ExecutiveTeam = () => {
             15 years and has called Vienna, Austria home for over a decade. In
             2010, together with his brother Shawn, he founded TourRadar to help
             connect people to life-enriching travel experiences.{" "}
-            <Link href="#" className="text-blue-400">
+            <Link href="#" className="text-[#936521] hover:text-[#D8AF53] transition-all ease-in-out duration-300">
               see more
             </Link>
           </p>

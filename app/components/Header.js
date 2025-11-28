@@ -23,20 +23,20 @@ const headerData = [
     title: "Experiences",
     href: "#",
     dropdown: [
-      { title: "Bagan", href: "#" },
-      { title: "Mandalay", href: "#" },
-      { title: "Yangon", href: "#" },
-      { title: "Taunggyi", href: "#" },
-      { title: "Kalaw", href: "#" },
-      { title: "Hpa-An", href: "#" },
-      { title: "Inle Lake", href: "#" },
-      { title: "Ngwesaung", href: "#" },
-      { title: "Chaung Thar", href: "#" },
+      { title: "Bagan", href: "#", image: "/assets/promobanner/bagan.jpg" },
+      { title: "Mandalay", href: "#", image: "/assets/promobanner/mandalay.jpg" },
+      { title: "Yangon", href: "#", image: "/assets/promobanner/yangon.jpg" },
+      { title: "Taunggyi", href: "#", image: "/assets/promobanner/taunggyi.jpg" },
+      { title: "Kalaw", href: "#", image: "/assets/promobanner/kalaw.jpg" },
+      { title: "Hpa-An", href: "#", image: "/assets/promobanner/hpa-an.jpg" },
+      { title: "Inle Lake", href: "#", image: "/assets/promobanner/inle.jpg" },
+      { title: "Ngwesaung", href: "#", image: "/assets/promobanner/ngwesaung.jpg" },
+      { title: "Chaung Thar", href: "#", image: "/assets/promobanner/chaungtha.jpg" },
     ],
   },
   { title: "About Us", href: "/aboutus" },
-  { title: "Contact Us", href: "#" },
-  { title: "Vlogger", href: "#" }
+  { title: "Contact Us", href: "/contactus" },
+  { title: "Vlogger", href: "#" },
 ];
 
 export default function Header() {
@@ -110,16 +110,21 @@ export default function Header() {
 
                 {/* Dropdown menu */}
                 {item.dropdown && openDropdown === item.title && (
-                  <div className="absolute top-full left-0 bg-white shadow-lg w-56 py-3 flex flex-col text-gray-600">
-                    {item.dropdown.map((sub, i) => (
-                      <Link
-                        key={i}
-                        href={sub.href}
-                        className="px-4 py-2 hover:bg-gray-100 hover:text-[#D8AF53] transition-all duration-200"
-                      >
-                        {sub.title}
-                      </Link>
-                    ))}
+                  <div className="absolute top-full left-0 bg-white shadow-lg w-130 py-3 flex flex-col text-gray-600">
+                        <div className="grid grid-cols-4 mx-auto gap-4 mt-10 justify-center">
+                          {item.dropdown.map((sub, i) => (
+                          <div key={i} className="bg-white flex flex-col justify-center items-center hover:shadow-md rounded-4xl p-1 gap-2 hover:-mt-1 hover:mb-1 transition-transform ease-in-out duration-300 cursor-pointer">
+                            <img
+                              src={sub.image}
+                              className="rounded-4xl"
+                              alt="#"
+                              height={100}
+                              width={100}
+                            />
+                            <p>{sub.title}</p>
+                          </div>
+                          ))}
+                        </div>
                   </div>
                 )}
               </div>
@@ -173,7 +178,7 @@ export default function Header() {
                       <Link
                         href={item.href}
                         className={`block ${
-                          isActive ? "text-blue-400 font-semibold" : ""
+                          isActive ? "text-[#936521] font-semibold" : ""
                         }`}
                         onClick={() => setMobileMenuOpen(false)}
                       >

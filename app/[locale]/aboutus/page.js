@@ -30,7 +30,7 @@ export default function AboutUs() {
           Golden Yellow.
         </p>
       </div>
-      <div className="grid grid-cols-2 max-lg:grid-cols-1 mx-30 text-justify gap-10 mt-10 max-lg:mx-5">
+      <div className="grid grid-cols-2 max-xl:grid-cols-1 mx-30 text-justify gap-10 mt-10 max-lg:mx-5">
         <div>
           <img
             src="/assets/chaungthar.jpg"
@@ -63,8 +63,8 @@ export default function AboutUs() {
       </div>
       {/* End About Us */}
       <OurValue/>
-      <VisionMission/>
       <ExecutiveTeam/>
+      <VisionMission/>
     </section>
   );
 }

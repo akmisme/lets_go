@@ -248,9 +248,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center text-white -mt-25">
-          <p>&copy; Copyright. All right Reserverd.</p>
-          <p>Developed By AKM.</p>
+        <div className="flex flex-col items-center text-white -mt-25 pb-5">
+          <p>&copy; Copyright 2025. All right Reserverd.</p>
+          <p>Developed By <Link href="https://yolodigitalmm.com/" target="blank" className="text-[#D8AF53] hover:text-blue-600 transition-all ease-in-out delay-100 duration-300">Yolo Digital Marketing Agency</Link>.</p>
         </div>
       </section>
     </footer>
