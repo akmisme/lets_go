@@ -63,6 +63,7 @@ export default function Header() {
         {/* Logo */}
         <Image
           src="/assets/logo.avif"
+          className="hover:rotate-360 transition-transform ease-in-out duration-500 delay-300 cursor-pointer"
           alt="STG Cement Distribution Logo"
           width={100}
           height={0}
@@ -113,7 +114,7 @@ export default function Header() {
                   <div className="absolute top-full left-0 bg-white shadow-lg w-130 py-3 flex flex-col text-gray-600">
                         <div className="grid grid-cols-4 mx-auto gap-4 mt-10 justify-center">
                           {item.dropdown.map((sub, i) => (
-                          <div key={i} className="bg-white flex flex-col justify-center items-center hover:shadow-md rounded-4xl p-1 gap-2 hover:-mt-1 hover:mb-1 transition-transform ease-in-out duration-300 cursor-pointer">
+                          <div key={i} className="bg-white flex flex-col justify-center items-center hover:shadow-md rounded-4xl p-1 gap-2 hover:-mt-1 hover:mb-1 transition-transform ease-in-out duration-500 delay-300 cursor-pointer">
                             <img
                               src={sub.image}
                               className="rounded-4xl"
