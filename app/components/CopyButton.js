@@ -12,17 +12,27 @@ export default function CopyTextButton({ text = "" }) {
     try {
       await navigator.clipboard.writeText(text);
       setCopied(true);
-      setTimeout(() => setCopied(false), 2000); // reset after 2s
+      setTimeout(() => setCopied(false), 1000); // reset after 1s
     } catch (err) {
       console.error("Copy failed:", err);
     }
   };
+
   return (
-    <button
-      onClick={handleCopy}
-      className="bg-[#936521] text-white px-4 py-2 rounded hover:bg-[#D8AF53] cursor-pointer"
-    >
-      {copied ? "Copied!" : "Copy Code"}
-    </button>
+    <div className="flex flex-col items-center gap-2">
+      <button
+        onClick={handleCopy}
+        className="bg-[#936521] text-white px-4 py-2 rounded hover:bg-[#D8AF53] cursor-pointer"
+      >
+        Copy Code
+      </button>
+
+      {/* Success message */}
+      {copied && (
+        <div className="bg-green-400 text-white px-3 py-1 rounded text-sm animate-fade-in">
+          Copied to clipboard!
+        </div>
+      )}
+    </div>
   );
 }

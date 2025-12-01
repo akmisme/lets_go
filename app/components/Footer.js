@@ -12,7 +12,7 @@ const Footer = () => {
             type="email"
             placeholder="Your Email Address"
             required
-            className="p-2 pr-50 border border-gray-200 rounded-4xl max-xl:pr-0 outline-none focus:border-[#D8AF53] px-5"
+            className="p-2 pr-50 border border-gray-200 rounded-4xl max-xl:pr-0 outline-none focus:border-[#D8AF53] focus:border-dashed px-5"
           />
           <button
             className="bg-[#936521] p-2 rounded-4xl text-white cursor-pointer hover:bg-[#D8AF53]"
