@@ -14,7 +14,7 @@ const poppins = Poppins({
 
 export const metadata = {
   title: "Golden Yellow International Travel",
-  // description: "Hotel booking and information site",
+  // description: "Traveling Throughout Myanmar Site",
 };
 
 export default async function RootLayout({ children, params }) {

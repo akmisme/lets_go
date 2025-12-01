@@ -6,13 +6,18 @@ import ExecutiveTeam from "@/app/components/ExecutiveTeam";
 
 export default function AboutUs() {
   return (
-    <section className="bg-gray-100 pb-10 pt-5">
-      {/* Search Bar */}
-      <div className="flex mt-50 mx-auto items-center justify-center px-5 border-b-1 border-gray-300 pb-10">
-        <SearchSection />
+    <section className="bg-gray-100 pb-10 mt-30">
+      {/* Banner Section */}
+      <div
+        className="relative top-5 bg-center bg-cover opacity-80 bg-no-repeat w-350 max-xl:w-auto max-xl:mx-5 h-100 mx-auto rounded-4xl flex"
+        style={{ backgroundImage: "url('/assets/bagan.jpg')" }}
+      >
+        <h1 className="font-bold m-auto text-white text-6xl max-md:text-4xl">
+          About Us
+        </h1>
       </div>
+      <SearchSection />
       {/* About Us */}
-      <h1 className="text-center font-bold text-3xl mt-5">About Us</h1>
       <div className="flex flex-col mx-30 text-justify gap-3 mt-10 max-lg:mx-5">
         <h1 className="font-bold text-3xl">Our Origin</h1>
         <p className="indent-10 leading-relaxed text-base">
@@ -37,7 +42,7 @@ export default function AboutUs() {
             alt="#"
             width={600}
             height={400}
-            className="rounded-4xl opacity-80 hover:opacity-100 transition-transform duration-300 cursor-pointer"
+            className="rounded-4xl hover:opacity-80 transition-transform duration-300 cursor-pointer"
           />
         </div>
         <div className="flex flex-col text-justify gap-5">
@@ -62,9 +67,9 @@ export default function AboutUs() {
         </div>
       </div>
       {/* End About Us */}
-      <OurValue/>
-      <ExecutiveTeam/>
-      <VisionMission/>
+      <OurValue />
+      <ExecutiveTeam />
+      <VisionMission />
     </section>
   );
 }

@@ -8,13 +8,13 @@ const PromotionBanner = () => {
     <section className="mt-10">
     <h1 className="text-center text-2xl font-bold">Promotion Banner</h1>
       <div className="grid grid-cols-4 max-md:grid-cols-1 max-[1025px]:grid-cols-2 px-5 mx-auto gap-4 mt-10 justify-center">
-        <div className="bg-white flex flex-col justify-center items-center hover:shadow-md rounded-4xl p-3 gap-2 hover:-mt-1 hover:mb-1 transition-transform ease-in-out duration-500 delay-300">
+        <div className="bg-white flex flex-col justify-center items-center hover:shadow-md rounded-4xl p-5 gap-2 hover:-mt-1 hover:mb-1 transition-transform ease-in-out duration-500 delay-300">
           <Image
             src="/assets/promobanner/bagan.jpg"
             className="rounded-4xl"
             alt="#"
-            height={300}
-            width={300}
+            height={500}
+            width={500}
           />
           <CopyTextButton text="BLACKFRIDAY2025" />
         </div>
@@ -23,8 +23,8 @@ const PromotionBanner = () => {
             src="/assets/promobanner/bagan.jpg"
             className="rounded-4xl"
             alt="#"
-            height={300}
-            width={300}
+            height={500}
+            width={500}
           />
           <CopyTextButton text="BLACKFRIDAY2025" />
         </div>
@@ -33,8 +33,8 @@ const PromotionBanner = () => {
             src="/assets/promobanner/bagan.jpg"
             className="rounded-4xl"
             alt="#"
-            height={300}
-            width={300}
+            height={500}
+            width={500}
           />
           <CopyTextButton text="BLACKFRIDAY2025" />
         </div>
@@ -43,8 +43,8 @@ const PromotionBanner = () => {
             src="/assets/promobanner/bagan.jpg"
             className="rounded-4xl"
             alt="#"
-            height={300}
-            width={300}
+            height={500}
+            width={500}
           />
           <CopyTextButton text="BLACKFRIDAY2025" />
         </div>
