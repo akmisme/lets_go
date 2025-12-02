@@ -5,106 +5,125 @@ import Link from "next/link";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   return (
     <div className="flex flex-col gap-5">
       <form className="flex flex-col mx-auto gap-5 pb-10">
-        {/* First Name */}
         <div className="flex gap-5 items-center justify-center">
-          <label className="font-bold text-base" htmlFor="phone">
-            First Name
-          </label>
-          <input
-            id="phone"
-            type="phone"
-            className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] focus:border-dashed w-80 max-md:w-60 p-1 transition-all ease-in-out duration-500"
-            placeholder="Enter Your Phone"
-            required
-          />
+          {/* First Name */}
+          <div className="flex flex-col gap-2">
+            <label className="font-bold text-base" htmlFor="first_name">
+              First Name
+            </label>
+            <input
+              id="first_name"
+              type="text"
+              className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] focus:border-dashed w-80 max-md:w-60 p-1 transition-all ease-in-out duration-500"
+              placeholder="Enter Your First Name"
+              required
+            />
+          </div>
+          {/* Last Name */}
+          <div className="flex flex-col gap-2">
+            <label className="font-bold text-base" htmlFor="last_name">
+              Last Name
+            </label>
+            <input
+              id="last_name"
+              type="text"
+              className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] focus:border-dashed w-80 max-md:w-60 p-1 transition-all ease-in-out duration-500"
+              placeholder="Enter Your Last Name"
+              required
+            />
+          </div>
         </div>
-        {/* Last Name */}
+
         <div className="flex gap-5 items-center justify-center">
-          <label className="font-bold text-base" htmlFor="phone">
-            Last Name
-          </label>
-          <input
-            id="phone"
-            type="phone"
-            className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] focus:border-dashed w-80 max-md:w-60 p-1 transition-all ease-in-out duration-500"
-            placeholder="Enter Your Phone"
-            required
-          />
+          {/* Email */}
+          <div className="flex flex-col gap-2">
+            <label className="font-bold text-base" htmlFor="email">
+              Email (Optional)
+            </label>
+            <input
+              id="email"
+              type="email"
+              className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] focus:border-dashed w-80 max-md:w-60 p-1 transition-all ease-in-out duration-500"
+              placeholder="Enter Your Email"
+            />
+          </div>
+          {/* Phone */}
+          <div className="flex flex-col gap-2">
+            <label className="font-bold text-base" htmlFor="phone">
+              Phone
+            </label>
+            <input
+              id="phone"
+              type="number"
+              className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] focus:border-dashed w-80 max-md:w-60 p-1 transition-all ease-in-out duration-500"
+              placeholder="Enter Your Phone"
+              required
+            />
+          </div>
         </div>
-        {/* Phone */}
+
         <div className="flex gap-5 items-center justify-center">
-          <label className="font-bold text-base" htmlFor="phone">
-            Last Name
-          </label>
-          <input
-            id="phone"
-            type="phone"
-            className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] focus:border-dashed w-80 max-md:w-60 p-1 transition-all ease-in-out duration-500"
-            placeholder="Enter Your Phone"
-            required
-          />
-        </div>
-        {/* Email */}
-        <div className="flex gap-5 items-center justify-center">
-          <label className="font-bold text-base" htmlFor="phone">
-            Last Name
-          </label>
-          <input
-            id="phone"
-            type="phone"
-            className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] focus:border-dashed w-80 max-md:w-60 p-1 transition-all ease-in-out duration-500"
-            placeholder="Enter Your Phone"
-            required
-          />
-        </div>
-        {/* Password */}
-        <div className="flex gap-5 items-center justify-center relative">
-          <label className="font-bold text-base" htmlFor="password">
-            Password
-          </label>
-          <input
-            id="password"
-            type={showPassword ? "text" : "password"}
-            className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] focus:border-dashed w-80 max-md:w-60 p-1 transition-all ease-in-out duration-500"
-            placeholder="Enter Your Password"
-            required
-          />
-          <button
-            type="button"
-            onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-2 top-2"
-          >
-            {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-          </button>
-        </div>
-        {/* Password */}
-        <div className="flex gap-5 items-center justify-center relative">
-          <label className="font-bold text-base" htmlFor="password">
-            Password
-          </label>
-          <input
-            id="password"
-            type={showPassword ? "text" : "password"}
-            className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] focus:border-dashed w-80 max-md:w-60 p-1 transition-all ease-in-out duration-500"
-            placeholder="Enter Your Password"
-            required
-          />
-          <button
-            type="button"
-            onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-2 top-2"
-          >
-            {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-          </button>
+          {/* Password */}
+          <div className="flex flex-col gap-2 w-80 max-md:w-60">
+            <label className="font-bold text-base" htmlFor="password">
+              Password
+            </label>
+            <div className="relative w-full">
+              <input
+                id="password"
+                type={showPassword ? "text" : "password"}
+                className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] 
+                 focus:border-dashed w-full p-2 pr-10 transition-all ease-in-out duration-500"
+                placeholder="Enter Your Password"
+                required
+                pattern="^(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$"
+                title="Password must be at least 8 characters long and include at least one special character (!@#$%^&*)."
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600"
+              >
+                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              </button>
+            </div>
+          </div>
+
+          {/* Confirm Password */}
+          <div className="flex flex-col gap-2 w-80 max-md:w-60">
+            <label className="font-bold text-base" htmlFor="cf_password">
+              Confirm Password
+            </label>
+            <div className="relative w-full">
+              <input
+                id="cf_password"
+                type={showConfirmPassword ? "text" : "password"}
+                className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] 
+                 focus:border-dashed w-full p-2 pr-10 transition-all ease-in-out duration-500"
+                placeholder="Enter Your Confirm Password"
+                required
+                pattern="^(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$"
+                title="Password must be at least 8 characters long and include at least one special character (!@#$%^&*)."
+              />
+              <button
+                type="button"
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600"
+              >
+                {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Submit */}
         <button
-          className="bg-[#936521] text-white px-4 py-2 rounded-md hover:bg-[#D8AF53] transition-all ease-in-out duration-300 cursor-pointer"
+          className="bg-[#936521] text-white mt-5 px-4 py-2 rounded-md hover:bg-[#D8AF53] transition-all ease-in-out duration-300 cursor-pointer"
           type="submit"
         >
           Register
