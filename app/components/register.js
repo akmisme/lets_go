@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-import Link from "next/link";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);

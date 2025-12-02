@@ -4,13 +4,13 @@ import { ThemeProvider } from "next-themes";
 import { NextIntlClientProvider } from "next-intl";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import AOSInit from "../components/AOS";
 import { notFound } from "next/navigation";
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "700"], // only include what you need
 });
-
 
 export const metadata = {
   title: "Golden Yellow International Travel",
@@ -31,9 +31,8 @@ export default async function RootLayout({ children, params }) {
 
   return (
     <html lang={currentLocale} suppressHydrationWarning>
-      <body
-        className={`${poppins.className} antialiased`}
-      >
+      <body className={`${poppins.className} antialiased`}>
+        <AOSInit /> {/* Place this component at the top level */}
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

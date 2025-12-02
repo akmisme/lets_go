@@ -17,7 +17,7 @@ const headerData = [
   { title: "Home", href: "/" },
   {
     title: "Packages",
-    href: "#",
+    href: "/packages",
   },
   {
     title: "Experiences",
