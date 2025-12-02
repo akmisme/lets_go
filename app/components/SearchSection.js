@@ -104,18 +104,17 @@ const SearchSection = () => {
         {open && (
           <div className="absolute z-10 mt-2 w-full bg-white border rounded-md shadow-lg p-4">
             {[
-              { label: "Passenger", value: Passenger, setter: setPassenger },
-            ].map(({ label, value, setter }) => (
+              { value: Passenger, setter: setPassenger },
+            ].map(({ value, setter }) => (
               <div
-                key={label}
+                key={value}
                 className="flex justify-between items-center mb-3"
               >
-                <span>{label}</span>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center mx-auto gap-2 flex-col">
                   <button
                     type="button"
                     onClick={() => adjust(setter, -1)}
-                    className="w-8 h-8 bg-gray-200 rounded-full text-lg font-bold hover:bg-gray-300"
+                    className="w-10 h-10 bg-gray-200 rounded-full text-lg font-bold hover:bg-gray-300"
                   >
                     −
                   </button>
@@ -123,7 +122,7 @@ const SearchSection = () => {
                   <button
                     type="button"
                     onClick={() => adjust(setter, 1)}
-                    className="w-8 h-8 bg-gray-200 rounded-full text-lg font-bold hover:bg-gray-300"
+                    className="w-10 h-10 bg-gray-200 rounded-full text-lg font-bold hover:bg-gray-300"
                   >
                     +
                   </button>

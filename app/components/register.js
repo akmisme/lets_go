@@ -6,10 +6,30 @@ import Link from "next/link";
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (password !== confirmPassword) {
+      setError("Passwords do not match!");
+      return;
+    }
+
+    setError("");
+    // ✅ Continue with form submission logic
+    console.log("Form submitted:", { password, confirmPassword });
+    alert("Registration successful!");
+  };
 
   return (
     <div className="flex flex-col gap-5">
-      <form className="flex flex-col mx-auto gap-5 pb-10">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col mx-auto gap-5 pb-10"
+      >
         <div className="flex gap-5 items-center justify-center">
           {/* First Name */}
           <div className="flex flex-col gap-2">
@@ -19,7 +39,8 @@ const Register = () => {
             <input
               id="first_name"
               type="text"
-              className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] focus:border-dashed w-80 max-md:w-60 p-1 transition-all ease-in-out duration-500"
+              className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] 
+                         focus:border-dashed w-80 max-md:w-60 p-1 transition-all ease-in-out duration-500"
               placeholder="Enter Your First Name"
               required
             />
@@ -32,7 +53,8 @@ const Register = () => {
             <input
               id="last_name"
               type="text"
-              className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] focus:border-dashed w-80 max-md:w-60 p-1 transition-all ease-in-out duration-500"
+              className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] 
+                         focus:border-dashed w-80 max-md:w-60 p-1 transition-all ease-in-out duration-500"
               placeholder="Enter Your Last Name"
               required
             />
@@ -48,7 +70,8 @@ const Register = () => {
             <input
               id="email"
               type="email"
-              className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] focus:border-dashed w-80 max-md:w-60 p-1 transition-all ease-in-out duration-500"
+              className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] 
+                         focus:border-dashed w-80 max-md:w-60 p-1 transition-all ease-in-out duration-500"
               placeholder="Enter Your Email"
             />
           </div>
@@ -59,9 +82,10 @@ const Register = () => {
             </label>
             <input
               id="phone"
-              type="number"
-              className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] focus:border-dashed w-80 max-md:w-60 p-1 transition-all ease-in-out duration-500"
-              placeholder="Enter Your Phone"
+              type="text"
+              className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] 
+                         focus:border-dashed w-80 max-md:w-60 p-1 transition-all ease-in-out duration-500"
+              placeholder="eg. +95 1234567890"
               required
             />
           </div>
@@ -77,8 +101,10 @@ const Register = () => {
               <input
                 id="password"
                 type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] 
-                 focus:border-dashed w-full p-2 pr-10 transition-all ease-in-out duration-500"
+                           focus:border-dashed w-full p-2 pr-10 transition-all ease-in-out duration-500"
                 placeholder="Enter Your Password"
                 required
                 pattern="^(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$"
@@ -103,8 +129,10 @@ const Register = () => {
               <input
                 id="cf_password"
                 type={showConfirmPassword ? "text" : "password"}
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
                 className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] 
-                 focus:border-dashed w-full p-2 pr-10 transition-all ease-in-out duration-500"
+                           focus:border-dashed w-full p-2 pr-10 transition-all ease-in-out duration-500"
                 placeholder="Enter Your Confirm Password"
                 required
                 pattern="^(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$"
@@ -121,9 +149,15 @@ const Register = () => {
           </div>
         </div>
 
+        {/* Error message */}
+        {error && (
+          <p className="text-red-600 font-semibold text-center">{error}</p>
+        )}
+
         {/* Submit */}
         <button
-          className="bg-[#936521] text-white mt-5 px-4 py-2 rounded-md hover:bg-[#D8AF53] transition-all ease-in-out duration-300 cursor-pointer"
+          className="bg-[#936521] text-white mt-5 px-4 py-2 rounded-md hover:bg-[#D8AF53] 
+                     transition-all ease-in-out duration-300 cursor-pointer"
           type="submit"
         >
           Register

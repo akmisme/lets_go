@@ -49,11 +49,11 @@ const Log = () => {
           </label>
           <input
             id="phone"
-            type="phone"
+            type="text"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] focus:border-dashed w-80 max-md:w-60 p-1 transition-all ease-in-out duration-500"
-            placeholder="Enter Your Phone"
+            placeholder="eg. +95 1234567890"
             required
           />
         </div>
