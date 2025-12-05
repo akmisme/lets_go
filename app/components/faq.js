@@ -5,7 +5,12 @@ const FAQ = () => {
   return (
     <section className="mt-10">
       <h1 className="mb-5 font-bold text-2xl mx-20 max-xl:mx-5">FAQ</h1>
-      <div className="grid grid-cols-3 gap-5 mx-20 max-xl:grid-cols-2 max-md:grid-cols-1 max-xl:mx-5">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1500"
+        data-aos-delay="100"
+        className="grid grid-cols-3 gap-5 mx-20 max-xl:grid-cols-2 max-md:grid-cols-1 max-xl:mx-5"
+      >
         <div className="flex flex-col gap-5 bg-white p-4 rounded-md">
           <h1 className="font-bold text-base">
             How to ask for more tour details?

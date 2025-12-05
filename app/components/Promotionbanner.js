@@ -6,8 +6,13 @@ import CopyTextButton from "./CopyButton";
 const PromotionBanner = () => {
   return (
     <section className="mt-10">
-    <h1 className="text-center text-2xl font-bold">Promotion Banner</h1>
-      <div className="grid grid-cols-4 max-md:grid-cols-1 max-[1025px]:grid-cols-2 px-5 mx-auto gap-4 mt-10 justify-center">
+      <h1 className="text-center text-2xl font-bold">Promotion Banner</h1>
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1500"
+        data-aos-delay="100"
+        className="grid grid-cols-4 max-md:grid-cols-1 max-[1025px]:grid-cols-2 px-5 mx-auto gap-4 mt-10 justify-center"
+      >
         <div className="bg-white flex flex-col justify-center items-center hover:shadow-md rounded-4xl p-5 gap-2 hover:-mt-1 hover:mb-1 transition-transform ease-in-out duration-500 delay-300">
           <Image
             src="/assets/promobanner/bagan.jpg"

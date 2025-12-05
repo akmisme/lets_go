@@ -1,39 +1,22 @@
 import React from "react";
-import Image from "next/image";
+import SearchSection from "@/app/components/SearchSection";
+import TourCard from "@/app/components/TourCard";
 
 export default function Package() {
   return (
-    <section className="mt-30 bg-gray-100">
-      <h1 className="text-center text-4xl font-bold">Our Tours</h1>
-      <div className="grid grid-cols-2">
-        <div className="flex gap-10 mx-20">
-            <Image
-              src="/assets/promobanner/bagan.jpg"
-              alt="#"
-              height={300}
-              width={300}
-            />
-          <div className="flex flex-col gap-5">
-            <h1 className="">Bagan Package</h1>
-            <div className="flex gap-2">
-              <label>Destination:</label>
-              <h1>Yangon</h1>
-            </div>
-            <div className="flex gap-2">
-              <label>Start Date:</label>
-              <h1>1.12.1999</h1>
-            </div>
-            <div className="flex gap-2">
-              <label>Number of People:</label>
-              <h1>5</h1>
-            </div>
-            <div className="flex gap-2">
-              <label>Duration:</label>
-              <h1>7 Days/ 6 Nights</h1>
-            </div>
-          </div>
-        </div>
+    <section className="min-h-screen px-4 pb-10 bg-gray-100 mt-30">
+      {/* Banner Section */}
+      <div
+        className="relative top-5 bg-center bg-cover opacity-80 bg-no-repeat w-350 max-xl:w-auto max-xl:mx-5 h-100 mx-auto rounded-4xl flex"
+        style={{ backgroundImage: "url('/assets/bagan.jpg')" }}
+      >
+        <h1 className="font-bold m-auto text-white text-6xl max-md:text-4xl">
+          Packages
+        </h1>
       </div>
+      <SearchSection />
+      <h1 className="font-bold text-3xl text-center my-10">Our Tours</h1>
+      <TourCard />
     </section>
   );
 }

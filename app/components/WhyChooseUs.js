@@ -4,7 +4,7 @@ const WhyChooseUs = () => {
   return (
     <section className="mt-10">
       <h1 className="mx-20 font-bold text-3xl mb-5">Why Choose Us?</h1>
-      <div className="grid grid-cols-4 max-[769px]:grid-cols-2 max-sm:grid-cols-1 max-sm:mx-10 justify-around mx-20 gap-10">
+      <div data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100" className="grid grid-cols-4 max-[769px]:grid-cols-2 max-sm:grid-cols-1 max-sm:mx-10 justify-around mx-20 gap-10">
         <div className="flex flex-col gap-3 max-w-fit max-sm:items-center">
           <img
             src="/assets/whychooseus/heart.svg"

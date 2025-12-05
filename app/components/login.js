@@ -1,15 +1,18 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Eye, EyeOff } from "lucide-react";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 import Link from "next/link";
+import { isValidPhoneNumber } from "libphonenumber-js";
 
 const Log = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
+  const [error, setError] = useState("");
 
-  // Load saved Phone & password if "remember me" was checked
   useEffect(() => {
     const savedPhone = localStorage.getItem("rememberedPhone");
     const savedPassword = localStorage.getItem("rememberedPassword");
@@ -25,6 +28,12 @@ const Log = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // ✅ Validate phone number before submitting
+    if (!isValidPhoneNumber(phone)) {
+      setError("Invalid phone number format or length.");
+      return;
+    }
+
     if (remember) {
       localStorage.setItem("rememberedPhone", phone);
       localStorage.setItem("rememberedPassword", password); // ⚠️ insecure
@@ -38,44 +47,37 @@ const Log = () => {
 
   return (
     <div className="flex flex-col gap-5">
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col mx-auto gap-5 pb-10"
-      >
+      <form onSubmit={handleSubmit} className="flex flex-col mx-auto gap-5 pb-10">
         {/* Phone */}
-        <div className="flex gap-5 items-center justify-center">
-          <label className="font-bold text-base" htmlFor="phone">
-            Phone
-          </label>
-          <input
+        <div className="flex gap-2 items-center justify-center">
+          <label className="font-bold text-base" htmlFor="phone">Phone</label>
+          <PhoneInput
             id="phone"
-            type="text"
+            className="border border-gray-400 rounded-3xl outline-none p-2"
             value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] focus:border-dashed w-80 max-md:w-60 p-1 transition-all ease-in-out duration-500"
-            placeholder="eg. +95 1234567890"
-            required
+            onChange={setPhone}
+            defaultCountry="US"
+            international
+            countryCallingCodeEditable={false}
           />
         </div>
 
         {/* Password */}
         <div className="flex gap-5 items-center justify-center relative">
-          <label className="font-bold text-base" htmlFor="password">
-            Password
-          </label>
+          <label className="font-bold text-base" htmlFor="password">Password</label>
           <input
             id="password"
             type={showPassword ? "text" : "password"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] focus:border-dashed w-80 max-md:w-60 p-1 transition-all ease-in-out duration-500"
+            className="border border-gray-400 rounded-4xl outline-0 w-80 max-md:w-60 px-7 py-2"
             placeholder="Enter Your Password"
             required
           />
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-2 top-2"
+            className="absolute right-2 top-2.5"
           >
             {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
           </button>
@@ -91,7 +93,7 @@ const Log = () => {
           />
           <label htmlFor="remember"> Remember Me</label>
         </div>
-
+        {error && <span className="text-red-500 text-sm text-center">{error}</span>}
         {/* Submit */}
         <button
           className="bg-[#936521] text-white px-4 py-2 rounded-md hover:bg-[#D8AF53] transition-all ease-in-out duration-300 cursor-pointer"
@@ -100,15 +102,14 @@ const Log = () => {
           Login
         </button>
       </form>
+
       <div className="flex gap-5 mx-auto pb-10">
         <label className="text-[#936521] hover:text-[#D8AF53] cursor-pointer">
-          <Link href="#" />
-          Forget Password
+          <Link href="#">Forget Password</Link>
         </label>
         <label>|</label>
         <label className="text-[#936521] hover:text-[#D8AF53] cursor-pointer">
-          <Link href="/register" />
-          Register
+          <Link href="/register">Register</Link>
         </label>
       </div>
     </div>

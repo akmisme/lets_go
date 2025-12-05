@@ -15,6 +15,9 @@ const poppins = Poppins({
 export const metadata = {
   title: "Golden Yellow International Travel",
   // description: "Traveling Throughout Myanmar Site",
+  icons: {
+    icon: "../favicon.ico", // ✅ must be root-relative
+  },
 };
 
 export default async function RootLayout({ children, params }) {

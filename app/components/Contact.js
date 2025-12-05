@@ -1,84 +1,107 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 
 const Contact = () => {
+  const [value, setValue] = useState("");
+
   return (
     <div className="mt-10 mx-auto pb-5">
       <h1 className="text-3xl font-bold text-center mb-10">Contact Us</h1>
-      <div className="flex gap-10 mx-20 max-xl:flex-col max-md:mx-auto">
-        <form className="flex flex-col">
-          <div className="flex max-[321px]:flex-col gap-5 mb-5 mx-auto">
-            <div className="flex flex-col gap-5">
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1500"
+        data-aos-delay="100"
+        className="flex gap-10 mx-20 max-xl:flex-col max-md:mx-auto"
+      >
+        <form className="flex flex-col mx-auto">
+          <div className="flex flex-col md:flex-row gap-5 mb-5 mx-auto">
+            <div className="flex flex-col gap-2">
               <label className="font-bold text-base" htmlFor="name">
                 Name
               </label>
               <input
                 id="name"
+                name="name"
                 type="text"
-                className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] focus:border-dashed w-80 max-md:w-40 p-1 transition-all ease-in-out duration-500"
+                className="border border-gray-400 rounded-3xl outline-none w-full max-w-md py-2 px-7"
                 placeholder="Enter your name"
                 required
               />
             </div>
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-2">
               <label className="font-bold text-base" htmlFor="email">
                 Email
               </label>
               <input
                 id="email"
+                name="email"
                 type="email"
-                className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] focus:border-dashed w-80 max-md:w-40 p-1 transition-all ease-in-out duration-500"
-                placeholder="Enter your Email"
+                className="border border-gray-400 rounded-3xl outline-none w-full max-w-md py-2 px-7"
+                placeholder="Enter your email"
                 required
               />
             </div>
           </div>
-          <div className="flex max-[321px]:flex-col gap-5 mb-5 mx-auto">
-            <div className="flex flex-col gap-5">
+
+          {/* Phone + Subject */}
+          <div className="flex flex-col md:flex-row gap-5 mb-5 mx-auto">
+            <div className="flex flex-col gap-2">
               <label className="font-bold text-base" htmlFor="phone">
                 Phone
               </label>
-              <input
-                id="phone"
-                type="text"
-                className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] focus:border-dashed w-80 max-md:w-40 p-1 transition-all ease-in-out duration-500"
-                placeholder="eg. +95 1234567890"
-                required
+              <PhoneInput
+                placeholder="Enter phone number"
+                className="border border-gray-400 rounded-3xl outline-none w-full max-w-md p-2"
+                value={value}
+                onChange={setValue}
+                defaultCountry="US"
+                international
+                countryCallingCodeEditable={false}
               />
             </div>
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-2">
               <label className="font-bold text-base" htmlFor="subject">
                 Subject
               </label>
               <input
                 id="subject"
+                name="subject"
                 type="text"
-                className="border border-gray-400 rounded-4xl outline-0 focus:border-[#D8AF53] focus:border-dashed w-80 max-md:w-40 p-1 transition-all ease-in-out duration-500"
-                placeholder="Enter your Subject"
+                className="border border-gray-400 rounded-3xl outline-none w-full max-w-md py-2 px-7"
+                placeholder="Enter your subject"
                 required
               />
             </div>
           </div>
-          <div className="flex gap-5 mb-5 mx-auto">
-            <div className="flex flex-col gap-5">
+
+          {/* Message */}
+          <div className="flex gap-5 mb-5 mx-auto w-full max-w-2xl">
+            <div className="flex flex-col gap-2 w-full">
               <label className="font-bold text-base" htmlFor="message">
                 Message
               </label>
               <textarea
                 id="message"
-                className="max-h-32 h-32 w-165 max-md:w-80 spin border border-gray-400 outline-0 focus:border-[#D8AF53] focus:border-dashed rounded-md resize-none overflow-auto transition-all ease-in-out duration-500"
-                placeholder="Enter Your Message"
+                name="message"
+                className="h-32 border border-gray-400 outline-none rounded-md resize-none overflow-auto p-2"
+                placeholder="Enter your message"
+                required
               />
             </div>
           </div>
-          <div className="flex flex-col mt-5 gap-2 mx-auto">
+
+          {/* Buttons */}
+          <div className="flex flex-col mt-5 gap-2 mx-auto w-full max-w-md">
             <button
-              className="bg-blue-500 w-80 hover:bg-[#936521] shadow-md transition-all ease-in-out duration-500 rounded-4xl p-2 cursor-pointer"
+              className="bg-blue-500 hover:bg-[#936521] shadow-md transition-all ease-in-out duration-500 rounded-3xl p-2 cursor-pointer text-white"
               type="submit"
             >
               Send
             </button>
             <button
-              className="bg-[#D8AF53] w-80 hover:bg-red-700 shadow-md transition-all ease-in-out duration-500 rounded-4xl p-2 cursor-pointer"
+              className="bg-[#D8AF53] hover:bg-red-700 shadow-md transition-all ease-in-out duration-500 rounded-3xl p-2 cursor-pointer text-white"
               type="reset"
             >
               Clear

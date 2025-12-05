@@ -4,7 +4,7 @@ const OurValue = () => {
   return (
     <section className="mt-10">
       <h1 className="text-center text-2xl font-bold">Our Values</h1>
-      <div className="grid grid-cols-3 max-[1025px]:grid-cols-2 max-lg:grid-cols-1 mx-auto mt-10 px-10 gap-5 max-lg:mx-30 max-md:mx-auto">
+      <div className="grid grid-cols-3 max-[1025px]:grid-cols-2 max-lg:grid-cols-1 mx-20 mt-10 gap-5 max-lg:mx-30 max-md:mx-2">
         <div className="flex max-lg:flex-col gap-10 bg-[#D8AF53] p-3 rounded-4xl items-center justify-center hover:shadow-lg hover:-mt-1 hover:mb-1 transition-all ease-in-out duration-300">
           <img src="/assets/ourvalues/first.svg" alt="#" className="w-20" />
           <div className="flex flex-col gap-2 text-base text-justify text-white">
