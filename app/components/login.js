@@ -30,8 +30,8 @@ const Log = () => {
 
     // ✅ Validate phone number before submitting
     if (!isValidPhoneNumber(phone)) {
-      setError("Invalid phone number format or length.");
-      return;
+      setError("");
+      console.log("Form submitted with:", { phone });
     }
 
     if (remember) {
@@ -46,11 +46,13 @@ const Log = () => {
   };
 
   return (
-    <div className="flex flex-col gap-5">
-      <form onSubmit={handleSubmit} className="flex flex-col mx-auto gap-5 pb-10">
+    <section className="flex flex-col gap-5 my-10 mx-10">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-5 pb-10">
         {/* Phone */}
         <div className="flex gap-2 items-center justify-center">
-          <label className="font-bold text-base" htmlFor="phone">Phone</label>
+          <label className="font-bold text-base" htmlFor="phone">
+            Phone
+          </label>
           <PhoneInput
             id="phone"
             className="border border-gray-400 rounded-3xl outline-none p-2"
@@ -64,7 +66,9 @@ const Log = () => {
 
         {/* Password */}
         <div className="flex gap-5 items-center justify-center relative">
-          <label className="font-bold text-base" htmlFor="password">Password</label>
+          <label className="font-bold text-base" htmlFor="password">
+            Password
+          </label>
           <input
             id="password"
             type={showPassword ? "text" : "password"}
@@ -93,7 +97,9 @@ const Log = () => {
           />
           <label htmlFor="remember"> Remember Me</label>
         </div>
-        {error && <span className="text-red-500 text-sm text-center">{error}</span>}
+        {error && (
+          <span className="text-red-500 text-sm text-center">{error}</span>
+        )}
         {/* Submit */}
         <button
           className="bg-[#936521] text-white px-4 py-2 rounded-md hover:bg-[#D8AF53] transition-all ease-in-out duration-300 cursor-pointer"
@@ -107,12 +113,8 @@ const Log = () => {
         <label className="text-[#936521] hover:text-[#D8AF53] cursor-pointer">
           <Link href="#">Forget Password</Link>
         </label>
-        <label>|</label>
-        <label className="text-[#936521] hover:text-[#D8AF53] cursor-pointer">
-          <Link href="/register">Register</Link>
-        </label>
       </div>
-    </div>
+    </section>
   );
 };
 

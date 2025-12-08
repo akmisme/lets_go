@@ -2,14 +2,10 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  Menu,
-  X,
-  ChevronDown,
-  CircleUserRound
-} from "lucide-react";
+import { Menu, X, ChevronDown, CircleUserRound } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitch";
 import Image from "next/image";
+import Log from "@/app/components/login";
 
 const headerData = [
   { title: "Home", href: "/" },
@@ -22,14 +18,30 @@ const headerData = [
     href: "#",
     dropdown: [
       { title: "Bagan", href: "#", image: "/assets/promobanner/bagan.jpg" },
-      { title: "Mandalay", href: "#", image: "/assets/promobanner/mandalay.jpg" },
+      {
+        title: "Mandalay",
+        href: "#",
+        image: "/assets/promobanner/mandalay.jpg",
+      },
       { title: "Yangon", href: "#", image: "/assets/promobanner/yangon.jpg" },
-      { title: "Taunggyi", href: "#", image: "/assets/promobanner/taunggyi.jpg" },
+      {
+        title: "Taunggyi",
+        href: "#",
+        image: "/assets/promobanner/taunggyi.jpg",
+      },
       { title: "Kalaw", href: "#", image: "/assets/promobanner/kalaw.jpg" },
       { title: "Hpa-An", href: "#", image: "/assets/promobanner/hpa-an.jpg" },
       { title: "Inle Lake", href: "#", image: "/assets/promobanner/inle.jpg" },
-      { title: "Ngwesaung", href: "#", image: "/assets/promobanner/ngwesaung.jpg" },
-      { title: "Chaung Thar", href: "#", image: "/assets/promobanner/chaungtha.jpg" },
+      {
+        title: "Ngwesaung",
+        href: "#",
+        image: "/assets/promobanner/ngwesaung.jpg",
+      },
+      {
+        title: "Chaung Thar",
+        href: "#",
+        image: "/assets/promobanner/chaungtha.jpg",
+      },
     ],
   },
   { title: "About Us", href: "/aboutus" },
@@ -144,12 +156,48 @@ export default function Header() {
             <CircleUserRound className="w-6 h-6 text-gray-700 cursor-pointer hover:text-[#936521]" />
             {userMenuOpen && (
               <div className="absolute right-0 top-4 mt-2 w-40 bg-white shadow-lg rounded-md py-2 text-sm text-gray-700">
-                <Link href="/login" className="block px-4 py-2 hover:bg-gray-100">
+                <button
+                  className="block px-4 py-2 hover:bg-gray-100 open-btn w-full"
+                  onClick={() => document.getElementById("popup").showModal()}
+                >
                   Login
-                </Link>
-                <Link href="/register" className="block px-4 py-2 hover:bg-gray-100">
+                </button>
+                <div>
+                  <dialog
+                    id="popup"
+                    className="mx-auto my-auto rounded-md shadow-md"
+                  >
+                    <button
+                      className="close-btn text-right absolute right-3 top-2 cursor-pointer"
+                      onClick={() => document.getElementById("popup").close()}
+                    >
+                      X
+                    </button>
+
+                    <Log />
+                  </dialog>
+                </div>
+                <button
+                  className="block px-4 py-2 hover:bg-gray-100 open-btn w-full"
+                  onClick={() => document.getElementById("popup").showModal()}
+                >
                   Register
-                </Link>
+                </button>
+                <div>
+                  <dialog
+                    id="popup"
+                    className="mx-auto my-auto rounded-md shadow-md"
+                  >
+                    <button
+                      className="close-btn text-right absolute right-3 top-2 cursor-pointer"
+                      onClick={() => document.getElementById("popup").close()}
+                    >
+                      X
+                    </button>
+
+                    <Log />
+                  </dialog>
+                </div>
               </div>
             )}
           </div>
