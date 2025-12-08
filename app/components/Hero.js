@@ -3,7 +3,7 @@ import React from "react";
 const Hero = () => {
   return (
     <section
-      className="relative h-[70vh] bg-cover bg-center text-white"
+      className="relative h-[70vh] max-md:h-100 bg-cover bg-center text-white"
       style={{ backgroundImage: "url('/assets/bagan.jpg')" }}
     >
       <div className="absolute inset-0 bg-black/50"></div>

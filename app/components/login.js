@@ -56,7 +56,7 @@ const Log = () => {
             className="border border-gray-400 rounded-3xl outline-none p-2"
             value={phone}
             onChange={setPhone}
-            defaultCountry="US"
+            defaultCountry="MM"
             international
             countryCallingCodeEditable={false}
           />

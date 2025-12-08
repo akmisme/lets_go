@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Copy, BookOpenText, CircleDollarSign } from "lucide-react";
 
 export default function CopyTextButton({ text = "" }) {
   const [copied, setCopied] = useState(false);
@@ -19,20 +20,28 @@ export default function CopyTextButton({ text = "" }) {
   };
 
   return (
-    <div className="flex flex-col items-center gap-2">
-      <button
+    <div className="flex flex-col gap-2">
+      <div
         onClick={handleCopy}
-        className="bg-[#936521] text-white px-4 py-2 rounded hover:bg-[#D8AF53] cursor-pointer"
+        className="flex gap-2 text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 rounded cursor-pointer"
       >
-        Copy Code
-      </button>
-
+        <Copy />
+        <p>Promo Code</p>
+      </div>
       {/* Success message */}
       {copied && (
         <div className="bg-green-400 text-white px-3 py-1 rounded text-sm animate-fade-in">
           Copied to clipboard!
         </div>
       )}
+      <div className="flex gap-2 text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 rounded cursor-pointer">
+        <CircleDollarSign />
+        <p>500$</p>
+      </div>
+      <div className="flex gap-2 text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 rounded cursor-pointer">
+        <BookOpenText />
+        <p>Booking Now</p>
+      </div>
     </div>
   );
 }

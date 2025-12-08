@@ -6,9 +6,7 @@ import {
   Menu,
   X,
   ChevronDown,
-  Facebook,
-  Linkedin,
-  Instagram,
+  CircleUserRound
 } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitch";
 import Image from "next/image";
@@ -42,6 +40,7 @@ const headerData = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [userMenuOpen, setUserMenuOpen] = useState(false); // added
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
@@ -112,26 +111,48 @@ export default function Header() {
                 {/* Dropdown menu */}
                 {item.dropdown && openDropdown === item.title && (
                   <div className="absolute top-full left-0 bg-white shadow-lg w-130 py-3 flex flex-col text-gray-600">
-                        <div className="grid grid-cols-4 mx-auto gap-4 mt-10 justify-center">
-                          {item.dropdown.map((sub, i) => (
-                          <div key={i} className="bg-white flex flex-col justify-center items-center hover:shadow-md rounded-4xl p-1 gap-2 hover:-mt-1 hover:mb-1 transition-transform ease-in-out duration-500 delay-300 cursor-pointer">
-                            <img
-                              src={sub.image}
-                              className="rounded-4xl"
-                              alt="#"
-                              height={100}
-                              width={100}
-                            />
-                            <p>{sub.title}</p>
-                          </div>
-                          ))}
+                    <div className="grid grid-cols-4 mx-auto gap-4 mt-10 justify-center">
+                      {item.dropdown.map((sub, i) => (
+                        <div
+                          key={i}
+                          className="bg-white flex flex-col justify-center items-center hover:shadow-md rounded-4xl p-1 gap-2 hover:-mt-1 hover:mb-1 transition-transform ease-in-out duration-500 delay-300 cursor-pointer"
+                        >
+                          <img
+                            src={sub.image}
+                            className="rounded-4xl"
+                            alt="#"
+                            height={100}
+                            width={100}
+                          />
+                          <p>{sub.title}</p>
                         </div>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
             );
           })}
           <LanguageSwitcher />
+
+          {/* User icon with dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setUserMenuOpen(true)}
+            onMouseLeave={() => setUserMenuOpen(false)}
+          >
+            <CircleUserRound className="w-6 h-6 text-gray-700 cursor-pointer hover:text-[#936521]" />
+            {userMenuOpen && (
+              <div className="absolute right-0 top-4 mt-2 w-40 bg-white shadow-lg rounded-md py-2 text-sm text-gray-700">
+                <Link href="/login" className="block px-4 py-2 hover:bg-gray-100">
+                  Login
+                </Link>
+                <Link href="/register" className="block px-4 py-2 hover:bg-gray-100">
+                  Register
+                </Link>
+              </div>
+            )}
+          </div>
         </nav>
 
         {/* Mobile button */}
@@ -214,7 +235,12 @@ export default function Header() {
                       }`}
                     >
                       {item.dropdown.map((sub, i) => (
-                        <Link key={i} href={sub.href} className="block py-1">
+                        <Link
+                          key={i}
+                          href={sub.href}
+                          className="block py-1"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
                           {sub.title}
                         </Link>
                       ))}
@@ -225,7 +251,7 @@ export default function Header() {
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
                     className={`block ${
-                      isActive ? "text-blue-400 font-semibold" : ""
+                      isActive ? "text-[#936521] font-semibold" : ""
                     }`}
                   >
                     {item.title}

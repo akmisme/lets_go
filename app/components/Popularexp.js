@@ -22,7 +22,7 @@ const Popularexp = () => {
           </div>
           <div className="relative overflow-hidden shadow-lg group cursor-pointer">
             <Image
-              src="/assets/promobanner/bagan.jpg"
+              src="/assets/promobanner/inle.jpg"
               alt="#"
               width={300}
               height={300}
@@ -35,7 +35,7 @@ const Popularexp = () => {
           </div>
           <div className="relative overflow-hidden shadow-lg group cursor-pointer">
             <Image
-              src="/assets/promobanner/bagan.jpg"
+              src="/assets/promobanner/chaungtha.jpg"
               alt="#"
               width={300}
               height={300}
@@ -48,7 +48,7 @@ const Popularexp = () => {
           </div>
           <div className="relative overflow-hidden shadow-lg group cursor-pointer">
             <Image
-              src="/assets/promobanner/bagan.jpg"
+              src="/assets/promobanner/ngwesaung.jpg"
               alt="#"
               width={300}
               height={300}

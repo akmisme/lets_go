@@ -13,44 +13,56 @@ const PromotionBanner = () => {
         data-aos-delay="100"
         className="grid grid-cols-4 max-md:grid-cols-1 max-[1025px]:grid-cols-2 px-5 mx-auto gap-4 mt-10 justify-center"
       >
-        <div className="bg-white flex flex-col justify-center items-center hover:shadow-md rounded-4xl p-5 gap-2 hover:-mt-1 hover:mb-1 transition-transform ease-in-out duration-500 delay-300">
+        <div className="bg-white flex flex-col hover:shadow-md rounded-md p-5 gap-2 hover:-mt-1 hover:mb-1 transition-transform ease-in-out duration-500 delay-300">
           <Image
             src="/assets/promobanner/bagan.jpg"
-            className="rounded-4xl"
+            className="rounded-md"
             alt="#"
             height={500}
             width={500}
           />
+          <div className="text-gray-400 flex mb-2">
+            <p className="text-base">7days . Private Tour</p>
+          </div>
           <CopyTextButton text="BLACKFRIDAY2025" />
         </div>
-        <div className="bg-white flex flex-col justify-center items-center hover:shadow-md rounded-4xl p-5 gap-2 hover:-mt-1 hover:mb-1 transition-transform ease-in-out duration-500 delay-300">
+        <div className="bg-white flex flex-col hover:shadow-md rounded-md p-5 gap-2 hover:-mt-1 hover:mb-1 transition-transform ease-in-out duration-500 delay-300">
           <Image
-            src="/assets/promobanner/bagan.jpg"
-            className="rounded-4xl"
+            src="/assets/promobanner/hpa-an.jpg"
+            className="rounded-md"
             alt="#"
             height={500}
             width={500}
           />
+          <div className="text-gray-400 flex mb-2">
+            <p className="text-base">7days . Private Tour</p>
+          </div>
           <CopyTextButton text="BLACKFRIDAY2025" />
         </div>
-        <div className="bg-white flex flex-col justify-center items-center hover:shadow-md rounded-4xl p-5 gap-2 hover:-mt-1 hover:mb-1 transition-transform duration-500 delay-300">
+        <div className="bg-white flex flex-col hover:shadow-md rounded-md p-5 gap-2 hover:-mt-1 hover:mb-1 transition-transform duration-500 delay-300">
           <Image
-            src="/assets/promobanner/bagan.jpg"
-            className="rounded-4xl"
+            src="/assets/promobanner/kalaw.jpg"
+            className="rounded-md"
             alt="#"
             height={500}
             width={500}
           />
+          <div className="text-gray-400 flex mb-2">
+            <p className="text-base">7days . Private Tour</p>
+          </div>
           <CopyTextButton text="BLACKFRIDAY2025" />
         </div>
-        <div className="bg-white flex flex-col justify-center items-center hover:shadow-md rounded-4xl p-5 gap-2 hover:-mt-1 hover:mb-1 transition-transform duration-500 delay-300">
+        <div className="bg-white flex flex-col hover:shadow-md rounded-md p-5 gap-2 hover:-mt-1 hover:mb-1 transition-transform duration-500 delay-300">
           <Image
-            src="/assets/promobanner/bagan.jpg"
-            className="rounded-4xl"
+            src="/assets/promobanner/mandalay.jpg"
+            className="rounded-md"
             alt="#"
             height={500}
             width={500}
           />
+          <div className="text-gray-400 flex mb-2">
+            <p className="text-base">7days . Private Tour</p>
+          </div>
           <CopyTextButton text="BLACKFRIDAY2025" />
         </div>
       </div>
