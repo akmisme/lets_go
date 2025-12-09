@@ -6,6 +6,7 @@ import { Menu, X, ChevronDown, CircleUserRound } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitch";
 import Image from "next/image";
 import Log from "@/app/components/login";
+import Register from "./register";
 
 const headerData = [
   { title: "Home", href: "/" },
@@ -15,7 +16,7 @@ const headerData = [
   },
   {
     title: "Experiences",
-    href: "#",
+    href: "/experiences",
     dropdown: [
       { title: "Bagan", href: "#", image: "/assets/promobanner/bagan.jpg" },
       {
@@ -179,23 +180,23 @@ export default function Header() {
                 </div>
                 <button
                   className="block px-4 py-2 hover:bg-gray-100 open-btn w-full"
-                  onClick={() => document.getElementById("popup").showModal()}
+                  onClick={() => document.getElementById("popup1").showModal()}
                 >
                   Register
                 </button>
                 <div>
                   <dialog
-                    id="popup"
+                    id="popup1"
                     className="mx-auto my-auto rounded-md shadow-md"
                   >
                     <button
                       className="close-btn text-right absolute right-3 top-2 cursor-pointer"
-                      onClick={() => document.getElementById("popup").close()}
+                      onClick={() => document.getElementById("popup1").close()}
                     >
                       X
                     </button>
 
-                    <Log />
+                    <Register />
                   </dialog>
                 </div>
               </div>

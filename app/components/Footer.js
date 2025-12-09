@@ -128,7 +128,8 @@ const Footer = () => {
             <ul className="list-none flex flex-col gap-2">
               <li>
                 <Link
-                  href="#"
+                  href="https://yolodigitalmm.com/services/"
+                  target="blank"
                   className="hover:text-gray-400 ease-in-out delay-100 duration-300 text-[12px]"
                 >
                   Others

@@ -26,7 +26,7 @@ export default function CopyTextButton({ text = "" }) {
         className="flex gap-2 text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 rounded cursor-pointer"
       >
         <Copy />
-        <p>Promo Code</p>
+        <p>Promo Code - BLACKFRIDAY2025</p>
       </div>
       {/* Success message */}
       {copied && (

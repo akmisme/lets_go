@@ -1,12 +1,14 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 
 const SearchSection = () => {
+  const router = useRouter();
   const [today, setToday] = useState("");
   const [open, setOpen] = useState(false);
   const [Passenger, setPassenger] = useState(1);
   const [showDropdown, setShowDropdown] = useState(false);
-  const [selectedDestination, setSelectedDestination] = useState("");
+  const [query, setQuery] = useState("");   // ✅ user-typed search
   const [date, setDate] = useState("");
 
   const dropdownRef = useRef(null);
@@ -45,10 +47,10 @@ const SearchSection = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleSelect = (destination) => {
-    setSelectedDestination(destination);
-    setShowDropdown(false);
-  };
+  // ✅ Filter destinations based on typed query
+  const filteredDestinations = destinations.filter((dest) =>
+    dest.toLowerCase().includes(query.toLowerCase())
+  );
 
   const adjust = (setter, value) => {
     setter((prev) => Math.max(0, prev + value));
@@ -57,12 +59,17 @@ const SearchSection = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
-      destination: selectedDestination,
+      destination: query,   // ✅ use typed query
       date,
       Passenger,
     };
-    console.log("Form submitted:", formData);
-    alert(`Searching for: ${JSON.stringify(formData, null, 2)}`);
+
+    // Navigate to another page with query params
+    router.push(
+      `/filterpage?destination=${encodeURIComponent(
+        formData.destination
+      )}&date=${formData.date}&passenger=${formData.Passenger}`
+    );
   };
 
   return (
@@ -75,23 +82,32 @@ const SearchSection = () => {
         <input
           type="text"
           placeholder="City, airport, region, landmark or property name"
-          className="w-full border p-3 rounded-md cursor-pointer"
-          value={selectedDestination}
-          onClick={() => setShowDropdown(true)}
-          readOnly
+          className="w-full border p-3 rounded-md"
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value);
+            setShowDropdown(true);
+          }}
         />
-        {showDropdown && (
+        {showDropdown && query && (
           <div className="absolute top-full left-0 w-full bg-white border border-gray-300 rounded-md shadow-lg mt-2 z-50 max-h-60 overflow-y-auto">
             <ul className="divide-y divide-gray-200">
-              {destinations.map((dest, index) => (
-                <li
-                  key={index}
-                  className="p-3 hover:bg-gray-100 cursor-pointer"
-                  onClick={() => handleSelect(dest)}
-                >
-                  {dest}
-                </li>
-              ))}
+              {filteredDestinations.length > 0 ? (
+                filteredDestinations.map((dest, index) => (
+                  <li
+                    key={index}
+                    className="p-3 hover:bg-gray-100 cursor-pointer"
+                    onClick={() => {
+                      setQuery(dest);
+                      setShowDropdown(false);
+                    }}
+                  >
+                    {dest}
+                  </li>
+                ))
+              ) : (
+                <li className="p-3 text-gray-500">No results found</li>
+              )}
             </ul>
           </div>
         )}
