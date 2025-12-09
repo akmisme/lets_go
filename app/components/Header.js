@@ -47,7 +47,7 @@ const headerData = [
   },
   { title: "About Us", href: "/aboutus" },
   { title: "Contact Us", href: "/contactus" },
-  { title: "Vlogger", href: "#" },
+  { title: "Vlogger", href: "/vlogger" },
 ];
 
 export default function Header() {
