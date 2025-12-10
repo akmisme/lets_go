@@ -36,11 +36,10 @@ export default function CopyTextButton({ text = "" }) {
       )}
       <div className="flex gap-2 text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 rounded cursor-pointer">
         <CircleDollarSign />
-        <p>500$</p>
+        <p>Package Fees - 500$</p>
       </div>
-      <div className="flex gap-2 text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 rounded cursor-pointer">
-        <BookOpenText />
-        <p>Booking Now</p>
+      <div className="flex gap-2 justify-center text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 rounded cursor-pointer">
+        <button className="text-white bg-[#936521] p-2 hover:bg-[#D8AF53] transition ease-in-out duration-500 rounded-md cursor-pointer">Book Now</button>
       </div>
     </div>
   );
