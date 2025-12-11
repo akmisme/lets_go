@@ -7,7 +7,7 @@ export default function HpaanExp() {
       <h1 className="text-3xl font-bold mb-5 text-center">
         Hpa-An Experiences
       </h1>
-      <div className="grid grid-cols-4 max-md:grid-cols-1 gap-10 mx-auto">
+      <div className="grid grid-cols-4 max-md:grid-cols-1 max-lg:grid-cols-2 gap-10 mx-auto">
         <div
           data-aos="fade-up"
           data-aos-duration="1500"

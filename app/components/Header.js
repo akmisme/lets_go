@@ -18,29 +18,33 @@ const headerData = [
     title: "Experiences",
     href: "/experiences",
     dropdown: [
-      { title: "Bagan", href: "#", image: "/assets/promobanner/bagan.jpg" },
+      {
+        title: "Bagan",
+        href: "/baganexp",
+        image: "/assets/promobanner/bagan.jpg",
+      },
       {
         title: "Mandalay",
-        href: "#",
+        href: "/mandalayexp",
         image: "/assets/promobanner/mandalay.jpg",
       },
       { title: "Yangon", href: "#", image: "/assets/promobanner/yangon.jpg" },
       {
         title: "Taunggyi",
-        href: "#",
+        href: "/taunggyiexp",
         image: "/assets/promobanner/taunggyi.jpg",
       },
-      { title: "Kalaw", href: "#", image: "/assets/promobanner/kalaw.jpg" },
-      { title: "Hpa-An", href: "#", image: "/assets/promobanner/hpa-an.jpg" },
-      { title: "Inle Lake", href: "#", image: "/assets/promobanner/inle.jpg" },
+      { title: "Kalaw", href: "/kalawexp", image: "/assets/promobanner/kalaw.jpg" },
+      { title: "Hpa-An", href: "/hpa-anexp", image: "/assets/promobanner/hpa-an.jpg" },
+      { title: "Inle Lake", href: "/inleexp", image: "/assets/promobanner/inle.jpg" },
       {
         title: "Ngwesaung",
-        href: "#",
+        href: "/ngwesaungexp",
         image: "/assets/promobanner/ngwesaung.jpg",
       },
       {
         title: "Chaung Thar",
-        href: "#",
+        href: "/chaungthaexp",
         image: "/assets/promobanner/chaungtha.jpg",
       },
     ],
@@ -126,19 +130,21 @@ export default function Header() {
                   <div className="absolute top-full left-0 bg-white shadow-lg w-130 py-3 flex flex-col text-gray-600">
                     <div className="grid grid-cols-4 mx-auto gap-4 mt-10 justify-center">
                       {item.dropdown.map((sub, i) => (
-                        <div
-                          key={i}
-                          className="bg-white flex flex-col justify-center items-center hover:shadow-md rounded-4xl p-1 gap-2 hover:-mt-1 hover:mb-1 transition-transform ease-in-out duration-500 delay-300 cursor-pointer"
-                        >
-                          <img
-                            src={sub.image}
-                            className="rounded-4xl"
-                            alt="#"
-                            height={100}
-                            width={100}
-                          />
-                          <p>{sub.title}</p>
-                        </div>
+                        <Link href={sub.href}>
+                          <div
+                            key={i}
+                            className="bg-white flex flex-col justify-center items-center hover:shadow-md rounded-4xl p-1 gap-2 hover:-mt-1 hover:mb-1 transition-transform ease-in-out duration-500 delay-300 cursor-pointer"
+                          >
+                            <img
+                              src={sub.image}
+                              className="rounded-4xl"
+                              alt="#"
+                              height={100}
+                              width={100}
+                            />
+                            <p>{sub.title}</p>
+                          </div>
+                        </Link>
                       ))}
                     </div>
                   </div>
@@ -225,7 +231,7 @@ export default function Header() {
         <div className="flex justify-between items-center px-4 py-3 border-b border-gray-400">
           <Image
             src="/assets/logo.avif"
-            alt="STG Cement Distribution Logo"
+            alt="Golden Yellow"
             width={80}
             height={0}
             style={{ height: "auto" }}

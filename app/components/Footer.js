@@ -139,7 +139,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col gap-2 text-white">
             <h1 className="text-white font-bold text-md">Payment Methods</h1>
-            <div className="flex gap-5">
+            <div className="grid grid-cols-5 gap-5">
               <Image
                 src="/assets/payments/visa.svg"
                 alt="#"
@@ -171,7 +171,7 @@ const Footer = () => {
                 width={50}
               />
             </div>
-            <div className="flex gap-5">
+            <div className="grid grid-cols-6 gap-5">
               <img
                 src="https://play-lh.googleusercontent.com/Lgulng3ncFuuFVYTmT-JQxuZ_IQ9-iPCojY5lM6c3wK9uvSx_ZRqLGcq8dTQcez1HDvQiSvfmJHZN1EHg1oWfLk"
                 alt="#"
@@ -209,7 +209,7 @@ const Footer = () => {
                 width={35}
               />
             </div>
-            <div className="flex gap-5">
+            <div className="grid grid-cols-6 gap-5">
               <img
                 src="https://images.sftcdn.net/images/t_app-icon-m/p/51f8a011-69a7-45d5-a04d-6a04b2b614f4/201761240/citizens-pay-logo"
                 alt="#"

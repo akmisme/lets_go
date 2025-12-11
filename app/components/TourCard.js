@@ -4,16 +4,21 @@ import Image from "next/image";
 
 export default function TourCard() {
   return (
-    <div className="max-w-6xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200">
-      <div className="grid md:grid-cols-2 max-md:grid-cols-1 gap-5 p-6">
-        {/* Left: Image and Map */}
+    <div
+      data-aos="fade-up"
+      data-aos-duration="1500"
+      data-aos-delay="100"
+      className="max-w-6xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200"
+    >
+      <div className="grid grid-cols-2 max-lg:grid-cols-1 gap-10 max-lg:gap-5 p-3">
+        {/* Left: Image */}
         <div className="space-y-4">
           <Image
             src="/assets/promobanner/bagan.jpg"
             alt="Golden Buddha"
             width={450}
             height={300}
-            className="rounded-md object-cover h-full"
+            className="rounded-md object-cover h-full w-full"
           />
         </div>
 

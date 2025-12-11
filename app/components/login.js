@@ -13,9 +13,11 @@ const Log = () => {
   const [remember, setRemember] = useState(false);
   const [error, setError] = useState("");
 
+  // ✅ Load saved credentials
   useEffect(() => {
     const savedPhone = localStorage.getItem("rememberedPhone");
     const savedPassword = localStorage.getItem("rememberedPassword");
+
     if (savedPhone) {
       setPhone(savedPhone);
       setRemember(true);
@@ -25,18 +27,30 @@ const Log = () => {
     }
   }, []);
 
+  // ✅ Smooth inline validation
+  useEffect(() => {
+    if (phone && !isValidPhoneNumber(phone)) {
+      setError("Invalid phone number");
+    } else {
+      setError("");
+    }
+  }, [phone]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // ✅ Validate phone number before submitting
+    // ✅ Final validation before submit
     if (!isValidPhoneNumber(phone)) {
-      setError("");
-      console.log("Form submitted with:", { phone });
+      setError("Please enter a valid phone number");
+      return;
     }
 
+    setError("");
+
+    // ✅ Remember Me logic
     if (remember) {
       localStorage.setItem("rememberedPhone", phone);
-      localStorage.setItem("rememberedPassword", password); // ⚠️ insecure
+      localStorage.setItem("rememberedPassword", password); // ⚠️ insecure but kept as requested
     } else {
       localStorage.removeItem("rememberedPhone");
       localStorage.removeItem("rememberedPassword");
@@ -48,6 +62,7 @@ const Log = () => {
   return (
     <section className="flex flex-col gap-5 my-10 mx-10">
       <form onSubmit={handleSubmit} className="flex flex-col gap-5 pb-10">
+        
         {/* Phone */}
         <div className="flex gap-2 items-center justify-center">
           <label className="font-bold text-base" htmlFor="phone">
@@ -97,9 +112,12 @@ const Log = () => {
           />
           <label htmlFor="remember"> Remember Me</label>
         </div>
+
+        {/* Error */}
         {error && (
           <span className="text-red-500 text-sm text-center">{error}</span>
         )}
+
         {/* Submit */}
         <button
           className="bg-[#936521] text-white px-4 py-2 rounded-md hover:bg-[#D8AF53] transition-all ease-in-out duration-300 cursor-pointer"

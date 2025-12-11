@@ -46,6 +46,9 @@ export default function TikTokPlayer() {
       <div className="grid grid-cols-4 max-xl:grid-cols-2 max-md:grid-cols-1 gap-5 mx-20 max-md:mx-5">
         {videoIds.map((id, idx) => (
           <div
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="100"
             key={id}
             className="overflow-hidden rounded-lg h-120 border border-[#936521]"
           >
