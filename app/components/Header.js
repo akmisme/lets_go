@@ -28,7 +28,7 @@ const headerData = [
         href: "/mandalayexp",
         image: "/assets/promobanner/mandalay.jpg",
       },
-      { title: "Yangon", href: "#", image: "/assets/promobanner/yangon.jpg" },
+      { title: "Yangon", href: "/yangonexp", image: "/assets/promobanner/yangon.jpg" },
       {
         title: "Taunggyi",
         href: "/taunggyiexp",
