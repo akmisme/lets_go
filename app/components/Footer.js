@@ -6,13 +6,13 @@ const Footer = () => {
   return (
     <footer>
       <div className="flex flex-col items-center justify-center py-10 gap-8">
-        <h1 className="text-4xl max-xl:text-2xl">Subscribe For Newsletter</h1>
+        <h1 className="text-3xl max-xl:text-2xl">Subscribe For Newsletter</h1>
         <form className="flex gap-2">
           <input
             type="email"
             placeholder="Your Email Address"
             required
-            className="p-2 pr-50 border border-gray-200 rounded-4xl max-xl:pr-0 outline-none focus:border-[#D8AF53] focus:border-dashed px-5"
+            className="border w-80 border-gray-200 rounded-4xl outline-none focus:border-[#D8AF53] focus:border-dashed px-2"
           />
           <button
             className="bg-[#936521] p-2 rounded-4xl text-white cursor-pointer hover:bg-[#D8AF53]"
@@ -31,7 +31,7 @@ const Footer = () => {
             <ul className="list-none flex flex-col gap-2 mb-5">
               <li>
                 <Link
-                  href="#"
+                  href="/contactus"
                   className="hover:text-gray-400 ease-in-out delay-100 duration-300 text-[12px]"
                 >
                   Contact Us
@@ -39,7 +39,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/faq"
                   className="hover:text-gray-400 ease-in-out delay-100 duration-300 text-[12px]"
                 >
                   FAQ
@@ -99,7 +99,7 @@ const Footer = () => {
             <ul className="list-none flex flex-col gap-2">
               <li>
                 <Link
-                  href="#"
+                  href="/aboutus"
                   className="hover:text-gray-400 ease-in-out delay-100 duration-300 text-[12px]"
                 >
                   About Us

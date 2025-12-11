@@ -3,7 +3,7 @@ import React from "react";
 
 const FAQ = () => {
   return (
-    <section className="mt-10">
+    <section className="mt-10 pb-5">
       <h1 className="mb-5 font-bold text-2xl mx-20 max-xl:mx-5">FAQ</h1>
       <div
         data-aos="fade-up"

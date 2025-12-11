@@ -16,8 +16,8 @@ export default function ContactUs() {
         </h1>
       </div>
       <SearchSection />
-      <FAQ />
       <Contact/>
+      <FAQ />
     </section>
   );
 }
