@@ -17,29 +17,22 @@ export default function NgwesaungExp() {
           <img
             src="/assets/promobanner/ngwesaung.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Hla Hla Experiences</h1>
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
           <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
-            Hla Hla’s trip to Ngwesaung was a peaceful escape to the sea. The
-            long stretch of white sand and the gentle waves of the Bay of Bengal
-            welcomed her with calm and beauty. She enjoyed walking barefoot
-            along the shoreline, collecting seashells and watching fishermen
-            bring in their daily catch. In the afternoon, she took a boat to
-            nearby Lover’s Island, where the view of the ocean was breathtaking.
-            As the sun set, the horizon glowed in shades of orange and pink, and
-            the sound of the waves made her feel completely at ease. Ngwesaung’s
-            quiet charm and natural beauty left Hla Hla with a sense of serenity
-            and joy.
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] px-2 transition ease-in-out duration-500"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
         <div
           data-aos="fade-up"
@@ -50,29 +43,22 @@ export default function NgwesaungExp() {
           <img
             src="/assets/promobanner/ngwesaung.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Hla Hla Experiences</h1>
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
           <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
-            Hla Hla’s trip to Ngwesaung was a peaceful escape to the sea. The
-            long stretch of white sand and the gentle waves of the Bay of Bengal
-            welcomed her with calm and beauty. She enjoyed walking barefoot
-            along the shoreline, collecting seashells and watching fishermen
-            bring in their daily catch. In the afternoon, she took a boat to
-            nearby Lover’s Island, where the view of the ocean was breathtaking.
-            As the sun set, the horizon glowed in shades of orange and pink, and
-            the sound of the waves made her feel completely at ease. Ngwesaung’s
-            quiet charm and natural beauty left Hla Hla with a sense of serenity
-            and joy.
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] px-2 transition ease-in-out duration-500"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
         <div
           data-aos="fade-up"
@@ -83,29 +69,22 @@ export default function NgwesaungExp() {
           <img
             src="/assets/promobanner/ngwesaung.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Hla Hla Experiences</h1>
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
           <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
-            Hla Hla’s trip to Ngwesaung was a peaceful escape to the sea. The
-            long stretch of white sand and the gentle waves of the Bay of Bengal
-            welcomed her with calm and beauty. She enjoyed walking barefoot
-            along the shoreline, collecting seashells and watching fishermen
-            bring in their daily catch. In the afternoon, she took a boat to
-            nearby Lover’s Island, where the view of the ocean was breathtaking.
-            As the sun set, the horizon glowed in shades of orange and pink, and
-            the sound of the waves made her feel completely at ease. Ngwesaung’s
-            quiet charm and natural beauty left Hla Hla with a sense of serenity
-            and joy.
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] px-2 transition ease-in-out duration-500"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
         <div
           data-aos="fade-up"
@@ -116,29 +95,22 @@ export default function NgwesaungExp() {
           <img
             src="/assets/promobanner/ngwesaung.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Hla Hla Experiences</h1>
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
           <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
-            Hla Hla’s trip to Ngwesaung was a peaceful escape to the sea. The
-            long stretch of white sand and the gentle waves of the Bay of Bengal
-            welcomed her with calm and beauty. She enjoyed walking barefoot
-            along the shoreline, collecting seashells and watching fishermen
-            bring in their daily catch. In the afternoon, she took a boat to
-            nearby Lover’s Island, where the view of the ocean was breathtaking.
-            As the sun set, the horizon glowed in shades of orange and pink, and
-            the sound of the waves made her feel completely at ease. Ngwesaung’s
-            quiet charm and natural beauty left Hla Hla with a sense of serenity
-            and joy.
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] px-2 transition ease-in-out duration-500"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
       </div>
     </section>

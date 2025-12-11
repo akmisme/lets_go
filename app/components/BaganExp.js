@@ -10,137 +10,105 @@ export default function BaganExp() {
           data-aos="fade-up"
           data-aos-duration="1500"
           data-aos-delay="100"
-          className="flex flex-col gap-2 p-0 bg-white rounded-md shadow-md"
+          className="flex flex-col gap-2 bg-white rounded-md shadow-md"
         >
           <img
             src="/assets/promobanner/bagan.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Mg Mg Experiences</h1>
-          <p className="text-base line-clamp-2 leading-relaxed text-justify indent-10 px-2">
-            Mg Mg was filled with excitement as he arrived in Bagan, the ancient
-            city of temples and pagodas. The golden spires of Shwezigon Pagoda
-            shimmered under the morning sun, while the mist slowly lifted to
-            reveal thousands of historic monuments scattered across the plains.
-            Riding a bicycle along dusty paths, he stopped often to admire the
-            intricate carvings and peaceful atmosphere of each temple. As the
-            day ended, Mg Mg climbed up a viewing spot to watch the sunset,
-            where the sky turned shades of orange and purple over the timeless
-            landscape. The beauty and serenity of Bagan left him with
-            unforgettable memories and a deep appreciation for Myanmar’s rich
-            cultural heritage.
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 px-2"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
         <div
           data-aos="fade-up"
           data-aos-duration="1500"
           data-aos-delay="100"
-          className="flex flex-col gap-2 p-0 bg-white rounded-md shadow-md"
+          className="flex flex-col gap-2 bg-white rounded-md shadow-md"
         >
           <img
             src="/assets/promobanner/bagan.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Mg Mg Experiences</h1>
-          <p className="text-base line-clamp-2 leading-relaxed text-justify indent-10 px-2">
-            Mg Mg was filled with excitement as he arrived in Bagan, the ancient
-            city of temples and pagodas. The golden spires of Shwezigon Pagoda
-            shimmered under the morning sun, while the mist slowly lifted to
-            reveal thousands of historic monuments scattered across the plains.
-            Riding a bicycle along dusty paths, he stopped often to admire the
-            intricate carvings and peaceful atmosphere of each temple. As the
-            day ended, Mg Mg climbed up a viewing spot to watch the sunset,
-            where the sky turned shades of orange and purple over the timeless
-            landscape. The beauty and serenity of Bagan left him with
-            unforgettable memories and a deep appreciation for Myanmar’s rich
-            cultural heritage.
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 px-2"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
         <div
           data-aos="fade-up"
           data-aos-duration="1500"
           data-aos-delay="100"
-          className="flex flex-col gap-2 p-0 bg-white rounded-md shadow-md"
+          className="flex flex-col gap-2 bg-white rounded-md shadow-md"
         >
           <img
             src="/assets/promobanner/bagan.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Mg Mg Experiences</h1>
-          <p className="text-base line-clamp-2 leading-relaxed text-justify indent-10 px-2">
-            Mg Mg was filled with excitement as he arrived in Bagan, the ancient
-            city of temples and pagodas. The golden spires of Shwezigon Pagoda
-            shimmered under the morning sun, while the mist slowly lifted to
-            reveal thousands of historic monuments scattered across the plains.
-            Riding a bicycle along dusty paths, he stopped often to admire the
-            intricate carvings and peaceful atmosphere of each temple. As the
-            day ended, Mg Mg climbed up a viewing spot to watch the sunset,
-            where the sky turned shades of orange and purple over the timeless
-            landscape. The beauty and serenity of Bagan left him with
-            unforgettable memories and a deep appreciation for Myanmar’s rich
-            cultural heritage.
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 px-2"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
         <div
           data-aos="fade-up"
           data-aos-duration="1500"
           data-aos-delay="100"
-          className="flex flex-col gap-2 p-0 bg-white rounded-md shadow-md"
+          className="flex flex-col gap-2 bg-white rounded-md shadow-md"
         >
           <img
             src="/assets/promobanner/bagan.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Mg Mg Experiences</h1>
-          <p className="text-base line-clamp-2 leading-relaxed text-justify indent-10 px-2">
-            Mg Mg was filled with excitement as he arrived in Bagan, the ancient
-            city of temples and pagodas. The golden spires of Shwezigon Pagoda
-            shimmered under the morning sun, while the mist slowly lifted to
-            reveal thousands of historic monuments scattered across the plains.
-            Riding a bicycle along dusty paths, he stopped often to admire the
-            intricate carvings and peaceful atmosphere of each temple. As the
-            day ended, Mg Mg climbed up a viewing spot to watch the sunset,
-            where the sky turned shades of orange and purple over the timeless
-            landscape. The beauty and serenity of Bagan left him with
-            unforgettable memories and a deep appreciation for Myanmar’s rich
-            cultural heritage.
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 px-2"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
       </div>
     </section>

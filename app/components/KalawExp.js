@@ -17,29 +17,22 @@ export default function KalawExp() {
           <img
             src="/assets/promobanner/kalaw.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Hla Hla Experiences</h1>
-          <p className="text-base line-clamp-2 leading-relaxed text-justify indent-10 px-2">
-            Hla Hla’s journey to Kalaw was refreshing and full of natural
-            beauty. Nestled in the Shan hills, Kalaw welcomed her with cool
-            mountain breezes and pine forests that felt far removed from the
-            busy cities. She enjoyed wandering through the local market, where
-            ethnic groups like the Pa-O and Danu sold fresh produce and handmade
-            crafts. The highlight of her trip was trekking through scenic trails
-            that led to small villages, where she was greeted with warm smiles
-            and traditional tea. Surrounded by rolling hills and vibrant
-            greenery, Hla Hla found Kalaw to be a peaceful retreat and a perfect
-            gateway to explore the famous Inle Lake.
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 px-2"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
         <div
           data-aos="fade-up"
@@ -50,29 +43,22 @@ export default function KalawExp() {
           <img
             src="/assets/promobanner/kalaw.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Hla Hla Experiences</h1>
-          <p className="text-base line-clamp-2 leading-relaxed text-justify indent-10 px-2">
-            Hla Hla’s journey to Kalaw was refreshing and full of natural
-            beauty. Nestled in the Shan hills, Kalaw welcomed her with cool
-            mountain breezes and pine forests that felt far removed from the
-            busy cities. She enjoyed wandering through the local market, where
-            ethnic groups like the Pa-O and Danu sold fresh produce and handmade
-            crafts. The highlight of her trip was trekking through scenic trails
-            that led to small villages, where she was greeted with warm smiles
-            and traditional tea. Surrounded by rolling hills and vibrant
-            greenery, Hla Hla found Kalaw to be a peaceful retreat and a perfect
-            gateway to explore the famous Inle Lake.
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 px-2"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
         <div
           data-aos="fade-up"
@@ -83,29 +69,22 @@ export default function KalawExp() {
           <img
             src="/assets/promobanner/kalaw.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Hla Hla Experiences</h1>
-          <p className="text-base line-clamp-2 leading-relaxed text-justify indent-10 px-2">
-            Hla Hla’s journey to Kalaw was refreshing and full of natural
-            beauty. Nestled in the Shan hills, Kalaw welcomed her with cool
-            mountain breezes and pine forests that felt far removed from the
-            busy cities. She enjoyed wandering through the local market, where
-            ethnic groups like the Pa-O and Danu sold fresh produce and handmade
-            crafts. The highlight of her trip was trekking through scenic trails
-            that led to small villages, where she was greeted with warm smiles
-            and traditional tea. Surrounded by rolling hills and vibrant
-            greenery, Hla Hla found Kalaw to be a peaceful retreat and a perfect
-            gateway to explore the famous Inle Lake.
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 px-2"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
         <div
           data-aos="fade-up"
@@ -116,29 +95,22 @@ export default function KalawExp() {
           <img
             src="/assets/promobanner/kalaw.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Hla Hla Experiences</h1>
-          <p className="text-base line-clamp-2 leading-relaxed text-justify indent-10 px-2">
-            Hla Hla’s journey to Kalaw was refreshing and full of natural
-            beauty. Nestled in the Shan hills, Kalaw welcomed her with cool
-            mountain breezes and pine forests that felt far removed from the
-            busy cities. She enjoyed wandering through the local market, where
-            ethnic groups like the Pa-O and Danu sold fresh produce and handmade
-            crafts. The highlight of her trip was trekking through scenic trails
-            that led to small villages, where she was greeted with warm smiles
-            and traditional tea. Surrounded by rolling hills and vibrant
-            greenery, Hla Hla found Kalaw to be a peaceful retreat and a perfect
-            gateway to explore the famous Inle Lake.
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 px-2"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
       </div>
     </section>

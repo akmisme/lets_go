@@ -12,135 +12,108 @@ export default function MandalayExp() {
           data-aos="fade-up"
           data-aos-duration="1500"
           data-aos-delay="100"
-          className="flex flex-col gap-2 p-0 bg-white rounded-md shadow-md"
+          className="flex flex-col gap-2 bg-white rounded-md shadow-md"
         >
           <img
             src="/assets/promobanner/mandalay.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Hla Hla Experiences</h1>
-          <p className="text-base line-clamp-2 leading-relaxed text-justify indent-10 px-2">
-            Hla Hla’s journey to Mandalay was full of wonder and discovery. She
-            wandered through the majestic Mandalay Palace, imagining the lives
-            of kings and queens who once ruled there. At the top of Mandalay
-            Hill, she gazed out over the city, where countless pagodas and
-            monasteries dotted the landscape, glowing in the afternoon light.
-            The rhythmic chanting from nearby temples gave her a sense of peace,
-            while the bustling streets below reminded her of Mandalay’s vibrant
-            daily life. As evening fell, Hla Hla visited the U Bein Bridge,
-            where the sunset painted the sky in brilliant colors, leaving her
-            with a lasting memory of Mandalay’s charm and cultural richness.
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 px-2"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
         <div
           data-aos="fade-up"
           data-aos-duration="1500"
           data-aos-delay="100"
-          className="flex flex-col gap-2 p-0 bg-white rounded-md shadow-md"
+          className="flex flex-col gap-2 bg-white rounded-md shadow-md"
         >
           <img
             src="/assets/promobanner/mandalay.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Hla Hla Experiences</h1>
-          <p className="text-base line-clamp-2 leading-relaxed text-justify indent-10 px-2">
-            Hla Hla’s journey to Mandalay was full of wonder and discovery. She
-            wandered through the majestic Mandalay Palace, imagining the lives
-            of kings and queens who once ruled there. At the top of Mandalay
-            Hill, she gazed out over the city, where countless pagodas and
-            monasteries dotted the landscape, glowing in the afternoon light.
-            The rhythmic chanting from nearby temples gave her a sense of peace,
-            while the bustling streets below reminded her of Mandalay’s vibrant
-            daily life. As evening fell, Hla Hla visited the U Bein Bridge,
-            where the sunset painted the sky in brilliant colors, leaving her
-            with a lasting memory of Mandalay’s charm and cultural richness.
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 px-2"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
         <div
           data-aos="fade-up"
           data-aos-duration="1500"
           data-aos-delay="100"
-          className="flex flex-col gap-2 p-0 bg-white rounded-md shadow-md"
+          className="flex flex-col gap-2 bg-white rounded-md shadow-md"
         >
           <img
             src="/assets/promobanner/mandalay.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Hla Hla Experiences</h1>
-          <p className="text-base line-clamp-2 leading-relaxed text-justify indent-10 px-2">
-            Hla Hla’s journey to Mandalay was full of wonder and discovery. She
-            wandered through the majestic Mandalay Palace, imagining the lives
-            of kings and queens who once ruled there. At the top of Mandalay
-            Hill, she gazed out over the city, where countless pagodas and
-            monasteries dotted the landscape, glowing in the afternoon light.
-            The rhythmic chanting from nearby temples gave her a sense of peace,
-            while the bustling streets below reminded her of Mandalay’s vibrant
-            daily life. As evening fell, Hla Hla visited the U Bein Bridge,
-            where the sunset painted the sky in brilliant colors, leaving her
-            with a lasting memory of Mandalay’s charm and cultural richness.
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 px-2"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
         <div
           data-aos="fade-up"
           data-aos-duration="1500"
           data-aos-delay="100"
-          className="flex flex-col gap-2 p-0 bg-white rounded-md shadow-md"
+          className="flex flex-col gap-2 bg-white rounded-md shadow-md"
         >
           <img
             src="/assets/promobanner/mandalay.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Hla Hla Experiences</h1>
-          <p className="text-base line-clamp-2 leading-relaxed text-justify indent-10 px-2">
-            Hla Hla’s journey to Mandalay was full of wonder and discovery. She
-            wandered through the majestic Mandalay Palace, imagining the lives
-            of kings and queens who once ruled there. At the top of Mandalay
-            Hill, she gazed out over the city, where countless pagodas and
-            monasteries dotted the landscape, glowing in the afternoon light.
-            The rhythmic chanting from nearby temples gave her a sense of peace,
-            while the bustling streets below reminded her of Mandalay’s vibrant
-            daily life. As evening fell, Hla Hla visited the U Bein Bridge,
-            where the sunset painted the sky in brilliant colors, leaving her
-            with a lasting memory of Mandalay’s charm and cultural richness.
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 px-2"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
       </div>
+
     </section>
   );
 }

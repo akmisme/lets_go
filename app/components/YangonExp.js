@@ -17,31 +17,20 @@ export default function YangonExp() {
           <img
             src="/assets/promobanner/yangon.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Hla Hla Experiences</h1>
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
           <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
-            Hla Hla’s trip to Yangon was a blend of history, culture, and
-            vibrant city life. She began her morning at the magnificent
-            Shwedagon Pagoda, where the golden stupa glistened under the
-            sunlight, filling her with awe and serenity. Wandering through the
-            bustling streets, she explored Bogyoke Aung San Market, where
-            colorful fabrics, handicrafts, and the aroma of local food
-            surrounded her. In the afternoon, she strolled along Kandawgyi Lake,
-            enjoying the peaceful view of the Karaweik Palace reflected in the
-            water. As night fell, the city’s energy came alive with street
-            vendors, tea shops, and lively conversations, leaving Hla Hla with a
-            deep appreciation for Yangon’s charm as both a modern hub and a
-            timeless cultural treasure.
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 px-2"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">Price - 80$</p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
         <div
           data-aos="fade-up"
@@ -52,31 +41,20 @@ export default function YangonExp() {
           <img
             src="/assets/promobanner/yangon.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Hla Hla Experiences</h1>
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
           <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
-            Hla Hla’s trip to Yangon was a blend of history, culture, and
-            vibrant city life. She began her morning at the magnificent
-            Shwedagon Pagoda, where the golden stupa glistened under the
-            sunlight, filling her with awe and serenity. Wandering through the
-            bustling streets, she explored Bogyoke Aung San Market, where
-            colorful fabrics, handicrafts, and the aroma of local food
-            surrounded her. In the afternoon, she strolled along Kandawgyi Lake,
-            enjoying the peaceful view of the Karaweik Palace reflected in the
-            water. As night fell, the city’s energy came alive with street
-            vendors, tea shops, and lively conversations, leaving Hla Hla with a
-            deep appreciation for Yangon’s charm as both a modern hub and a
-            timeless cultural treasure.
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 px-2"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">Price - 80$</p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
         <div
           data-aos="fade-up"
@@ -87,31 +65,20 @@ export default function YangonExp() {
           <img
             src="/assets/promobanner/yangon.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Hla Hla Experiences</h1>
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
           <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
-            Hla Hla’s trip to Yangon was a blend of history, culture, and
-            vibrant city life. She began her morning at the magnificent
-            Shwedagon Pagoda, where the golden stupa glistened under the
-            sunlight, filling her with awe and serenity. Wandering through the
-            bustling streets, she explored Bogyoke Aung San Market, where
-            colorful fabrics, handicrafts, and the aroma of local food
-            surrounded her. In the afternoon, she strolled along Kandawgyi Lake,
-            enjoying the peaceful view of the Karaweik Palace reflected in the
-            water. As night fell, the city’s energy came alive with street
-            vendors, tea shops, and lively conversations, leaving Hla Hla with a
-            deep appreciation for Yangon’s charm as both a modern hub and a
-            timeless cultural treasure.
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 px-2"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">Price - 80$</p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
         <div
           data-aos="fade-up"
@@ -122,31 +89,20 @@ export default function YangonExp() {
           <img
             src="/assets/promobanner/yangon.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Hla Hla Experiences</h1>
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
           <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
-            Hla Hla’s trip to Yangon was a blend of history, culture, and
-            vibrant city life. She began her morning at the magnificent
-            Shwedagon Pagoda, where the golden stupa glistened under the
-            sunlight, filling her with awe and serenity. Wandering through the
-            bustling streets, she explored Bogyoke Aung San Market, where
-            colorful fabrics, handicrafts, and the aroma of local food
-            surrounded her. In the afternoon, she strolled along Kandawgyi Lake,
-            enjoying the peaceful view of the Karaweik Palace reflected in the
-            water. As night fell, the city’s energy came alive with street
-            vendors, tea shops, and lively conversations, leaving Hla Hla with a
-            deep appreciation for Yangon’s charm as both a modern hub and a
-            timeless cultural treasure.
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 px-2"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">Price - 80$</p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
       </div>
     </section>

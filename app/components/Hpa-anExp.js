@@ -17,30 +17,22 @@ export default function HpaanExp() {
           <img
             src="/assets/promobanner/hpa-an.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Hla Hla Experiences</h1>
-          <p className="text-base line-clamp-2 leading-relaxed text-justify indent-10 px-2">
-            Hla Hla’s trip to Hpa-An was a journey into nature’s beauty and
-            spiritual calm. Surrounded by limestone mountains and lush green
-            fields, she felt a sense of peace as she explored the countryside.
-            She visited the famous Kyauk Kalat Pagoda, perched dramatically on a
-            rock in the middle of a lake, and marveled at its unique setting.
-            Trekking up Mount Zwegabin, she was rewarded with panoramic views of
-            the entire region, where mist rolled gently over the hills. In the
-            evening, she relaxed by the Thanlwin River, watching the sunset
-            paint the sky in warm colors. Hpa-An’s blend of natural wonders and
-            cultural charm left her with unforgettable memories of Myanmar’s
-            serene landscapes.
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 px-2"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
         <div
           data-aos="fade-up"
@@ -51,30 +43,22 @@ export default function HpaanExp() {
           <img
             src="/assets/promobanner/hpa-an.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Hla Hla Experiences</h1>
-          <p className="text-base line-clamp-2 leading-relaxed text-justify indent-10 px-2">
-            Hla Hla’s trip to Hpa-An was a journey into nature’s beauty and
-            spiritual calm. Surrounded by limestone mountains and lush green
-            fields, she felt a sense of peace as she explored the countryside.
-            She visited the famous Kyauk Kalat Pagoda, perched dramatically on a
-            rock in the middle of a lake, and marveled at its unique setting.
-            Trekking up Mount Zwegabin, she was rewarded with panoramic views of
-            the entire region, where mist rolled gently over the hills. In the
-            evening, she relaxed by the Thanlwin River, watching the sunset
-            paint the sky in warm colors. Hpa-An’s blend of natural wonders and
-            cultural charm left her with unforgettable memories of Myanmar’s
-            serene landscapes.
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 px-2"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
         <div
           data-aos="fade-up"
@@ -85,30 +69,22 @@ export default function HpaanExp() {
           <img
             src="/assets/promobanner/hpa-an.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Hla Hla Experiences</h1>
-          <p className="text-base line-clamp-2 leading-relaxed text-justify indent-10 px-2">
-            Hla Hla’s trip to Hpa-An was a journey into nature’s beauty and
-            spiritual calm. Surrounded by limestone mountains and lush green
-            fields, she felt a sense of peace as she explored the countryside.
-            She visited the famous Kyauk Kalat Pagoda, perched dramatically on a
-            rock in the middle of a lake, and marveled at its unique setting.
-            Trekking up Mount Zwegabin, she was rewarded with panoramic views of
-            the entire region, where mist rolled gently over the hills. In the
-            evening, she relaxed by the Thanlwin River, watching the sunset
-            paint the sky in warm colors. Hpa-An’s blend of natural wonders and
-            cultural charm left her with unforgettable memories of Myanmar’s
-            serene landscapes.
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 px-2"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
         <div
           data-aos="fade-up"
@@ -119,30 +95,22 @@ export default function HpaanExp() {
           <img
             src="/assets/promobanner/hpa-an.jpg"
             alt="#"
-            height={300}
             width={300}
             className="w-full rounded-t-md"
           />
-          <h1 className="text-base font-bold px-2">Hla Hla Experiences</h1>
-          <p className="text-base line-clamp-2 leading-relaxed text-justify indent-10 px-2">
-            Hla Hla’s trip to Hpa-An was a journey into nature’s beauty and
-            spiritual calm. Surrounded by limestone mountains and lush green
-            fields, she felt a sense of peace as she explored the countryside.
-            She visited the famous Kyauk Kalat Pagoda, perched dramatically on a
-            rock in the middle of a lake, and marveled at its unique setting.
-            Trekking up Mount Zwegabin, she was rewarded with panoramic views of
-            the entire region, where mist rolled gently over the hills. In the
-            evening, she relaxed by the Thanlwin River, watching the sunset
-            paint the sky in warm colors. Hpa-An’s blend of natural wonders and
-            cultural charm left her with unforgettable memories of Myanmar’s
-            serene landscapes.
+          <h1 className="text-base font-bold px-2">
+            Hot Air Ballooning over Bagan
+          </h1>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
+            You’ll float above thousands of ancient pagodas, stupas, and the
+            Irrawaddy River.
           </p>
-          <Link
-            href=""
-            className="text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 px-2"
-          >
-            see more
-          </Link>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
+          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
+            Book Now
+          </button>
         </div>
       </div>
     </section>
