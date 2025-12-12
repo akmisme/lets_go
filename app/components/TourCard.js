@@ -73,10 +73,10 @@ export default function TourCard() {
 
           {/* Buttons */}
           <div className="flex gap-4 mt-4 items-center max-lg:justify-center">
-            <button className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 transition">
-              View Tour
-            </button>
-            <button className="border border-yellow-500 text-yellow-600 px-4 py-2 rounded hover:bg-yellow-50 transition">
+              <button className="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 transition cursor-pointer">
+                View Tour
+              </button>
+            <button className="border border-yellow-500 text-yellow-600 px-4 py-2 rounded hover:bg-yellow-50 transition cursor-pointer">
               Download Brochure
             </button>
           </div>
