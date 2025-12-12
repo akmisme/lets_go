@@ -7,6 +7,7 @@ import LanguageSwitcher from "./LanguageSwitch";
 import Image from "next/image";
 import Log from "@/app/components/login";
 import Register from "./register";
+import Popup from "./popup";
 
 const headerData = [
   { title: "Home", href: "/" },
@@ -28,15 +29,31 @@ const headerData = [
         href: "/mandalayexp",
         image: "/assets/promobanner/mandalay.jpg",
       },
-      { title: "Yangon", href: "/yangonexp", image: "/assets/promobanner/yangon.jpg" },
+      {
+        title: "Yangon",
+        href: "/yangonexp",
+        image: "/assets/promobanner/yangon.jpg",
+      },
       {
         title: "Taunggyi",
         href: "/taunggyiexp",
         image: "/assets/promobanner/taunggyi.jpg",
       },
-      { title: "Kalaw", href: "/kalawexp", image: "/assets/promobanner/kalaw.jpg" },
-      { title: "Hpa-An", href: "/hpa-anexp", image: "/assets/promobanner/hpa-an.jpg" },
-      { title: "Inle Lake", href: "/inleexp", image: "/assets/promobanner/inle.jpg" },
+      {
+        title: "Kalaw",
+        href: "/kalawexp",
+        image: "/assets/promobanner/kalaw.jpg",
+      },
+      {
+        title: "Hpa-An",
+        href: "/hpa-anexp",
+        image: "/assets/promobanner/hpa-an.jpg",
+      },
+      {
+        title: "Inle Lake",
+        href: "/inleexp",
+        image: "/assets/promobanner/inle.jpg",
+      },
       {
         title: "Ngwesaung",
         href: "/ngwesaungexp",
@@ -60,6 +77,8 @@ export default function Header() {
   const [userMenuOpen, setUserMenuOpen] = useState(false); // added
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const [openLogin, setOpenLogin] = useState(false);
+  const [openRegister, setOpenRegister] = useState(false);
 
   // detect scroll
   useEffect(() => {
@@ -161,52 +180,36 @@ export default function Header() {
             onMouseLeave={() => setUserMenuOpen(false)}
           >
             <CircleUserRound className="w-6 h-6 text-gray-700 cursor-pointer hover:text-[#936521]" />
+
             {userMenuOpen && (
               <div className="absolute right-0 top-4 mt-2 w-40 bg-white shadow-lg rounded-md py-2 text-sm text-gray-700">
+                {/* ✅ Login Button */}
                 <button
-                  className="block px-4 py-2 hover:bg-gray-100 open-btn w-full"
-                  onClick={() => document.getElementById("popup").showModal()}
+                  className="block px-4 py-2 hover:bg-gray-100 w-full"
+                  onClick={() => setOpenLogin(true)}
                 >
                   Login
                 </button>
-                <div>
-                  <dialog
-                    id="popup"
-                    className="mx-auto my-auto rounded-md shadow-md"
-                  >
-                    <button
-                      className="close-btn text-right absolute right-3 top-2 cursor-pointer"
-                      onClick={() => document.getElementById("popup").close()}
-                    >
-                      X
-                    </button>
 
-                    <Log />
-                  </dialog>
-                </div>
+                {/* ✅ Register Button */}
                 <button
-                  className="block px-4 py-2 hover:bg-gray-100 open-btn w-full"
-                  onClick={() => document.getElementById("popup1").showModal()}
+                  className="block px-4 py-2 hover:bg-gray-100 w-full"
+                  onClick={() => setOpenRegister(true)}
                 >
                   Register
                 </button>
-                <div>
-                  <dialog
-                    id="popup1"
-                    className="mx-auto my-auto rounded-md shadow-md"
-                  >
-                    <button
-                      className="close-btn text-right absolute right-3 top-2 cursor-pointer"
-                      onClick={() => document.getElementById("popup1").close()}
-                    >
-                      X
-                    </button>
-
-                    <Register />
-                  </dialog>
-                </div>
               </div>
             )}
+
+            {/* ✅ Login Popup */}
+            <Popup isOpen={openLogin} onClose={() => setOpenLogin(false)}>
+              <Log />
+            </Popup>
+
+            {/* ✅ Register Popup */}
+            <Popup isOpen={openRegister} onClose={() => setOpenRegister(false)}>
+              <Register />
+            </Popup>
           </div>
         </nav>
 
