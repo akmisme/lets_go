@@ -1,5 +1,22 @@
 import React from "react";
 
+const experiences = [
+  {
+    title: "Riding hot air balloons in Bagan",
+    para: "Riding hot air balloons in Bagan, Myanmar is one of the most iconic travel experiences in the world. It’s often simply called “Bagan Balloon Ride” or “Hot Air Ballooning over Bagan.”",
+    subtitle: "Here’s what makes it special:",
+    facts: [
+      "Most rides happen at dawn, when the mist lifts and the templesglow in golden light.",
+      "You’ll float above thousands of ancient pagodas, stupas, and the Irrawaddy River.",
+      "Ballooning season usually runs from October to March, when the weather is cool and skies are clear.",
+      "Flights are suspended during the rainy season for safety.",
+      "Several companies operate in Bagan, offering different packages (classic, premium, private).",
+      "They typically include hotel pickup, a light breakfast, and a champagne toast after landing.",
+      "The ride lasts about 45 minutes to 1 hour.",
+      "It’s calm, quiet, and gives you a bird’s-eye view of one of Asia’s most breathtaking archaeological sites.",
+    ],
+  },
+];
 export default function BaganExpDetail() {
   return (
     <section className="text-base bg-gray-100 mt-30 py-5">
