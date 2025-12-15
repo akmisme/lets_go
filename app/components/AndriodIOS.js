@@ -32,12 +32,12 @@ const AndIOS = () => {
           <img
             src="https://images.assets-landingi.com/uc/e214f160-c333-4c77-9c82-53dba58928e1/badgegoogleplay.png"
             alt="Google Play"
-            className="w-44 max-md:w-32 hover:scale-105 transition duration-300"
+            className="w-44 max-md:w-32 hover:scale-105 transition duration-300 cursor-pointer"
           />
           <img
             src="https://images.assets-landingi.com/uc/55b6aa2f-d847-4d9c-abbe-110eca108b5c/badgeapple.png"
             alt="App Store"
-            className="w-44 max-md:w-32 hover:scale-105 transition duration-300"
+            className="w-44 max-md:w-32 hover:scale-105 transition duration-300 cursor-pointer"
           />
         </div>
       </div>

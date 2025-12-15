@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
+import SearchSection from "@/app/components/SearchSection";
 
 export default function FilterPage() {
   const params = useSearchParams();
@@ -33,7 +34,19 @@ export default function FilterPage() {
 
   return (
     <main className="mt-20 py-10 bg-gray-100 min-h-screen">
-      <h1 className="text-gray-500 font-bold text-2xl md:text-3xl text-center mb-10 px-4">
+       {/* Banner Section */}
+            <div
+              className="relative top-5 bg-center bg-cover opacity-80 bg-no-repeat w-350 max-xl:w-auto max-xl:mx-5 h-100 mx-auto rounded-4xl flex"
+              style={{ backgroundImage: "url('/assets/bagan.jpg')" }}
+            >
+              <h1 className="font-bold m-auto text-white text-6xl max-md:text-4xl">
+                About Us
+              </h1>
+            </div>
+      
+            {/* Search Section */}
+            <SearchSection />
+      <h1 className="text-gray-500 font-bold text-2xl md:text-3xl text-center mb-10 px-4 mt-5">
         Searched... {destination}, {date}, {passenger}
       </h1>
 
