@@ -1,5 +1,25 @@
 {
-  "welcome":[
-    {"title": "တြေုျြ်ုတေ့ြ"}
-  ]
+  "header": [
+    { "title": "မူလစာမျက်နှာ", "href": "/" },
+    { "title": "ပက်ကေ့ဂျ်များ", "href": "/packages" },
+    {
+      "title": "အတွေ့အကြုံများ",
+      "href": "/experiences",
+      "dropdown": [
+        { "title": "ရန်ကုန်", "href": "/yangonexp", "image": "/assets/promobanner/yangon.jpg" },
+        { "title": "မန္တလေး", "href": "/mandalayexp", "image": "/assets/promobanner/mandalay.jpg" },
+        { "title": "ပုဂံ", "href": "/baganexp", "image": "/assets/promobanner/bagan.jpg" },
+        { "title": "တောင်ကြီး", "href": "/taunggyiexp", "image": "/assets/promobanner/taunggyi.jpg" },
+        { "title": "အင်းလေးကန်", "href": "/inleexp", "image": "/assets/promobanner/inle.jpg" },
+        { "title": "ငွေဆောင်", "href": "/ngwesaungexp", "image": "/assets/promobanner/ngwesaung.jpg" },
+        { "title": "ချောင်းသာ", "href": "/chaungthaexp", "image": "/assets/promobanner/chaungtha.jpg" },
+        { "title": "ဘားအံ", "href": "/hpaanexp", "image": "/assets/promobanner/hpa-an.jpg" },
+        { "title": "ကလော", "href": "/kalawexp", "image": "/assets/promobanner/kalaw.jpg" }
+      ]
+    },
+    { "title": "ကျွန်ုပ်တို့အကြောင်း", "href": "/aboutus" },
+    { "title": "ဆက်သွယ်ရန်", "href": "/contactus" },
+    { "title": "ဗလော့ဂ်", "href": "/vlogger" }
+  ],
+  "account": ["လော့ဂ်အင်", "စာရင်းသွင်းရန်"]
 }

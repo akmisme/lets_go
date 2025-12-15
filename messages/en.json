@@ -1,5 +1,25 @@
 {
-  "welcome":[
-    {"title": "welcome"}
-  ]
+  "header": [
+    { "title": "HOME", "href": "/" },
+    { "title": "Packages", "href": "/packages" },
+    {
+      "title": "Experiences",
+      "href": "/experiences",
+      "dropdown": [
+        { "title": "Yangon", "href": "/yangonexp", "image": "/assets/promobanner/yangon.jpg" },
+        { "title": "Mandalay", "href": "/mandalayexp", "image": "/assets/promobanner/mandalay.jpg" },
+        { "title": "Bagan", "href": "/baganexp", "image": "/assets/promobanner/bagan.jpg" },
+        { "title": "Taunggyi", "href": "/taunggyiexp", "image": "/assets/promobanner/taunggyi.jpg" },
+        { "title": "Inle Lake", "href": "/inleexp", "image": "/assets/promobanner/inle.jpg" },
+        { "title": "Ngwesaung", "href": "/ngwesaungexp", "image": "/assets/promobanner/ngwesaung.jpg" },
+        { "title": "Chaungthar", "href": "/chaungthaexp", "image": "/assets/promobanner/chaungtha.jpg" },
+        { "title": "Hpa-An", "href": "/hpaanexp", "image": "/assets/promobanner/hpa-an.jpg" },
+        { "title": "Kalaw", "href": "/kalawexp", "image": "/assets/promobanner/kalaw.jpg" }
+      ]
+    },
+    { "title": "About Us", "href": "/aboutus" },
+    { "title": "Contact Us", "href": "/contactus" },
+    { "title": "Vlog", "href": "/vlogger" }
+  ],
+  "account": ["Login", "Register"]
 }

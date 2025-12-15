@@ -6,7 +6,7 @@ const SearchSection = () => {
   const router = useRouter();
   const [today, setToday] = useState("");
   const [open, setOpen] = useState(false);
-  const [Passenger, setPassenger] = useState("1");
+  const [Passenger, setPassenger] = useState(1);
   const [showDropdown, setShowDropdown] = useState(false);
   const [query, setQuery] = useState("");
   const [date, setDate] = useState("");

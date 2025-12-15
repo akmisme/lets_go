@@ -1,75 +1,77 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, CircleUserRound } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitch";
 import Image from "next/image";
 import Log from "@/app/components/login";
 import Register from "./register";
 import Popup from "./popup";
+import { usePathname } from "next/navigation";
+import en from "../../messages/en.json";
+import mm from "../../messages/mm.json";
 
-const headerData = [
-  { title: "Home", href: "/" },
-  {
-    title: "Packages",
-    href: "/packages",
-  },
-  {
-    title: "Experiences",
-    href: "/experiences",
-    dropdown: [
-      {
-        title: "Bagan",
-        href: "/baganexp",
-        image: "/assets/promobanner/bagan.jpg",
-      },
-      {
-        title: "Mandalay",
-        href: "/mandalayexp",
-        image: "/assets/promobanner/mandalay.jpg",
-      },
-      {
-        title: "Yangon",
-        href: "/yangonexp",
-        image: "/assets/promobanner/yangon.jpg",
-      },
-      {
-        title: "Taunggyi",
-        href: "/taunggyiexp",
-        image: "/assets/promobanner/taunggyi.jpg",
-      },
-      {
-        title: "Kalaw",
-        href: "/kalawexp",
-        image: "/assets/promobanner/kalaw.jpg",
-      },
-      {
-        title: "Hpa-An",
-        href: "/hpa-anexp",
-        image: "/assets/promobanner/hpa-an.jpg",
-      },
-      {
-        title: "Inle Lake",
-        href: "/inleexp",
-        image: "/assets/promobanner/inle.jpg",
-      },
-      {
-        title: "Ngwesaung",
-        href: "/ngwesaungexp",
-        image: "/assets/promobanner/ngwesaung.jpg",
-      },
-      {
-        title: "Chaung Thar",
-        href: "/chaungthaexp",
-        image: "/assets/promobanner/chaungtha.jpg",
-      },
-    ],
-  },
-  { title: "About Us", href: "/aboutus" },
-  { title: "Contact Us", href: "/contactus" },
-  { title: "Vlog", href: "/vlogger" },
-];
+// const header = [
+//   { title: "Home", href: "/" },
+//   {
+//     title: "Packages",
+//     href: "/packages",
+//   },
+//   {
+//     title: "Experiences",
+//     href: "/experiences",
+//     dropdown: [
+//       {
+//         title: "Bagan",
+//         href: "/baganexp",
+//         image: "/assets/promobanner/bagan.jpg",
+//       },
+//       {
+//         title: "Mandalay",
+//         href: "/mandalayexp",
+//         image: "/assets/promobanner/mandalay.jpg",
+//       },
+//       {
+//         title: "Yangon",
+//         href: "/yangonexp",
+//         image: "/assets/promobanner/yangon.jpg",
+//       },
+//       {
+//         title: "Taunggyi",
+//         href: "/taunggyiexp",
+//         image: "/assets/promobanner/taunggyi.jpg",
+//       },
+//       {
+//         title: "Kalaw",
+//         href: "/kalawexp",
+//         image: "/assets/promobanner/kalaw.jpg",
+//       },
+//       {
+//         title: "Hpa-An",
+//         href: "/hpa-anexp",
+//         image: "/assets/promobanner/hpa-an.jpg",
+//       },
+//       {
+//         title: "Inle Lake",
+//         href: "/inleexp",
+//         image: "/assets/promobanner/inle.jpg",
+//       },
+//       {
+//         title: "Ngwesaung",
+//         href: "/ngwesaungexp",
+//         image: "/assets/promobanner/ngwesaung.jpg",
+//       },
+//       {
+//         title: "Chaung Thar",
+//         href: "/chaungthaexp",
+//         image: "/assets/promobanner/chaungtha.jpg",
+//       },
+//     ],
+//   },
+//   { title: "About Us", href: "/aboutus" },
+//   { title: "Contact Us", href: "/contactus" },
+//   { title: "Vlog", href: "/vlogger" },
+// ];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -87,6 +89,16 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // detect locale from URL
+  const pathSegments = pathname.split("/").filter(Boolean);
+  const currentLocale = ["en", "mm"].includes(pathSegments[0])
+    ? pathSegments[0]
+    : "en";
+
+  // load translations
+  const headerData = currentLocale === "mm" ? mm.header : en.header;
+  const accountData = currentLocale === "mm" ? mm.account : en.account;
+
   return (
     <header
       className={`w-full fixed top-0 z-[1000] transition-all duration-500 ${
@@ -99,7 +111,7 @@ export default function Header() {
         <Image
           src="/assets/logo.avif"
           className="hover:rotate-360 transition-transform ease-in-out duration-500 delay-300 cursor-pointer"
-          alt="STG Cement Distribution Logo"
+          alt="Golden Yellow"
           width={100}
           height={0}
           style={{ height: "auto" }}
