@@ -56,7 +56,10 @@ const Log = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-6 w-full pb-4 mt-10">
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-6 w-full max-w-md mx-auto rounded-xl p-8 mt-10"
+    >
       {/* Phone */}
       <div className="flex flex-col gap-2 w-full">
         <label className="font-bold text-base" htmlFor="phone">
@@ -64,7 +67,7 @@ const Log = () => {
         </label>
         <PhoneInput
           id="phone"
-          className="border border-gray-400 rounded-3xl p-3 w-full"
+          className="rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none"
           value={phone}
           onChange={setPhone}
           defaultCountry="MM"
@@ -83,14 +86,14 @@ const Log = () => {
           type={showPassword ? "text" : "password"}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="border border-gray-400 rounded-3xl p-3 w-full"
+          className="rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none"
           placeholder="Enter Your Password"
           required
         />
         <button
           type="button"
           onClick={() => setShowPassword(!showPassword)}
-          className="absolute right-4 top-[43px]"
+          className="absolute right-4 top-[43px] text-gray-600"
         >
           {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
         </button>

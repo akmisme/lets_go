@@ -66,14 +66,14 @@ const Register = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-5 w-full max-w-md mx-auto pb-6"
+      className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-3xl mx-auto p-8 mt-5"
     >
       {/* ✅ First Name */}
       <div className="flex flex-col gap-2 w-full">
-        <label className="font-bold text-base">First Name</label>
+        <label className="font-bold text-sm">First Name</label>
         <input
           type="text"
-          className="border border-gray-400 rounded-3xl p-3 w-full"
+          className="rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none"
           placeholder="Enter Your First Name"
           required
         />
@@ -81,96 +81,93 @@ const Register = () => {
 
       {/* ✅ Last Name */}
       <div className="flex flex-col gap-2 w-full">
-        <label className="font-bold text-base">Last Name</label>
+        <label className="font-bold text-sm">Last Name</label>
         <input
           type="text"
-          className="border border-gray-400 rounded-3xl p-3 w-full"
+          className="rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none"
           placeholder="Enter Your Last Name"
           required
         />
       </div>
 
-      {/* ✅ Email */}
-      <div className="flex flex-col gap-2 w-full">
-        <label className="font-bold text-base">Email (Optional)</label>
+      {/* ✅ Email (full width) */}
+      <div className="flex flex-col gap-2 w-full md:col-span-2">
+        <label className="font-bold text-sm">Email (Optional)</label>
         <input
           type="email"
-          className="border border-gray-400 rounded-3xl p-3 w-full"
+          className="rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none"
           placeholder="Enter Your Email"
         />
       </div>
 
-      {/* ✅ Phone (GLOBAL VALIDATION) */}
-      <div className="flex flex-col gap-2 w-full">
-        <label className="font-bold text-base">Phone</label>
+      {/* ✅ Phone (full width) */}
+      <div className="flex flex-col gap-2 w-full md:col-span-2">
+        <label className="font-bold text-sm">Phone</label>
         <PhoneInput
           value={phone}
           onChange={handlePhoneChange}
           defaultCountry="MM"
           international
+          isValidPhoneNumber
           countryCallingCodeEditable={false}
-          className="border border-gray-400 rounded-3xl p-3 w-full"
+          className="rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none"
           placeholder="Enter Your Phone Number"
           required
         />
-        {phoneError && (
-          <p className="text-red-600 text-sm">{phoneError}</p>
-        )}
+        {phoneError && <p className="text-red-600 text-sm">{phoneError}</p>}
       </div>
 
       {/* ✅ Password */}
-      <div className="flex flex-col gap-2 w-full">
-        <label className="font-bold text-base">Password</label>
-        <div className="relative">
-          <input
-            type={showPassword ? "text" : "password"}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="border border-gray-400 rounded-3xl p-3 w-full pr-10"
-            placeholder="Enter Your Password"
-            required
-          />
-          <button
-            type="button"
-            onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600"
-          >
-            {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-          </button>
-        </div>
+      <div className="flex flex-col gap-2 w-full relative">
+        <label className="font-bold text-sm">Password</label>
+        <input
+          type={showPassword ? "text" : "password"}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none pr-10"
+          placeholder="Enter Your Password"
+          required
+        />
+        <button
+          type="button"
+          onClick={() => setShowPassword(!showPassword)}
+          className="absolute right-4 top-[43px] text-gray-600"
+        >
+          {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+        </button>
       </div>
 
       {/* ✅ Confirm Password */}
-      <div className="flex flex-col gap-2 w-full">
-        <label className="font-bold text-base">Confirm Password</label>
-        <div className="relative">
-          <input
-            type={showConfirmPassword ? "text" : "password"}
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            className="border border-gray-400 rounded-3xl p-3 w-full pr-10"
-            placeholder="Confirm Your Password"
-            required
-          />
-          <button
-            type="button"
-            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600"
-          >
-            {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-          </button>
-        </div>
+      <div className="flex flex-col gap-2 w-full relative">
+        <label className="font-bold text-sm">Confirm Password</label>
+        <input
+          type={showConfirmPassword ? "text" : "password"}
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          className="rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none pr-10"
+          placeholder="Confirm Your Password"
+          required
+        />
+        <button
+          type="button"
+          onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+          className="absolute right-4 top-[43px] text-gray-600"
+        >
+          {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+        </button>
       </div>
 
-      {/* ✅ Error Message */}
+      {/* ✅ Error Message (full width) */}
       {error && (
-        <p className="text-red-600 font-semibold text-center">{error}</p>
+        <p className="text-red-600 font-semibold text-center md:col-span-2">
+          {error}
+        </p>
       )}
 
-      {/* ✅ Submit */}
+      {/* ✅ Submit (full width) */}
       <button
         type="submit"
-        className="bg-[#936521] text-white px-4 py-2 rounded-md hover:bg-[#D8AF53] transition-all duration-300"
+        className="bg-[#936521] text-white px-4 py-2 rounded-md hover:bg-[#D8AF53] transition-all duration-300 md:col-span-2 cursor-pointer"
       >
         Register
       </button>

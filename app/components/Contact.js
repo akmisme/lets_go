@@ -23,53 +23,59 @@ const Contact = () => {
   return (
     <div className="mt-10 mx-auto pb-5">
       <h1 className="text-3xl font-bold text-center mb-10">Contact Us</h1>
+
       <div
         data-aos="fade-up"
         data-aos-duration="1500"
         data-aos-delay="100"
-        className="flex gap-10 mx-20 max-xl:flex-col max-md:mx-auto"
+        className="flex flex-col xl:flex-row gap-10 w-full max-w-7xl mx-auto px-5 items-start xl:items-stretch"
       >
-        <form className="flex flex-col mx-auto" onSubmit={handleSubmit}>
-          {/* Name + Email */}
-          <div className="flex flex-col md:flex-row gap-5 mb-5 mx-auto">
+        {/* ✅ FORM */}
+        <form
+          className="flex flex-col w-full xl:w-1/2 bg-white shadow-md rounded-xl p-8"
+          onSubmit={handleSubmit}
+        >
+          {/* ✅ Name + Email */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-5">
             <div className="flex flex-col gap-2">
-              <label className="font-bold text-base" htmlFor="name">
+              <label className="font-bold text-sm" htmlFor="name">
                 Name
               </label>
               <input
                 id="name"
                 name="name"
                 type="text"
-                className="border border-gray-400 rounded-3xl outline-none w-full max-w-md py-2 px-7"
+                className="rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none"
                 placeholder="Enter your name"
                 required
               />
             </div>
+
             <div className="flex flex-col gap-2">
-              <label className="font-bold text-base" htmlFor="email">
+              <label className="font-bold text-sm" htmlFor="email">
                 Email
               </label>
               <input
                 id="email"
                 name="email"
                 type="email"
-                className="border border-gray-400 rounded-3xl outline-none w-full max-w-md py-2 px-7"
+                className="rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none"
                 placeholder="Enter your email"
                 required
               />
             </div>
           </div>
 
-          {/* Phone + Subject */}
-          <div className="flex flex-col md:flex-row gap-5 mb-5 mx-auto">
+          {/* ✅ Phone + Subject */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-5">
             <div className="flex flex-col gap-2">
-              <label className="font-bold text-base" htmlFor="phone">
+              <label className="font-bold text-sm" htmlFor="phone">
                 Phone
               </label>
               <PhoneInput
                 id="phone"
                 placeholder="Enter phone number"
-                className="border border-gray-400 rounded-3xl outline-none w-full max-w-md p-2"
+                className="rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none"
                 value={value}
                 onChange={setValue}
                 defaultCountry="MM"
@@ -77,47 +83,52 @@ const Contact = () => {
                 countryCallingCodeEditable={false}
               />
             </div>
+
             <div className="flex flex-col gap-2">
-              <label className="font-bold text-base" htmlFor="subject">
+              <label className="font-bold text-sm" htmlFor="subject">
                 Subject
               </label>
               <input
                 id="subject"
                 name="subject"
                 type="text"
-                className="border border-gray-400 rounded-3xl outline-none w-full max-w-md py-2 px-7"
+                className="rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none"
                 placeholder="Enter your subject"
                 required
               />
             </div>
           </div>
 
-          {/* Message */}
-          <div className="flex gap-5 mb-5 mx-auto w-full max-w-2xl">
-            <div className="flex flex-col gap-2 w-full">
-              <label className="font-bold text-base" htmlFor="message">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                className="h-32 border border-gray-400 outline-none rounded-md resize-none overflow-auto p-2"
-                placeholder="Enter your message"
-                required
-              />
-            </div>
+          {/* ✅ Message */}
+          <div className="flex flex-col gap-2 mb-5 w-full">
+            <label className="font-bold text-sm" htmlFor="message">
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              className="h-32 rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none resize-none"
+              placeholder="Enter your message"
+              required
+            />
           </div>
-          {error && <span className="text-red-500 text-sm text-center">{error}</span>}
-          {/* Buttons */}
-          <div className="flex flex-col mt-5 gap-2 mx-auto w-full max-w-md">
+
+          {/* ✅ Error */}
+          {error && (
+            <span className="text-red-500 text-sm text-center">{error}</span>
+          )}
+
+          {/* ✅ Buttons */}
+          <div className="flex flex-col mt-5 gap-3 w-full max-w-md mx-auto">
             <button
-              className="bg-blue-500 hover:bg-[#936521] shadow-md transition-all ease-in-out duration-500 rounded-3xl p-2 cursor-pointer text-white"
+              className="bg-[#936521] hover:bg-[#D8AF53] shadow-md transition-all duration-300 rounded-3xl p-2 text-white"
               type="submit"
             >
               Send
             </button>
+
             <button
-              className="bg-[#D8AF53] hover:bg-red-700 shadow-md transition-all ease-in-out duration-500 rounded-3xl p-2 cursor-pointer text-white"
+              className="bg-gray-300 hover:bg-red-600 shadow-md transition-all duration-300 rounded-3xl p-2 text-black hover:text-white"
               type="reset"
               onClick={() => {
                 setValue("");
@@ -129,13 +140,11 @@ const Contact = () => {
           </div>
         </form>
 
-        {/* Map */}
-        <div className="flex flex-col items-center pb-10">
+        {/* ✅ MAP — PERFECTLY ALIGNED */}
+        <div className="flex justify-center items-stretch w-full xl:w-1/2">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13948.529776221692!2d96.14214415188654!3d16.832370232953423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c195e4c8eabd11%3A0xceb012d50969af9f!2sYolo%20Digital%20Marketing%20Company!5e1!3m2!1sen!2smm!4v1765165031535!5m2!1sen!2smm"
-            width="650"
-            height="500"
-            className="rounded-md shadow-md max-xl:w-full"
+            className="rounded-md shadow-md w-full aspect-video max-md:aspect-[4/5]"
             style={{ border: 0 }}
             allowFullScreen=""
             loading="lazy"
