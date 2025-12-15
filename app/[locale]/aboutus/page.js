@@ -10,30 +10,30 @@ export default function AboutUs() {
 
   const items = [
     {
+      title: "Travis Pittman, Co-Founder & CE",
+      description:
+        "Originally from Australia, Travis has lived in Europe for the past 15 years and has called Vienna, Austria home for over a decade. In 2010, together with his brother Shawn, he founded TourRadar to help connect people to life-enriching travel experiences. TourRadar’s vision is for its platform to be the epicenter of the $200bn global adventure travel ecosystem, by connecting travelers, operators, and distribution partners like travel advisors, OTAs, GDSs, airlines, influencers, and content providers. Travis' passion for adventure began when he was growing up in the Northern Territory in Australia, so when he's not leading his team, he enjoys spending time mountain biking, wakeboarding, running, and in general outdoors. Under his leadership, TourRadar has grown into a diverse team of 45+ nationalities and is the leading Organized Adventure Platform with 50,000+ organized adventures in more than 160 countries. TourRadar has raised $60m+ from world-class investors such as Cherry Ventures, Endeit Capital, Hoxton Ventures, Speedinvest, and TCV.",
+      image: "/assets/executiveteam/CEO.jpg",
+    },
+    {
       title: "Travis Pittman, Co-Founder & CEO",
       description:
         "Originally from Australia, Travis has lived in Europe for the past 15 years and has called Vienna, Austria home for over a decade. In 2010, together with his brother Shawn, he founded TourRadar to help connect people to life-enriching travel experiences. TourRadar’s vision is for its platform to be the epicenter of the $200bn global adventure travel ecosystem, by connecting travelers, operators, and distribution partners like travel advisors, OTAs, GDSs, airlines, influencers, and content providers. Travis' passion for adventure began when he was growing up in the Northern Territory in Australia, so when he's not leading his team, he enjoys spending time mountain biking, wakeboarding, running, and in general outdoors. Under his leadership, TourRadar has grown into a diverse team of 45+ nationalities and is the leading Organized Adventure Platform with 50,000+ organized adventures in more than 160 countries. TourRadar has raised $60m+ from world-class investors such as Cherry Ventures, Endeit Capital, Hoxton Ventures, Speedinvest, and TCV.",
       image: "/assets/executiveteam/CEO.jpg",
     },
-     {
+    {
       title: "Travis Pittman, Co-Founder & CEO",
       description:
         "Originally from Australia, Travis has lived in Europe for the past 15 years and has called Vienna, Austria home for over a decade. In 2010, together with his brother Shawn, he founded TourRadar to help connect people to life-enriching travel experiences. TourRadar’s vision is for its platform to be the epicenter of the $200bn global adventure travel ecosystem, by connecting travelers, operators, and distribution partners like travel advisors, OTAs, GDSs, airlines, influencers, and content providers. Travis' passion for adventure began when he was growing up in the Northern Territory in Australia, so when he's not leading his team, he enjoys spending time mountain biking, wakeboarding, running, and in general outdoors. Under his leadership, TourRadar has grown into a diverse team of 45+ nationalities and is the leading Organized Adventure Platform with 50,000+ organized adventures in more than 160 countries. TourRadar has raised $60m+ from world-class investors such as Cherry Ventures, Endeit Capital, Hoxton Ventures, Speedinvest, and TCV.",
       image: "/assets/executiveteam/CEO.jpg",
     },
-     {
+    {
       title: "Travis Pittman, Co-Founder & CEO",
       description:
         "Originally from Australia, Travis has lived in Europe for the past 15 years and has called Vienna, Austria home for over a decade. In 2010, together with his brother Shawn, he founded TourRadar to help connect people to life-enriching travel experiences. TourRadar’s vision is for its platform to be the epicenter of the $200bn global adventure travel ecosystem, by connecting travelers, operators, and distribution partners like travel advisors, OTAs, GDSs, airlines, influencers, and content providers. Travis' passion for adventure began when he was growing up in the Northern Territory in Australia, so when he's not leading his team, he enjoys spending time mountain biking, wakeboarding, running, and in general outdoors. Under his leadership, TourRadar has grown into a diverse team of 45+ nationalities and is the leading Organized Adventure Platform with 50,000+ organized adventures in more than 160 countries. TourRadar has raised $60m+ from world-class investors such as Cherry Ventures, Endeit Capital, Hoxton Ventures, Speedinvest, and TCV.",
       image: "/assets/executiveteam/CEO.jpg",
     },
-     {
-      title: "Travis Pittman, Co-Founder & CEO",
-      description:
-        "Originally from Australia, Travis has lived in Europe for the past 15 years and has called Vienna, Austria home for over a decade. In 2010, together with his brother Shawn, he founded TourRadar to help connect people to life-enriching travel experiences. TourRadar’s vision is for its platform to be the epicenter of the $200bn global adventure travel ecosystem, by connecting travelers, operators, and distribution partners like travel advisors, OTAs, GDSs, airlines, influencers, and content providers. Travis' passion for adventure began when he was growing up in the Northern Territory in Australia, so when he's not leading his team, he enjoys spending time mountain biking, wakeboarding, running, and in general outdoors. Under his leadership, TourRadar has grown into a diverse team of 45+ nationalities and is the leading Organized Adventure Platform with 50,000+ organized adventures in more than 160 countries. TourRadar has raised $60m+ from world-class investors such as Cherry Ventures, Endeit Capital, Hoxton Ventures, Speedinvest, and TCV.",
-      image: "/assets/executiveteam/CEO.jpg",
-    },
-     {
+    {
       title: "Travis Pittman, Co-Founder & CEO",
       description:
         "Originally from Australia, Travis has lived in Europe for the past 15 years and has called Vienna, Austria home for over a decade. In 2010, together with his brother Shawn, he founded TourRadar to help connect people to life-enriching travel experiences. TourRadar’s vision is for its platform to be the epicenter of the $200bn global adventure travel ecosystem, by connecting travelers, operators, and distribution partners like travel advisors, OTAs, GDSs, airlines, influencers, and content providers. Travis' passion for adventure began when he was growing up in the Northern Territory in Australia, so when he's not leading his team, he enjoys spending time mountain biking, wakeboarding, running, and in general outdoors. Under his leadership, TourRadar has grown into a diverse team of 45+ nationalities and is the leading Organized Adventure Platform with 50,000+ organized adventures in more than 160 countries. TourRadar has raised $60m+ from world-class investors such as Cherry Ventures, Endeit Capital, Hoxton Ventures, Speedinvest, and TCV.",
@@ -66,13 +66,8 @@ export default function AboutUs() {
         </p>
       </div>
 
-      <div
-        data-aos="fade-up"
-        data-aos-duration="1500"
-        data-aos-delay="100"
-        className="grid grid-cols-2 max-xl:grid-cols-1 mx-30 text-justify gap-10 mt-10 max-lg:mx-5"
-      >
-        <div>
+      <div className="grid grid-cols-2 max-xl:grid-cols-1 mx-30 text-justify gap-10 mt-10 max-lg:mx-5">
+        <div data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
           <img
             src="/assets/chaungthar.jpg"
             alt="Chaung Thar"
@@ -81,7 +76,12 @@ export default function AboutUs() {
             className="rounded-4xl hover:opacity-80 transition-transform duration-300 cursor-pointer"
           />
         </div>
-        <div className="flex flex-col text-justify gap-5">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1500"
+          data-aos-delay="100"
+          className="flex flex-col text-justify gap-5"
+        >
           <h1 className="font-bold text-2xl">What is Golden Yellow?</h1>
           <p className="indent-10 leading-relaxed text-base">
             Golden Yellow is the Organized Adventure Platform, offering the
@@ -100,60 +100,70 @@ export default function AboutUs() {
       <OurValue />
 
       {/* Executive Team */}
-      <h1 className="text-2xl font-bold mb-5 mx-20 my-10">Executive Team</h1>
-      <div
-        data-aos="fade-up"
-        data-aos-duration="1500"
-        data-aos-delay="100"
-        className="grid grid-cols-4 max-lg:grid-cols-2 max-md:mx-2 max-md:grid-cols-1 gap-10 mx-20"
-      >
+      <h1 className="text-3xl font-bold mb-10 mx-20 max-md:mx-5 mt-10 text-center">
+        Executive Team
+      </h1>
+
+      <div className="grid grid-cols-4 max-xl:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-10 mx-20 max-md:mx-5">
         {items.map((item, index) => (
           <div
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="100"
             key={index}
-            className="flex flex-col gap-4 bg-white p-2 rounded-xl shadow-md"
+            className="bg-white rounded-2xl shadow-lg p-5 flex flex-col gap-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
           >
-            <img src={item.image} className="rounded-xl w-full h-auto" />
-            <h1 className="font-bold text-xl">{item.title}</h1>
-            <p className="text-base leading-relaxed indent-10 line-clamp-4">
+            <img
+              src={item.image}
+              className="rounded-xl w-full h-56 object-cover"
+            />
+
+            <h1 className="font-bold text-xl text-gray-800">{item.title}</h1>
+
+            <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
               {item.description}
             </p>
-            <span
-              className="w-fit text-[#936521] rounded-md cursor-pointer"
+
+            <button
+              className="text-[#936521] font-semibold hover:text-[#D8AF53] transition cursor-pointer w-fit"
               onClick={() => {
                 setSelectedItem(item);
                 setIsOpen(true);
               }}
             >
-              see more
-            </span>
+              Read More →
+            </button>
           </div>
         ))}
       </div>
 
       {/* Popup */}
       {isOpen && selectedItem && (
-        <div className="fixed z-1001 inset-0 flex items-center justify-center bg-black/50">
-          <div className="bg-white rounded-lg shadow-lg w-[600px] max-md:w-[90%] max-h-[80%] overflow-y-auto p-6">
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-[1000] p-4">
+          <div className="bg-white rounded-2xl shadow-xl w-full max-w-xl max-h-[85vh] overflow-y-auto p-6 animate-fadeIn">
+            {/* Header */}
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-lg font-semibold">{selectedItem.title}</h2>
+              <h2 className="text-xl font-bold text-gray-800">
+                {selectedItem.title}
+              </h2>
               <button
-                className="text-gray-500 hover:text-gray-700 cursor-pointer"
+                className="text-gray-500 hover:text-gray-700 text-xl"
                 onClick={() => setIsOpen(false)}
               >
                 ✕
               </button>
             </div>
-            <div className="mt-5">
-              <img
-                src={selectedItem.image}
-                className="rounded-xl w-75 h-auto mx-auto"
-              />
-            </div>
-            <div className="space-y-2 mt-4">
-              <p className="px-4 py-2 rounded-md indent-10 text-justify">
-                {selectedItem.description}
-              </p>
-            </div>
+
+            {/* Image */}
+            <img
+              src={selectedItem.image}
+              className="rounded-xl w-full h-64 object-cover"
+            />
+
+            {/* Description */}
+            <p className="mt-4 text-gray-700 leading-relaxed text-justify">
+              {selectedItem.description}
+            </p>
           </div>
         </div>
       )}

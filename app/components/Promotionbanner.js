@@ -5,66 +5,63 @@ import CopyTextButton from "./CopyButton";
 
 const PromotionBanner = () => {
   return (
-    <section className="mt-10">
-      <h1 className="text-center text-2xl font-bold">Promotion Banner</h1>
+    <section className="mt-14 px-4">
+      <h1 className="text-center text-3xl font-bold tracking-wide">
+        Promotion Banner
+      </h1>
+
       <div
         data-aos="fade-up"
         data-aos-duration="1500"
         data-aos-delay="100"
-        className="grid grid-cols-4 max-md:grid-cols-1 max-[1025px]:grid-cols-2 px-5 mx-auto gap-4 mt-10 justify-center"
+        className="
+          grid 
+          grid-cols-4 
+          max-[1280px]:grid-cols-3
+          max-[1024px]:grid-cols-2 
+          max-md:grid-cols-1
+          gap-6 
+          mt-12 
+          max-w-7xl 
+          mx-auto
+        "
       >
-        <div className="bg-white flex flex-col hover:shadow-md rounded-md p-5 gap-2 hover:-mt-1 hover:mb-1 transition-transform ease-in-out duration-500 delay-300">
-          <Image
-            src="/assets/promobanner/bagan.jpg"
-            className="rounded-md"
-            alt="#"
-            height={500}
-            width={500}
-          />
-          <div className="text-gray-400 flex mb-2">
-            <p className="text-base">7days . Private Tour</p>
+        {/* CARD */}
+        {[
+          "/assets/promobanner/bagan.jpg",
+          "/assets/promobanner/hpa-an.jpg",
+          "/assets/promobanner/kalaw.jpg",
+          "/assets/promobanner/mandalay.jpg",
+        ].map((img, index) => (
+          <div
+            key={index}
+            className="
+              bg-white 
+              rounded-xl 
+              shadow-sm 
+              hover:shadow-lg 
+              transition-all 
+              duration-500 
+              hover:-translate-y-1 
+              p-5 
+              flex 
+              flex-col 
+              gap-3
+            "
+          >
+            <Image
+              src={img}
+              alt="promo"
+              height={500}
+              width={500}
+              className="rounded-lg object-cover"
+            />
+
+            <p className="text-gray-500 text-sm mt-1">7days · Private Tour</p>
+
+            <CopyTextButton text="BLACKFRIDAY2025" />
           </div>
-          <CopyTextButton text="BLACKFRIDAY2025" />
-        </div>
-        <div className="bg-white flex flex-col hover:shadow-md rounded-md p-5 gap-2 hover:-mt-1 hover:mb-1 transition-transform ease-in-out duration-500 delay-300">
-          <Image
-            src="/assets/promobanner/hpa-an.jpg"
-            className="rounded-md"
-            alt="#"
-            height={500}
-            width={500}
-          />
-          <div className="text-gray-400 flex mb-2">
-            <p className="text-base">7days . Private Tour</p>
-          </div>
-          <CopyTextButton text="BLACKFRIDAY2025" />
-        </div>
-        <div className="bg-white flex flex-col hover:shadow-md rounded-md p-5 gap-2 hover:-mt-1 hover:mb-1 transition-transform duration-500 delay-300">
-          <Image
-            src="/assets/promobanner/kalaw.jpg"
-            className="rounded-md"
-            alt="#"
-            height={500}
-            width={500}
-          />
-          <div className="text-gray-400 flex mb-2">
-            <p className="text-base">7days . Private Tour</p>
-          </div>
-          <CopyTextButton text="BLACKFRIDAY2025" />
-        </div>
-        <div className="bg-white flex flex-col hover:shadow-md rounded-md p-5 gap-2 hover:-mt-1 hover:mb-1 transition-transform duration-500 delay-300">
-          <Image
-            src="/assets/promobanner/mandalay.jpg"
-            className="rounded-md"
-            alt="#"
-            height={500}
-            width={500}
-          />
-          <div className="text-gray-400 flex mb-2">
-            <p className="text-base">7days . Private Tour</p>
-          </div>
-          <CopyTextButton text="BLACKFRIDAY2025" />
-        </div>
+        ))}
       </div>
     </section>
   );

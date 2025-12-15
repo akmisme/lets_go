@@ -164,7 +164,7 @@ const Footer = () => {
                 height={50}
                 width={50}
               />
-               <img
+              <img
                 src="https://www.myanmarpaymentunion.com/storage/images/logo/NwmqOfkCylSwGTP59aLZ3Rkk4zgdFO2S4CEf2pVh.png"
                 alt="#"
                 height={10}
@@ -249,9 +249,21 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center text-white -mt-25 pb-5">
-          <p>&copy; Copyright 2025. All right Reserverd.</p>
-          <p>Developed By <Link href="https://yolodigitalmm.com/" target="blank" className="text-[#D8AF53] hover:text-blue-600 transition-all ease-in-out delay-100 duration-300">Yolo Digital Marketing Agency</Link>.</p>
+        <div className="flex flex-col text-sm items-center text-white -mt-25 pb-5">
+          <p>
+            &copy; Copyright {new Date().getFullYear()}. All right Reserverd.
+          </p>
+          <p>
+            Developed By{" "}
+            <Link
+              href="https://yolodigitalmm.com/"
+              target="blank"
+              className="text-[#D8AF53] hover:text-blue-600 transition-all ease-in-out delay-100 duration-300"
+            >
+              Yolo Digital Marketing Agency
+            </Link>
+            .
+          </p>
         </div>
       </section>
     </footer>

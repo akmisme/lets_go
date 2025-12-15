@@ -48,16 +48,20 @@ export default function YangonExpDetail() {
         </div>
 
         {/* RIGHT SIDE */}
-        <div className="flex flex-col gap-6">
-          {/* CARD TYPE FILTER */}
-          <h1 className="text-center text-3xl font-bold">Payment Types</h1>
-          <div className="flex gap-4">
+        <div className="flex flex-col gap-8 mx-auto my-6 w-full max-w-md">
+          {/* TITLE */}
+          <h1 className="text-center text-3xl font-bold text-[#936521]">
+            Payment Types
+          </h1>
+
+          {/* CARD TYPE SWITCH */}
+          <div className="flex gap-4 justify-center">
             <button
               onClick={() => setCardType("mastercard")}
-              className={`px-4 py-2 rounded text-white ${
+              className={`px-5 py-2 rounded-3xl font-semibold transition-all duration-300 ${
                 cardType === "mastercard"
-                  ? "bg-[#936521] cursor-pointer"
-                  : "bg-gray-700 cursor-pointer"
+                  ? "bg-[#936521] text-white"
+                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
               }`}
             >
               Mastercard
@@ -65,10 +69,10 @@ export default function YangonExpDetail() {
 
             <button
               onClick={() => setCardType("visa")}
-              className={`px-4 py-2 rounded text-white ${
+              className={`px-5 py-2 rounded-3xl font-semibold transition-all duration-300 ${
                 cardType === "visa"
-                  ? "bg-[#936521] cursor-pointer"
-                  : "bg-gray-700 cursor-pointer"
+                  ? "bg-[#936521] text-white"
+                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
               }`}
             >
               Visa
@@ -77,11 +81,14 @@ export default function YangonExpDetail() {
 
           {/* ✅ MASTERCARD FORM */}
           {cardType === "mastercard" && (
-            <form className="bg-[#1b1b1b] text-white p-6 rounded-lg shadow-lg border border-gray-700 space-y-4">
-              <h2 className="text-xl font-semibold">Mastercard Payment</h2>
+            <form className="bg-gray-100 p-6 rounded-3xl shadow-md border border-gray-300 space-y-5">
+              <h2 className="text-xl font-semibold text-[#936521]">
+                Mastercard Payment
+              </h2>
 
-              <div>
-                <label className="text-sm text-gray-300">Card Number</label>
+              {/* CARD NUMBER */}
+              <div className="flex flex-col gap-1">
+                <label className="font-medium text-gray-700">Card Number</label>
                 <input
                   type="text"
                   maxLength={19}
@@ -95,13 +102,14 @@ export default function YangonExpDetail() {
                     )
                   }
                   placeholder="1234 5678 9012 3456"
-                  className="w-full mt-1 p-2 bg-[#2a2a2a] border border-gray-600 rounded outline-none focus:border-[#936521]"
+                  className="rounded-3xl p-3 bg-white border border-gray-300 outline-none focus:ring-2 focus:ring-[#936521]"
                 />
               </div>
 
+              {/* EXPIRY + CVV */}
               <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <label className="text-sm text-gray-300">
+                <div className="flex flex-col gap-1">
+                  <label className="font-medium text-gray-700">
                     Expiry (MM/YY)
                   </label>
                   <input
@@ -116,12 +124,12 @@ export default function YangonExpDetail() {
                       )
                     }
                     placeholder="08/27"
-                    className="w-full mt-1 p-2 bg-[#2a2a2a] border border-gray-600 rounded outline-none focus:border-[#936521]"
+                    className="rounded-3xl p-3 bg-white border border-gray-300 outline-none focus:ring-2 focus:ring-[#936521]"
                   />
                 </div>
 
-                <div>
-                  <label className="text-sm text-gray-300">CVV</label>
+                <div className="flex flex-col gap-1">
+                  <label className="font-medium text-gray-700">CVV</label>
                   <input
                     type="password"
                     maxLength={3}
@@ -130,33 +138,34 @@ export default function YangonExpDetail() {
                       setMcCvv(e.target.value.replace(/\D/g, ""))
                     }
                     placeholder="123"
-                    className="w-full mt-1 p-2 bg-[#2a2a2a] border border-gray-600 rounded outline-none focus:border-[#936521]"
+                    className="rounded-3xl p-3 bg-white border border-gray-300 outline-none focus:ring-2 focus:ring-[#936521]"
                   />
                 </div>
               </div>
 
-              <button className="w-full bg-[#936521] hover:bg-[#D8AF53] transition p-2 rounded font-semibold">
+              <button className="w-full bg-[#936521] text-white py-3 rounded-3xl font-semibold hover:bg-[#D8AF53] transition-all duration-300">
                 Pay Now
               </button>
             </form>
           )}
 
-          {/* ✅ REAL STEAM VISA FORM */}
+          {/* ✅ VISA FORM */}
           {cardType === "visa" && (
-            <form className="bg-[#171a21] text-white p-6 rounded-lg shadow-lg border border-[#2f323a] space-y-5">
-              {/* VISA LOGO */}
+            <form className="bg-gray-100 p-6 rounded-3xl shadow-md border border-gray-300 space-y-5">
               <div className="flex items-center gap-3">
                 <img
                   src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png"
                   className="w-14"
                   alt="Visa"
                 />
-                <h2 className="text-xl font-semibold">Visa Payment</h2>
+                <h2 className="text-xl font-semibold text-[#936521]">
+                  Visa Payment
+                </h2>
               </div>
 
               {/* CARD NUMBER */}
-              <div className="space-y-1">
-                <label className="text-sm text-gray-300">Card Number</label>
+              <div className="flex flex-col gap-1">
+                <label className="font-medium text-gray-700">Card Number</label>
                 <input
                   type="text"
                   maxLength={19}
@@ -170,14 +179,14 @@ export default function YangonExpDetail() {
                     )
                   }
                   placeholder="XXXX XXXX XXXX XXXX"
-                  className="w-full mt-1 p-2 bg-[#2a2e35] border border-[#3c4048] rounded outline-none focus:border-[#936521]"
+                  className="rounded-3xl p-3 bg-white border border-gray-300 outline-none focus:ring-2 focus:ring-[#936521]"
                 />
               </div>
 
               {/* EXPIRY + CVV */}
               <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-1">
-                  <label className="text-sm text-gray-300">Expiry</label>
+                <div className="flex flex-col gap-1">
+                  <label className="font-medium text-gray-700">Expiry</label>
                   <input
                     type="text"
                     maxLength={5}
@@ -190,12 +199,12 @@ export default function YangonExpDetail() {
                       )
                     }
                     placeholder="MM/YY"
-                    className="w-full mt-1 p-2 bg-[#2a2e35] border border-[#3c4048] rounded outline-none focus:border-[#936521]"
+                    className="rounded-3xl p-3 bg-white border border-gray-300 outline-none focus:ring-2 focus:ring-[#936521]"
                   />
                 </div>
 
-                <div className="space-y-1">
-                  <label className="text-sm text-gray-300">CVV</label>
+                <div className="flex flex-col gap-1">
+                  <label className="font-medium text-gray-700">CVV</label>
                   <input
                     type="password"
                     maxLength={3}
@@ -204,13 +213,12 @@ export default function YangonExpDetail() {
                       setVisaCvv(e.target.value.replace(/\D/g, ""))
                     }
                     placeholder="***"
-                    className="w-full mt-1 p-2 bg-[#2a2e35] border border-[#3c4048] rounded outline-none focus:border-[#936521]"
+                    className="rounded-3xl p-3 bg-white border border-gray-300 outline-none focus:ring-2 focus:ring-[#936521]"
                   />
                 </div>
               </div>
 
-              {/* PAY BUTTON */}
-              <button className="w-full bg-[#936521] hover:bg-[#D8AF53] transition p-2 rounded font-semibold text-black">
+              <button className="w-full bg-[#936521] text-white py-3 rounded-3xl font-semibold hover:bg-[#D8AF53] transition-all duration-300">
                 Continue
               </button>
             </form>
@@ -225,9 +233,7 @@ export default function YangonExpDetail() {
             <h1>{exp.subtitle}</h1>
             <ul className="list-disc flex flex-col gap-3">
               {exp.facts.map((f, i) => (
-              <li key={i}>
-                {f}
-              </li>
+                <li key={i}>{f}</li>
               ))}
             </ul>
           </div>

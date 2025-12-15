@@ -8,7 +8,7 @@ const SearchSection = () => {
   const [open, setOpen] = useState(false);
   const [Passenger, setPassenger] = useState(1);
   const [showDropdown, setShowDropdown] = useState(false);
-  const [query, setQuery] = useState("");   // ✅ user-typed search
+  const [query, setQuery] = useState("");
   const [date, setDate] = useState("");
 
   const dropdownRef = useRef(null);
@@ -47,7 +47,6 @@ const SearchSection = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // ✅ Filter destinations based on typed query
   const filteredDestinations = destinations.filter((dest) =>
     dest.toLowerCase().includes(query.toLowerCase())
   );
@@ -58,45 +57,59 @@ const SearchSection = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const formData = {
-      destination: query,   // ✅ use typed query
-      date,
-      Passenger,
-    };
-
-    // Navigate to another page with query params
     router.push(
       `/filterpage?destination=${encodeURIComponent(
-        formData.destination
-      )}&date=${formData.date}&passenger=${formData.Passenger}`
+        query
+      )}&date=${date}&passenger=${Passenger}`
     );
   };
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="relative z-10 bg-white shadow-lg p-6 rounded-lg max-w-7xl mx-auto max-xl:mx-10 -mt-16 grid max-[769px]:grid-cols-2 min-[769px]:grid-cols-5 gap-6"
+      className="
+        relative z-10 bg-white shadow-2xl p-8 rounded-3xl 
+        max-w-7xl mx-auto -mt-24
+        grid gap-6
+        xl:grid-cols-5
+        lg:grid-cols-5
+        md:grid-cols-4
+        sm:grid-cols-2
+        grid-cols-1
+        border border-gray-100
+      "
     >
       {/* Destination */}
       <div className="relative col-span-2" ref={dropdownRef}>
-        <input
-          type="text"
-          placeholder="City, airport, region, landmark or property name"
-          className="w-full border p-3 rounded-md"
-          value={query}
-          onChange={(e) => {
-            setQuery(e.target.value);
-            setShowDropdown(true);
-          }}
-        />
+        <label className="text-sm font-semibold text-gray-700 mb-1 block">
+          Destination
+        </label>
+
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Search city, region, landmark..."
+            className="
+              w-full border p-3 rounded-xl 
+              focus:ring-2 focus:ring-[#936521] outline-none
+              transition-all duration-200
+            "
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              setShowDropdown(true);
+            }}
+          />
+        </div>
+
         {showDropdown && query && (
-          <div className="absolute top-full left-0 w-full bg-white border border-gray-300 rounded-md shadow-lg mt-2 z-50 max-h-60 overflow-y-auto">
-            <ul className="divide-y divide-gray-200">
+          <div className="absolute top-full left-0 w-full bg-white border border-gray-200 rounded-xl shadow-xl mt-2 z-50 max-h-60 overflow-y-auto">
+            <ul className="divide-y divide-gray-100">
               {filteredDestinations.length > 0 ? (
                 filteredDestinations.map((dest, index) => (
                   <li
                     key={index}
-                    className="p-3 hover:bg-gray-100 cursor-pointer"
+                    className="p-3 hover:bg-gray-100 cursor-pointer transition"
                     onClick={() => {
                       setQuery(dest);
                       setShowDropdown(false);
@@ -114,49 +127,74 @@ const SearchSection = () => {
       </div>
 
       {/* Date */}
-      <input
-        type="date"
-        value={date}
-        min={today}
-        onChange={(e) => setDate(e.target.value)}
-        className="border p-3 rounded-md cursor-pointer"
-      />
+      <div>
+        <label className="text-sm font-semibold text-gray-700 mb-1 block">
+          Date
+        </label>
+        <input
+          type="date"
+          value={date}
+          min={today}
+          onChange={(e) => setDate(e.target.value)}
+          className="
+            w-full border p-3 rounded-xl cursor-pointer 
+            focus:ring-2 focus:ring-[#936521] outline-none
+            transition-all duration-200
+          "
+        />
+      </div>
 
-      {/* Guests */}
-      <div className="relative max-w-md mx-auto" ref={passengerRef}>
+      {/* Passengers */}
+      <div className="relative" ref={passengerRef}>
+        <label className="text-sm font-semibold text-gray-700 mb-1 block">
+          Passengers
+        </label>
         <input
           readOnly
           onClick={() => setOpen(!open)}
           value={`${Passenger} Passenger${Passenger !== 1 ? "s" : ""}`}
-          className="w-full border p-3 rounded-md cursor-pointer"
+          className="
+            w-full border p-3 rounded-xl cursor-pointer 
+            focus:ring-2 focus:ring-[#936521] outline-none
+            transition-all duration-200
+          "
         />
 
         {open && (
-          <div className="absolute top-full left-0 z-50 mt-2 w-full bg-white border rounded-md shadow-lg p-4">
-            <div className="flex justify-between items-center mb-3">
-              <div className="flex items-center mx-auto gap-2 flex-col">
-                <button
-                  type="button"
-                  onClick={() => adjust(setPassenger, -1)}
-                  className="w-10 h-10 bg-gray-200 rounded-full text-lg font-bold hover:bg-gray-300"
-                >
-                  −
-                </button>
-                <span>{Passenger}</span>
-                <button
-                  type="button"
-                  onClick={() => adjust(setPassenger, 1)}
-                  className="w-10 h-10 bg-gray-200 rounded-full text-lg font-bold hover:bg-gray-300"
-                >
-                  +
-                </button>
-              </div>
+          <div className="absolute top-full left-0 z-50 mt-2 w-full bg-white border rounded-xl shadow-xl p-4">
+            <div className="flex justify-center items-center gap-6">
+              <button
+                type="button"
+                onClick={() => adjust(setPassenger, -1)}
+                className="
+                  w-10 h-10 bg-gray-200 rounded-full 
+                  text-lg font-bold hover:bg-gray-300 transition
+                "
+              >
+                −
+              </button>
+
+              <span className="text-lg font-semibold">{Passenger}</span>
+
+              <button
+                type="button"
+                onClick={() => adjust(setPassenger, 1)}
+                className="
+                  w-10 h-10 bg-gray-200 rounded-full 
+                  text-lg font-bold hover:bg-gray-300 transition
+                "
+              >
+                +
+              </button>
             </div>
 
             <button
               type="button"
               onClick={() => setOpen(false)}
-              className="mt-4 w-full bg-[#936521] text-white py-2 rounded-md hover:bg-[#D8AF53] transition"
+              className="
+                mt-4 w-full bg-[#936521] text-white py-2 rounded-xl 
+                hover:bg-[#D8AF53] transition font-semibold
+              "
             >
               Done
             </button>
@@ -165,12 +203,17 @@ const SearchSection = () => {
       </div>
 
       {/* Submit */}
-      <button
-        type="submit"
-        className="bg-[#936521] text-white px-0 py-3 rounded-md hover:bg-[#D8AF53] cursor-pointer"
-      >
-        Search
-      </button>
+      <div className="flex items-end">
+        <button
+          type="submit"
+          className="
+            w-full bg-[#936521] text-white py-3 rounded-xl 
+            hover:bg-[#D8AF53] transition font-semibold shadow-md
+          "
+        >
+          Search
+        </button>
+      </div>
     </form>
   );
 };

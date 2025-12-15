@@ -13,6 +13,10 @@ const Log = () => {
   const [remember, setRemember] = useState(false);
   const [error, setError] = useState("");
 
+  // ✅ Prevent auto-validation
+  const [touched, setTouched] = useState(false);
+
+  // ✅ Load saved login
   useEffect(() => {
     const savedPhone = localStorage.getItem("rememberedPhone");
     const savedPassword = localStorage.getItem("rememberedPassword");
@@ -26,24 +30,36 @@ const Log = () => {
     }
   }, []);
 
-  useEffect(() => {
-    if (phone && !isValidPhoneNumber(phone)) {
+  // ✅ Validate only when needed
+  const validatePhone = () => {
+    if (!phone || !isValidPhoneNumber(phone)) {
       setError("Invalid phone number");
     } else {
       setError("");
     }
-  }, [phone]);
+  };
 
+  // ✅ When typing or changing country
+  const handlePhoneChange = (value) => {
+    setPhone(value);
+    if (touched) validatePhone(); // ✅ validate only after first blur
+  };
+
+  // ✅ When leaving the field
+  const handleBlur = () => {
+    setTouched(true);
+    validatePhone();
+  };
+
+  // ✅ Submit
   const handleSubmit = (e) => {
     e.preventDefault();
+    setTouched(true);
+    validatePhone();
 
-    if (!isValidPhoneNumber(phone)) {
-      setError("Please enter a valid phone number");
-      return;
-    }
+    if (!isValidPhoneNumber(phone)) return;
 
-    setError("");
-
+    // ✅ Save login if checked
     if (remember) {
       localStorage.setItem("rememberedPhone", phone);
       localStorage.setItem("rememberedPassword", password);
@@ -65,11 +81,13 @@ const Log = () => {
         <label className="font-bold text-base" htmlFor="phone">
           Phone
         </label>
+
         <PhoneInput
           id="phone"
           className="rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none"
           value={phone}
-          onChange={setPhone}
+          onChange={handlePhoneChange}
+          onBlur={handleBlur} // ✅ validate only when leaving field
           defaultCountry="MM"
           international
           countryCallingCodeEditable={false}
@@ -81,6 +99,7 @@ const Log = () => {
         <label className="font-bold text-base" htmlFor="password">
           Password
         </label>
+
         <input
           id="password"
           type={showPassword ? "text" : "password"}
@@ -90,6 +109,7 @@ const Log = () => {
           placeholder="Enter Your Password"
           required
         />
+
         <button
           type="button"
           onClick={() => setShowPassword(!showPassword)}
