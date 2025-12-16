@@ -193,14 +193,14 @@ export default function Header() {
           >
             <CircleUserRound className="w-6 h-6 text-gray-700 cursor-pointer hover:text-[#936521]" />
 
-            {userMenuOpen && (
-              <div className="absolute right-0 top-4 mt-2 w-40 bg-white shadow-lg rounded-md py-2 text-sm text-gray-700">
+            {userMenuOpen && accountData.map((acc, index)=> (
+              <div key={index} className="absolute right-0 top-4 mt-2 w-40 bg-white shadow-lg rounded-md py-2 text-sm text-gray-700">
                 {/* ✅ Login Button */}
                 <button
                   className="block px-4 py-2 hover:bg-gray-100 w-full"
                   onClick={() => setOpenLogin(true)}
                 >
-                  Login
+                  {acc.name1}
                 </button>
 
                 {/* ✅ Register Button */}
@@ -208,10 +208,10 @@ export default function Header() {
                   className="block px-4 py-2 hover:bg-gray-100 w-full"
                   onClick={() => setOpenRegister(true)}
                 >
-                  Register
+                  {acc.name2}
                 </button>
               </div>
-            )}
+            ))}
 
             {/* ✅ Login Popup */}
             <Popup isOpen={openLogin} onClose={() => setOpenLogin(false)}>

@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
+import en from "../../messages/en.json";
+import mm from "../../messages/mm.json";
 
 const SearchSection = () => {
   const router = useRouter();
@@ -13,18 +15,29 @@ const SearchSection = () => {
 
   const dropdownRef = useRef(null);
   const passengerRef = useRef(null);
+  const pathname = usePathname();
 
-  const destinations = [
-    "Bagan, Myanmar",
-    "Mandalay, Myanmar",
-    "Yangon, Myanmar",
-    "Taunggyi, Myanmar",
-    "Kalaw, Myanmar",
-    "Hpa-an, Myanmar",
-    "Inle Lake, Myanmar",
-    "Ngwesaung, Myanmar",
-    "Chaung Thar, Myanmar",
-  ];
+  // detect locale from URL
+  const pathSegments = pathname.split("/").filter(Boolean);
+  const currentLocale = ["en", "mm"].includes(pathSegments[0])
+    ? pathSegments[0]
+    : "en";
+
+  // load translations
+  const searchtitle = currentLocale === "mm" ? mm.searchtitle : en.searchtitle;
+  const destinations = currentLocale === "mm" ? mm.destinations : en.destinations;
+
+  // const destinations = [
+  //   "Bagan, Myanmar",
+  //   "Mandalay, Myanmar",
+  //   "Yangon, Myanmar",
+  //   "Taunggyi, Myanmar",
+  //   "Kalaw, Myanmar",
+  //   "Hpa-an, Myanmar",
+  //   "Inle Lake, Myanmar",
+  //   "Ngwesaung, Myanmar",
+  //   "Chaung Thar, Myanmar",
+  // ];
 
   useEffect(() => {
     const now = new Date();
@@ -81,10 +94,11 @@ const SearchSection = () => {
     >
       {/* Destination */}
       <div className="relative col-span-2" ref={dropdownRef}>
-        <label className="text-sm font-semibold text-gray-700 mb-1 block">
-          Destination
+        {searchtitle.map((title, index)=>(
+        <label key={index} className="text-sm font-semibold text-gray-700 mb-1 block">
+          {title.searchtitle1}
         </label>
-
+        ))}
         <div className="relative">
           <input
             type="text"
@@ -128,9 +142,11 @@ const SearchSection = () => {
 
       {/* Date */}
       <div>
-        <label className="text-sm font-semibold text-gray-700 mb-1 block">
-          Date
+        {searchtitle.map((title, index)=>(
+        <label key={index} className="text-sm font-semibold text-gray-700 mb-1 block">
+          {title.searchtitle2}
         </label>
+        ))}
         <input
           type="date"
           value={date}
@@ -146,9 +162,11 @@ const SearchSection = () => {
 
       {/* Passengers */}
       <div className="relative" ref={passengerRef}>
-        <label className="text-sm font-semibold text-gray-700 mb-1 block">
-          Passengers
+        {searchtitle.map((title, index)=>(
+        <label key={index} className="text-sm font-semibold text-gray-700 mb-1 block">
+          {title.searchtitle3}
         </label>
+        ))}
         <input
           readOnly
           onClick={() => setOpen(!open)}

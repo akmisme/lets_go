@@ -2,14 +2,28 @@
 import Image from "next/image";
 import React from "react";
 import CopyTextButton from "./CopyButton";
+import en from "../../messages/en.json";
+import mm from "../../messages/mm.json";
+import { usePathname } from "next/navigation";
 
 const PromotionBanner = () => {
+  const pathname = usePathname();
+
+  // detect locale from URL
+  const pathSegments = pathname.split("/").filter(Boolean);
+  const currentLocale = ["en", "mm"].includes(pathSegments[0])
+    ? pathSegments[0]
+    : "en";
+
+  // load translations
+  const promobanner = currentLocale === "mm" ? mm.home : en.home;
   return (
     <section className="mt-14 px-4">
-      <h1 className="text-center text-3xl font-bold tracking-wide">
-        Promotion Banner
+      {promobanner.map((promo, index)=>(
+      <h1 key={index} className="text-center text-3xl font-bold tracking-wide">
+        {promo.title1}
       </h1>
-
+      ))}
       <div
         data-aos="fade-up"
         data-aos-duration="1500"

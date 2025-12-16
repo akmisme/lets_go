@@ -1,12 +1,28 @@
-import React from "react";
+"use client";
+import React, {useState} from "react";
+import { usePathname } from "next/navigation";
+import en from "../../messages/en.json";
+import mm from "../../messages/mm.json";
 
 const WhyChooseUs = () => {
+  const pathname = usePathname();
+  
+    // detect locale from URL
+    const pathSegments = pathname.split("/").filter(Boolean);
+    const currentLocale = ["en", "mm"].includes(pathSegments[0])
+      ? pathSegments[0]
+      : "en";
+  
+    // load translations
+    const why = currentLocale === "mm" ? mm.home : en.home;
+
   return (
     <section className="mt-16 px-6">
-      <h1 className="text-3xl font-bold mb-10 text-center md:text-left md:mx-20">
-        Why Choose Us?
+      {why.map((why,index)=>(
+      <h1 key={index} className="text-3xl font-bold mb-10 text-center md:text-left md:mx-20">
+        {why.title4}
       </h1>
-
+      ))}
       <div
         data-aos="fade-up"
         data-aos-duration="1500"

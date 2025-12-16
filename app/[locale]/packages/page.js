@@ -1,8 +1,21 @@
+"use client";
 import React from "react";
 import SearchSection from "@/app/components/SearchSection";
 import TourCard from "@/app/components/TourCard";
+import { usePathname } from "next/navigation";
+import en from "../../../messages/en.json";
+import mm from "../../../messages/mm.json";
 
 export default function Package() {
+  const pathname = usePathname();
+  // detect locale from URL
+  const pathSegments = pathname.split("/").filter(Boolean);
+  const currentLocale = ["en", "mm"].includes(pathSegments[0])
+    ? pathSegments[0]
+    : "en";
+
+  // load translations
+  const tours = currentLocale === "mm" ? mm.packages : en.packages;
   return (
     <section className="min-h-screen px-4 pb-10 bg-gray-100 mt-30">
       {/* Banner Section */}
@@ -15,7 +28,11 @@ export default function Package() {
         </h1>
       </div>
       <SearchSection />
-      <h1 className="font-bold text-3xl text-center my-10">Our Tours</h1>
+      {tours.map((t, i) => (
+        <h1 key={i} className="font-bold text-3xl text-center my-10">
+          {t.title}
+        </h1>
+      ))}
       <TourCard />
     </section>
   );

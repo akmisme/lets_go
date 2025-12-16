@@ -6,20 +6,122 @@
       "title": "Experiences",
       "href": "/experiences",
       "dropdown": [
-        { "title": "Yangon", "href": "/yangonexp", "image": "/assets/promobanner/yangon.jpg" },
-        { "title": "Mandalay", "href": "/mandalayexp", "image": "/assets/promobanner/mandalay.jpg" },
-        { "title": "Bagan", "href": "/baganexp", "image": "/assets/promobanner/bagan.jpg" },
-        { "title": "Taunggyi", "href": "/taunggyiexp", "image": "/assets/promobanner/taunggyi.jpg" },
-        { "title": "Inle Lake", "href": "/inleexp", "image": "/assets/promobanner/inle.jpg" },
-        { "title": "Ngwesaung", "href": "/ngwesaungexp", "image": "/assets/promobanner/ngwesaung.jpg" },
-        { "title": "Chaungthar", "href": "/chaungthaexp", "image": "/assets/promobanner/chaungtha.jpg" },
-        { "title": "Hpa-An", "href": "/hpaanexp", "image": "/assets/promobanner/hpa-an.jpg" },
-        { "title": "Kalaw", "href": "/kalawexp", "image": "/assets/promobanner/kalaw.jpg" }
+        {
+          "title": "Yangon",
+          "href": "/yangonexp",
+          "image": "/assets/promobanner/yangon.jpg"
+        },
+        {
+          "title": "Mandalay",
+          "href": "/mandalayexp",
+          "image": "/assets/promobanner/mandalay.jpg"
+        },
+        {
+          "title": "Bagan",
+          "href": "/baganexp",
+          "image": "/assets/promobanner/bagan.jpg"
+        },
+        {
+          "title": "Taunggyi",
+          "href": "/taunggyiexp",
+          "image": "/assets/promobanner/taunggyi.jpg"
+        },
+        {
+          "title": "Inle Lake",
+          "href": "/inleexp",
+          "image": "/assets/promobanner/inle.jpg"
+        },
+        {
+          "title": "Ngwesaung",
+          "href": "/ngwesaungexp",
+          "image": "/assets/promobanner/ngwesaung.jpg"
+        },
+        {
+          "title": "Chaungthar",
+          "href": "/chaungthaexp",
+          "image": "/assets/promobanner/chaungtha.jpg"
+        },
+        {
+          "title": "Hpa-An",
+          "href": "/hpaanexp",
+          "image": "/assets/promobanner/hpa-an.jpg"
+        },
+        {
+          "title": "Kalaw",
+          "href": "/kalawexp",
+          "image": "/assets/promobanner/kalaw.jpg"
+        }
       ]
     },
     { "title": "About Us", "href": "/aboutus" },
     { "title": "Contact Us", "href": "/contactus" },
     { "title": "Vlog", "href": "/vlogger" }
   ],
-  "account": ["Login", "Register"]
+  "account": [{ "name1": "Login", "name2": "Register" }],
+  "destinations": [
+    "Bagan, Myanmar",
+    "Mandalay, Myanmar",
+    "Yangon, Myanmar",
+    "Taunggyi, Myanmar",
+    "Kalaw, Myanmar",
+    "Hpa-an, Myanmar",
+    "Inle Lake, Myanmar",
+    "Ngwesaung, Myanmar",
+    "Chaung Thar, Myanmar"
+  ],
+  "searchtitle": [
+    {
+      "searchtitle1": "Destinations",
+      "searchtitle2": "Date",
+      "searchtitle3": "Passengers"
+    }
+  ],
+  "home": [
+    {
+      "title1": "Promotion Banner",
+      "title2": "Popular Experiences",
+      "title3": "Tranding Now",
+      "title4": "Why Choose Us?" 
+    }
+  ],
+  "packages": [
+    {
+      "title": "Our Tours"
+    }
+  ],
+  "scribe": [
+    {
+      "title": "Subscribe For Newsletter",
+      "btn": "Sign Up",
+      "placeholder": "Enter your Email"
+    }
+  ],
+  "footer1": [
+    {
+      "title": "Contact Golden Yellow",
+      "link": [
+        { "subtitle": "Contact Us", "href": "/contactus" },
+        { "subtitle": "FAQ", "href": "/faq" }
+      ]
+    }
+  ],
+  "footer2": [
+    {
+      "title": "About Golden Yellow",
+      "link": [
+        { "subtitle": "About Us", "href": "/aboutus" },
+        { "subtitle": "Terms & Condition", "href": "#" },
+        { "subtitle": "Privacy Policy", "href": "#" }
+      ]
+    }
+  ],
+  "footer3": [
+    {
+      "title": "Other Services",
+      "link": [
+        { "subtitle": "Others", "href": "https://yolodigitalmm.com/services/" }
+      ]
+    }
+  ],
+  "footer4": [{ "title": "Payment Methods" }]
 }

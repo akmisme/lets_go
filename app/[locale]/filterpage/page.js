@@ -11,7 +11,7 @@ export default function FilterPage() {
   const passenger = params.get("passenger");
 
   const trips = [
-    { destination: "Bagan, Myanmar", date: "2025-12-15", passenger: "2" },
+    { destination: "Bagan, Myanmar", date: "2025-12-16", passenger: "2" },
     { destination: "Mandalay, Myanmar", date: "2025-12-10", passenger: "1" },
     { destination: "Yangon, Myanmar", date: "2025-12-09", passenger: "3" },
     { destination: "Inle Lake, Myanmar", date: "2025-12-11", passenger: "2" },
@@ -33,17 +33,7 @@ export default function FilterPage() {
   }, [destination, date, passenger]);
 
   return (
-    <main className="mt-20 py-10 bg-gray-100 min-h-screen">
-       {/* Banner Section */}
-            <div
-              className="relative top-5 bg-center bg-cover opacity-80 bg-no-repeat w-350 max-xl:w-auto max-xl:mx-5 h-100 mx-auto rounded-4xl flex"
-              style={{ backgroundImage: "url('/assets/bagan.jpg')" }}
-            >
-              <h1 className="font-bold m-auto text-white text-6xl max-md:text-4xl">
-                About Us
-              </h1>
-            </div>
-      
+    <main className="mt-50 py-10 bg-gray-100 min-h-screen">
             {/* Search Section */}
             <SearchSection />
       <h1 className="text-gray-500 font-bold text-2xl md:text-3xl text-center mb-10 px-4 mt-5">

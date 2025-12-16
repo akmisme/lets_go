@@ -1,11 +1,27 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import en from "../../messages/en.json";
+import mm from "../../messages/mm.json";
 
 const Popularexp = () => {
+  const pathname = usePathname();
+  
+    // detect locale from URL
+    const pathSegments = pathname.split("/").filter(Boolean);
+    const currentLocale = ["en", "mm"].includes(pathSegments[0])
+      ? pathSegments[0]
+      : "en";
+  
+    // load translations
+    const popular = currentLocale === "mm" ? mm.home : en.home;
   return (
     <section>
       <section className="mt-10">
-        <h1 className="text-center text-2xl font-bold">Popular Experiences</h1>
+        {popular.map((pop,index)=>(
+        <h1 key={index} className="text-center text-2xl font-bold">{pop.title2}</h1>
+        ))}
         <div className="grid grid-cols-4 max-md:grid-cols-1 max-[1025px]:grid-cols-2 px-5 mx-auto gap-4 mt-10 justify-center">
           <div className="relative overflow-hidden shadow-lg group cursor-pointer">
             <Image

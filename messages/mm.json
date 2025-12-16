@@ -6,20 +6,132 @@
       "title": "အတွေ့အကြုံများ",
       "href": "/experiences",
       "dropdown": [
-        { "title": "ရန်ကုန်", "href": "/yangonexp", "image": "/assets/promobanner/yangon.jpg" },
-        { "title": "မန္တလေး", "href": "/mandalayexp", "image": "/assets/promobanner/mandalay.jpg" },
-        { "title": "ပုဂံ", "href": "/baganexp", "image": "/assets/promobanner/bagan.jpg" },
-        { "title": "တောင်ကြီး", "href": "/taunggyiexp", "image": "/assets/promobanner/taunggyi.jpg" },
-        { "title": "အင်းလေးကန်", "href": "/inleexp", "image": "/assets/promobanner/inle.jpg" },
-        { "title": "ငွေဆောင်", "href": "/ngwesaungexp", "image": "/assets/promobanner/ngwesaung.jpg" },
-        { "title": "ချောင်းသာ", "href": "/chaungthaexp", "image": "/assets/promobanner/chaungtha.jpg" },
-        { "title": "ဘားအံ", "href": "/hpaanexp", "image": "/assets/promobanner/hpa-an.jpg" },
-        { "title": "ကလော", "href": "/kalawexp", "image": "/assets/promobanner/kalaw.jpg" }
+        {
+          "title": "ရန်ကုန်",
+          "href": "/yangonexp",
+          "image": "/assets/promobanner/yangon.jpg"
+        },
+        {
+          "title": "မန္တလေး",
+          "href": "/mandalayexp",
+          "image": "/assets/promobanner/mandalay.jpg"
+        },
+        {
+          "title": "ပုဂံ",
+          "href": "/baganexp",
+          "image": "/assets/promobanner/bagan.jpg"
+        },
+        {
+          "title": "တောင်ကြီး",
+          "href": "/taunggyiexp",
+          "image": "/assets/promobanner/taunggyi.jpg"
+        },
+        {
+          "title": "အင်းလေးကန်",
+          "href": "/inleexp",
+          "image": "/assets/promobanner/inle.jpg"
+        },
+        {
+          "title": "ငွေဆောင်",
+          "href": "/ngwesaungexp",
+          "image": "/assets/promobanner/ngwesaung.jpg"
+        },
+        {
+          "title": "ချောင်းသာ",
+          "href": "/chaungthaexp",
+          "image": "/assets/promobanner/chaungtha.jpg"
+        },
+        {
+          "title": "ဘားအံ",
+          "href": "/hpaanexp",
+          "image": "/assets/promobanner/hpa-an.jpg"
+        },
+        {
+          "title": "ကလော",
+          "href": "/kalawexp",
+          "image": "/assets/promobanner/kalaw.jpg"
+        }
       ]
     },
     { "title": "ကျွန်ုပ်တို့အကြောင်း", "href": "/aboutus" },
     { "title": "ဆက်သွယ်ရန်", "href": "/contactus" },
     { "title": "ဗလော့ဂ်", "href": "/vlogger" }
   ],
-  "account": ["လော့ဂ်အင်", "စာရင်းသွင်းရန်"]
+  "account": [{ "name1": "လော့ဂ်အင်", "name2": "စာရင်းသွင်းရန်" }],
+  "destinations": [
+    "ပုဂံ၊ မြန်မာ",
+    "မန္တလေး၊ မြန်မာ",
+    "ရန်ကုန်၊ မြန်မာ",
+    "တောင်ကြီး၊ မြန်မာ",
+    "ကလော၊ မြန်မာ",
+    "ဘားအံ၊ မြန်မာ",
+    "အင်းလေးကန်၊ မြန်မာ",
+    "ငွေဆောင်၊ မြန်မာ",
+    "ချောင်းသာ၊ မြန်မာ"
+  ],
+  "searchtitle": [
+    {
+      "searchtitle1": "သွားမည့်နေရာများ",
+      "searchtitle2": "ရက်စွဲ",
+      "searchtitle3": "ခရီးသည်များ"
+    }
+  ],
+  "home": [
+    {
+      "title1": "ပရိုမိုးရှင်း ဘန်နာ",
+      "title2": "လူကြိုက်များသော အတွေ့အကြုံများ",
+      "title3": "လတ်တလော လူကြိုက်များမှု",
+      "title4": "ဘာကြောင့် ကျွန်ုပ်တို့ကို ရွေးချယ်သင့်သလဲ?"
+    }
+  ],
+  "packages": [
+    {
+      "title": "ခရီးစဉ်များ"
+    }
+  ],
+  "scribe": [
+    {
+      "title": "သတင်းလွှာကို စာရင်းသွင်းရယူပါ",
+      "btn": "စာရင်းသွင်းမည်",
+      "placeholder": "Email ကို ထည့်သွင်းပါ"
+    }
+  ],
+  "footer1": [
+    {
+      "title": "ဂိုးဒင်ယဲလိုကို ဆက်သွယ်ရန်",
+      "link": [
+        { "subtitle": "ဆက်သွယ်ရန်", "href": "/contactus" },
+        { "subtitle": "မေးလေ့ရှိသော မေးခွန်းများ", "href": "/faq" }
+      ]
+    }
+  ],
+
+  "footer2": [
+    {
+      "title": "ဂိုးဒင်ယဲလိုအကြောင်း",
+      "link": [
+        { "subtitle": "ကျွန်ုပ်တို့အကြောင်း", "href": "/aboutus" },
+        { "subtitle": "စည်းကမ်းနှင့် သတ်မှတ်ချက်များ", "href": "#" },
+        { "subtitle": "ကိုယ်ရေးအချက်အလက် မူဝါဒ", "href": "#" }
+      ]
+    }
+  ],
+
+  "footer3": [
+    {
+      "title": "အခြားဝန်ဆောင်မှုများ",
+      "link": [
+        {
+          "subtitle": "အခြားဝန်ဆောင်မှုများ",
+          "href": "https://yolodigitalmm.com/services/"
+        }
+      ]
+    }
+  ],
+
+  "footer4": [
+    {
+      "title": "ငွေပေးချေမှု မျိုးစုံ"
+    }
+  ]
 }

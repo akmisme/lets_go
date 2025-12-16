@@ -1,16 +1,36 @@
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import en from "../../messages/en.json";
+import mm from "../../messages/mm.json";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+  const pathname = usePathname();
+
+  // detect locale from URL
+  const pathSegments = pathname.split("/").filter(Boolean);
+  const currentLocale = ["en", "mm"].includes(pathSegments[0])
+    ? pathSegments[0]
+    : "en";
+
+  // load translations
+  const footer1Data = currentLocale === "mm" ? mm.footer1 : en.footer1;
+  const footer2Data = currentLocale === "mm" ? mm.footer2 : en.footer2;
+  const footer3Data = currentLocale === "mm" ? mm.footer3 : en.footer3;
+  const footer4Data = currentLocale === "mm" ? mm.footer4 : en.footer4;
+  const SubscribeEmail = currentLocale === "mm" ? mm.scribe : en.scribe;
+
   return (
     <footer>
-      <div className="flex flex-col items-center justify-center py-10 gap-8">
-        <h1 className="text-3xl max-xl:text-2xl">Subscribe For Newsletter</h1>
+      {SubscribeEmail.map((scribe, index)=>(
+      <div key={index} className="flex flex-col items-center justify-center py-10 gap-8">
+        <h1 className="text-3xl max-xl:text-2xl">{scribe.title}</h1>
         <form className="flex gap-2">
           <input
             type="email"
-            placeholder="Your Email Address"
+            placeholder={scribe.placeholder}
             required
             className="border w-80 border-gray-200 rounded-4xl outline-none focus:border-[#D8AF53] focus:border-dashed px-2"
           />
@@ -18,33 +38,30 @@ const Footer = () => {
             className="bg-[#936521] p-2 rounded-4xl text-white cursor-pointer hover:bg-[#D8AF53]"
             value="submit"
           >
-            <span className="text-sm">SIGN UP</span>
+            <span className="text-sm">{scribe.btn}</span>
           </button>
         </form>
       </div>
+      ))}
       <section className="bg-[#936521] px-10 pt-5 mx-auto">
         <div className="grid grid-cols-4 max-md:grid-cols-1 max-[1025px]:grid-cols-2 mb-26 gap-5 mx-auto border-b-1 border-gray-400 pb-5">
-          <div className="flex flex-col gap-2 text-white">
+          {footer1Data.map((foot, index)=> (
+          <div key={index} className="flex flex-col gap-2 text-white">
             <h1 className="text-white font-bold text-md">
-              Contact Golden Yellow
+              {foot.title}
             </h1>
             <ul className="list-none flex flex-col gap-2 mb-5">
-              <li>
+              {foot.link.map((l, i)=> (
+              <li key={i}>
                 <Link
-                  href="/contactus"
+                  href={l.href}
                   className="hover:text-gray-400 ease-in-out delay-100 duration-300 text-[12px]"
+                  target="blank"
                 >
-                  Contact Us
+                  {l.subtitle}
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/faq"
-                  className="hover:text-gray-400 ease-in-out delay-100 duration-300 text-[12px]"
-                >
-                  FAQ
-                </Link>
-              </li>
+              ))}
             </ul>
             <div className="flex gap-5">
               <svg
@@ -92,53 +109,50 @@ const Footer = () => {
               </svg>
             </div>
           </div>
-          <div className="flex flex-col gap-2 text-white">
+          ))}
+          {footer2Data.map((foot, index)=> (
+          <div key={index} className="flex flex-col gap-2 text-white">
             <h1 className="text-white font-bold text-md">
-              About Golden Yellow
+              {foot.title}
             </h1>
-            <ul className="list-none flex flex-col gap-2">
-              <li>
+            <ul className="list-none flex flex-col gap-2 mb-5">
+              {foot.link.map((l, i)=> (
+              <li key={i}>
                 <Link
-                  href="/aboutus"
+                  href={l.href}
                   className="hover:text-gray-400 ease-in-out delay-100 duration-300 text-[12px]"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="hover:text-gray-400 ease-in-out delay-100 duration-300 text-[12px]"
-                >
-                  Terms & Condition
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className="hover:text-gray-400 ease-in-out delay-100 duration-300 text-[12px]"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="flex flex-col gap-2 text-white">
-            <h1 className="text-white font-bold text-md">Other Services</h1>
-            <ul className="list-none flex flex-col gap-2">
-              <li>
-                <Link
-                  href="https://yolodigitalmm.com/services/"
                   target="blank"
-                  className="hover:text-gray-400 ease-in-out delay-100 duration-300 text-[12px]"
                 >
-                  Others
+                  {l.subtitle}
                 </Link>
               </li>
+              ))}
             </ul>
           </div>
-          <div className="flex flex-col gap-2 text-white">
-            <h1 className="text-white font-bold text-md">Payment Methods</h1>
+          ))}
+          {footer3Data.map((foot, index)=> (
+          <div key={index} className="flex flex-col gap-2 text-white">
+            <h1 className="text-white font-bold text-md">
+              {foot.title}
+            </h1>
+            <ul className="list-none flex flex-col gap-2 mb-5">
+              {foot.link.map((l, i)=> (
+              <li key={i}>
+                <Link
+                  href={l.href}
+                  className="hover:text-gray-400 ease-in-out delay-100 duration-300 text-[12px]"
+                  target="blank"
+                >
+                  {l.subtitle}
+                </Link>
+              </li>
+              ))}
+            </ul>
+          </div>
+          ))}
+          {footer4Data.map((foot,index)=>(
+          <div key={index} className="flex flex-col gap-2 text-white">
+            <h1 className="text-white font-bold text-md">{foot.title}</h1>
             <div className="grid grid-cols-5 gap-5">
               <Image
                 src="/assets/payments/visa.svg"
@@ -248,6 +262,7 @@ const Footer = () => {
               />
             </div>
           </div>
+          ))}
         </div>
         <div className="flex flex-col text-sm items-center text-white -mt-25 pb-5">
           <p>
