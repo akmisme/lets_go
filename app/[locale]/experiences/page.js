@@ -12,15 +12,29 @@ import ChaungthaExp from "@/app/components/ChaungthaExp";
 export default function Exp() {
   return (
     <main className="mt-30 px-10 pt-5 pb-10 bg-gray-100">
-        <BaganExp/>
-        <MandalayExp/>
-        <YangonExp/>
-        <TaunggyiExp/>
-        <KalawExp/>
-        <HpaanExp/>
-        <InleExp/>
-        <NgwesaungExp/>
-        <ChaungthaExp/>
+      {/* Banner Section */}
+      <div
+        className="relative top-5 mb-10 bg-center bg-cover opacity-80 bg-no-repeat w-auto max-xl:w-auto max-xl:mx-5 h-100 mx-auto rounded-4xl flex"
+        style={{ backgroundImage: "url('/assets/myanmar.jpg')" }}
+      >
+        <div className="m-auto flex flex-col gap-5">
+          <h1 className="font-bold text-white text-center text-4xl max-md:text-3">
+            Experiences
+          </h1>
+          <p className="text-white text-center text-base">
+            Test Data for this website.
+          </p>
+        </div>
+      </div>
+      <BaganExp />
+      <MandalayExp />
+      <YangonExp />
+      <TaunggyiExp />
+      <KalawExp />
+      <HpaanExp />
+      <InleExp />
+      <NgwesaungExp />
+      <ChaungthaExp />
     </main>
   );
 }

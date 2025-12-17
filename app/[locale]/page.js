@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
-import { useTranslations } from "next-intl";
-import SearchSection from "../components/SearchSection";
+import HomeSearchSection from "../components/homesearch";
 import Hero from "../components/Hero";
 import PromotionBanner from "../components/Promotionbanner";
 import Popularexp from "../components/Popularexp";
@@ -13,7 +12,7 @@ export default function Home() {
   return (
     <section className="min-h-screen bg-gray-100 pb-10">
       <Hero/>
-      <SearchSection/>
+      <HomeSearchSection/>
       <PromotionBanner/>
       <Popularexp/>
       <TrandingNow/>

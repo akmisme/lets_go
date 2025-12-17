@@ -1,10 +1,24 @@
+"use client";
 import React from "react";
-import Link from "next/link";
+import { usePathname } from "next/navigation";
+import en from "../../messages/en.json";
+import mm from "../../messages/mm.json";
 
 export default function BaganExp() {
+  const pathname = usePathname();
+  // detect locale from URL
+  const pathSegments = pathname.split("/").filter(Boolean);
+  const currentLocale = ["en", "mm"].includes(pathSegments[0])
+    ? pathSegments[0]
+    : "en";
+
+  // load translations
+  const experiences = currentLocale === "mm" ? mm.experiences : en.experiences;
   return (
     <section>
-      <h1 className="text-3xl font-bold mb-5 text-center">Bagan Experiences</h1>
+      {experiences.map((exp,index)=>(
+      <h1 key={index} className="text-3xl font-bold mb-5 text-center">{exp.bagan}</h1>
+      ))}
       <div className="grid grid-cols-4 max-md:grid-cols-1 max-lg:grid-cols-2 gap-10 mx-auto">
         <div
           data-aos="fade-up"

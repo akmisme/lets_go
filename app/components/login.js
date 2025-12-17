@@ -5,6 +5,9 @@ import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import Link from "next/link";
 import { isValidPhoneNumber } from "libphonenumber-js";
+import en from "../../messages/en.json";
+import mm from "../../messages/mm.json";
+import { usePathname } from "next/navigation";
 
 const Log = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -12,6 +15,15 @@ const Log = () => {
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
   const [error, setError] = useState("");
+  const pathname = usePathname();
+  // detect locale from URL
+  const pathSegments = pathname.split("/").filter(Boolean);
+  const currentLocale = ["en", "mm"].includes(pathSegments[0])
+    ? pathSegments[0]
+    : "en";
+
+  // load translations
+  const login = currentLocale === "mm" ? mm.login : en.login;
 
   // ✅ Prevent auto-validation
   const [touched, setTouched] = useState(false);
@@ -76,10 +88,12 @@ const Log = () => {
       onSubmit={handleSubmit}
       className="flex flex-col gap-6 w-full max-w-md mx-auto rounded-xl p-8 mt-10"
     >
+
       {/* Phone */}
-      <div className="flex flex-col gap-2 w-full">
+      {login.map((log, index)=>(
+      <div key={index} className="flex flex-col gap-2 w-full">
         <label className="font-bold text-base" htmlFor="phone">
-          Phone
+          {log.title1}
         </label>
 
         <PhoneInput
@@ -90,14 +104,16 @@ const Log = () => {
           onBlur={handleBlur} // ✅ validate only when leaving field
           defaultCountry="MM"
           international
+          isValidPhoneNumber={true}
           countryCallingCodeEditable={false}
         />
       </div>
-
+      ))}
       {/* Password */}
-      <div className="flex flex-col gap-2 w-full relative">
+      {login.map((log, index)=>(
+      <div key={index} className="flex flex-col gap-2 w-full relative">
         <label className="font-bold text-base" htmlFor="password">
-          Password
+          {log.title2}
         </label>
 
         <input
@@ -106,7 +122,7 @@ const Log = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           className="rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none"
-          placeholder="Enter Your Password"
+          placeholder={log.placeholder}
           required
         />
 
@@ -118,8 +134,10 @@ const Log = () => {
           {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
         </button>
       </div>
+      ))}
 
       {/* Remember Me */}
+      {login.map((log, index)=>(
       <div className="flex items-center gap-3">
         <input
           type="checkbox"
@@ -127,30 +145,35 @@ const Log = () => {
           checked={remember}
           onChange={(e) => setRemember(e.target.checked)}
         />
-        <label htmlFor="remember">Remember Me</label>
+        <label htmlFor="remember">{log.svp}</label>
       </div>
+      ))}
 
       {/* Error */}
       {error && (
         <span className="text-red-500 text-sm text-center">{error}</span>
       )}
-
+      
       {/* Submit */}
+      {login.map((log, index)=>(
       <button
         className="bg-[#936521] text-white px-4 py-2 rounded-md hover:bg-[#D8AF53] transition-all duration-300"
         type="submit"
       >
-        Login
+        {log.btn}
       </button>
+      ))}
 
+      {login.map((log, index)=>(
       <div className="text-center pt-2">
         <Link
           href="#"
           className="text-[#936521] hover:text-[#D8AF53] cursor-pointer"
         >
-          Forget Password
+          {log.fgt}
         </Link>
       </div>
+      ))}
     </form>
   );
 };

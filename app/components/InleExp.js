@@ -1,12 +1,26 @@
+"use client";
 import React from "react";
-import Link from "next/link";
+import en from "../../messages/en.json";
+import mm from "../../messages/mm.json";
+import { usePathname } from "next/navigation";
 
 export default function InleExp() {
+  const pathname = usePathname();
+      // detect locale from URL
+      const pathSegments = pathname.split("/").filter(Boolean);
+      const currentLocale = ["en", "mm"].includes(pathSegments[0])
+        ? pathSegments[0]
+        : "en";
+    
+      // load translations
+      const experiences = currentLocale === "mm" ? mm.experiences : en.experiences;
   return (
     <section className="mt-10">
-      <h1 className="text-3xl font-bold mb-5 text-center">
-        Inle Experiences
+      {experiences.map((exp, index)=>(
+      <h1 key={index} className="text-3xl font-bold mb-5 text-center">
+        {exp.inle}
       </h1>
+      ))}
       <div className="grid grid-cols-4 max-md:grid-cols-1 max-lg:grid-cols-2 gap-10 mx-auto">
         <div
           data-aos="fade-up"

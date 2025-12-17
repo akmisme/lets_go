@@ -11,68 +11,6 @@ import { usePathname } from "next/navigation";
 import en from "../../messages/en.json";
 import mm from "../../messages/mm.json";
 
-// const header = [
-//   { title: "Home", href: "/" },
-//   {
-//     title: "Packages",
-//     href: "/packages",
-//   },
-//   {
-//     title: "Experiences",
-//     href: "/experiences",
-//     dropdown: [
-//       {
-//         title: "Bagan",
-//         href: "/baganexp",
-//         image: "/assets/promobanner/bagan.jpg",
-//       },
-//       {
-//         title: "Mandalay",
-//         href: "/mandalayexp",
-//         image: "/assets/promobanner/mandalay.jpg",
-//       },
-//       {
-//         title: "Yangon",
-//         href: "/yangonexp",
-//         image: "/assets/promobanner/yangon.jpg",
-//       },
-//       {
-//         title: "Taunggyi",
-//         href: "/taunggyiexp",
-//         image: "/assets/promobanner/taunggyi.jpg",
-//       },
-//       {
-//         title: "Kalaw",
-//         href: "/kalawexp",
-//         image: "/assets/promobanner/kalaw.jpg",
-//       },
-//       {
-//         title: "Hpa-An",
-//         href: "/hpa-anexp",
-//         image: "/assets/promobanner/hpa-an.jpg",
-//       },
-//       {
-//         title: "Inle Lake",
-//         href: "/inleexp",
-//         image: "/assets/promobanner/inle.jpg",
-//       },
-//       {
-//         title: "Ngwesaung",
-//         href: "/ngwesaungexp",
-//         image: "/assets/promobanner/ngwesaung.jpg",
-//       },
-//       {
-//         title: "Chaung Thar",
-//         href: "/chaungthaexp",
-//         image: "/assets/promobanner/chaungtha.jpg",
-//       },
-//     ],
-//   },
-//   { title: "About Us", href: "/aboutus" },
-//   { title: "Contact Us", href: "/contactus" },
-//   { title: "Vlog", href: "/vlogger" },
-// ];
-
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);

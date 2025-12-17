@@ -1,6 +1,19 @@
+"use client";
 import React from "react";
+import en from "../../messages/en.json";
+import mm from "../../messages/mm.json";
+import { usePathname } from "next/navigation";
 
 const OurValue = () => {
+  const pathname = usePathname();
+  // detect locale from URL
+  const pathSegments = pathname.split("/").filter(Boolean);
+  const currentLocale = ["en", "mm"].includes(pathSegments[0])
+    ? pathSegments[0]
+    : "en";
+
+  // load translations
+  const aboutus = currentLocale === "mm" ? mm.about : en.about;
   const values = [
     {
       title: "Customer Come First",
@@ -32,12 +45,16 @@ const OurValue = () => {
   return (
     <section className="mt-20">
       {/* Title */}
-      <h1 className="text-center text-4xl font-extrabold tracking-tight">
-        Our Values
+      {aboutus.map((about, index)=>(
+      <h1 key={index} className="text-center text-4xl font-extrabold tracking-tight">
+        {about.title3}
       </h1>
-      <p className="text-center text-gray-500 mt-2 text-lg">
-        What drives our mission and shapes our culture
+      ))}
+      {aboutus.map((about, index)=>(
+      <p key={index} className="text-center text-gray-500 mt-2 text-lg">
+        {about.subtitle1}
       </p>
+      ))}
 
       {/* Grid */}
       <div

@@ -3,10 +3,23 @@ import React, { useState } from "react";
 import SearchSection from "@/app/components/SearchSection";
 import OurValue from "@/app/components/ourvalues";
 import VisionMission from "@/app/components/Vision&Mission";
+import en from "../../../messages/en.json";
+import mm from "../../../messages/mm.json";
+import { usePathname } from "next/navigation";
 
 export default function AboutUs() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  const pathname = usePathname();
+  
+  // detect locale from URL
+  const pathSegments = pathname.split("/").filter(Boolean);
+  const currentLocale = ["en", "mm"].includes(pathSegments[0])
+    ? pathSegments[0]
+    : "en";
+
+  // load translations
+  const aboutus = currentLocale === "mm" ? mm.about : en.about;
 
   const items = [
     {
@@ -58,14 +71,17 @@ export default function AboutUs() {
 
       {/* Staff / About Us Content */}
       <div className="flex flex-col mx-30 text-justify gap-3 mt-10 max-lg:mx-5">
-        <h1 className="font-bold text-3xl">Our Origin</h1>
+        {aboutus.map((about, index) => (
+          <h1 key={index} className="font-bold text-3xl">
+            {about.title1}
+          </h1>
+        ))}
         <p className="indent-10 leading-relaxed text-base">
           Brothers Travis and Shawn Pittman left Queensland, Australia, to live
           and work in London, UK. Their experiences opened their eyes to the
           power of travel...
         </p>
       </div>
-
       <div className="grid grid-cols-2 max-xl:grid-cols-1 mx-30 text-justify gap-10 mt-10 max-lg:mx-5">
         <div data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
           <img
@@ -82,7 +98,9 @@ export default function AboutUs() {
           data-aos-delay="100"
           className="flex flex-col text-justify gap-5"
         >
-          <h1 className="font-bold text-2xl">What is Golden Yellow?</h1>
+          {aboutus.map((about,index)=>(
+          <h1 key={index} className="font-bold text-2xl">{about.title2}</h1>
+          ))}
           <p className="indent-10 leading-relaxed text-base">
             Golden Yellow is the Organized Adventure Platform, offering the
             world’s largest selection of multi-day organized adventures
@@ -100,10 +118,11 @@ export default function AboutUs() {
       <OurValue />
 
       {/* Executive Team */}
-      <h1 className="text-3xl font-bold mb-10 mx-20 max-md:mx-5 mt-10 text-center">
-        Executive Team
+      {aboutus.map((about, index)=>(
+      <h1 key={index} className="text-3xl font-bold mb-10 mx-20 max-md:mx-5 mt-10 text-center">
+        {about.title4}
       </h1>
-
+      ))}
       <div className="grid grid-cols-4 max-xl:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-10 mx-20 max-md:mx-5">
         {items.map((item, index) => (
           <div

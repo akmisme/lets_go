@@ -1,9 +1,20 @@
 "use client";
-
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
+import en from "../../messages/en.json";
+import mm from "../../messages/mm.json";
+import { usePathname } from "next/navigation";
 
 export default function TikTokPlayer() {
   const refs = useRef([]);
+  const pathname = usePathname();
+  // detect locale from URL
+  const pathSegments = pathname.split("/").filter(Boolean);
+  const currentLocale = ["en", "mm"].includes(pathSegments[0])
+    ? pathSegments[0]
+    : "en";
+
+  // load translations
+  const vlogger = currentLocale === "mm" ? mm.vlogger : en.vlogger;
 
   useEffect(() => {
     const handleMessage = (event) => {
@@ -47,8 +58,9 @@ export default function TikTokPlayer() {
 
   return (
     <main className="pb-5">
-      <h1 className="text-3xl font-bold mb-4 text-center">Vlog</h1>
-
+      {vlogger.map((v, index)=>(
+      <h1 key={index} className="text-3xl font-bold mb-4 text-center">{v.vlog}</h1>
+      ))}
       <div className="grid grid-cols-4 max-xl:grid-cols-2 max-md:grid-cols-1 gap-5 mx-20 max-md:mx-5">
         {videoIds.map((id, idx) => (
           <div

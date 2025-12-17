@@ -1,6 +1,6 @@
 {
   "header": [
-    { "title": "HOME", "href": "/" },
+    { "title": "Home", "href": "/" },
     { "title": "Packages", "href": "/packages" },
     {
       "title": "Experiences",
@@ -43,7 +43,7 @@
         },
         {
           "title": "Hpa-An",
-          "href": "/hpaanexp",
+          "href": "/hpa-anexp",
           "image": "/assets/promobanner/hpa-an.jpg"
         },
         {
@@ -81,12 +81,80 @@
       "title1": "Promotion Banner",
       "title2": "Popular Experiences",
       "title3": "Tranding Now",
-      "title4": "Why Choose Us?" 
+      "title4": "Why Choose Us?"
     }
   ],
   "packages": [
     {
       "title": "Our Tours"
+    }
+  ],
+  "experiences": [
+    {
+      "bagan": "Bagan Experiences",
+      "mandalay": "Mandalay Experiences",
+      "yangon": "Yangon Experiences",
+      "taunggyi": "Taunggyi Experiences",
+      "kalaw": "Kalaw Experiences",
+      "hpaan": "Hpa-An Experiences",
+      "inle": "Inle Experiences",
+      "ngwesaung": "Ngwesaung Experiences",
+      "chaungthar": "Chaungthar Experiences"
+    }
+  ],
+  "about": [
+    {
+      "title1": "Our Origin",
+      "title2": "What is Golden Yellow",
+      "title3": "Our Values",
+      "subtitle1": "What drives our mission and shapes our culture",
+      "title4": "Executive Team",
+      "title5": "Our Vision & Mission",
+      "subtitle2": "The purpose that guides everything we do"
+    }
+  ],
+  "contact": [
+    {
+      "title1": "Contact Us",
+      "title2": "Frequently Asked Questions",
+      "subtitle1": "Name",
+      "subtitle2": "Email",
+      "subtitle3": "Phone",
+      "subtitle4": "Subject",
+      "subtitle5": "Message",
+      "placeholder1": "Enter Your Name",
+      "placeholder2": "Enter Your Email",
+      "placeholder3": "Enter Your Subject",
+      "placeholder4": "Enter Your Message",
+      "btn1": "Send",
+      "btn2": "Clear"
+    }
+  ],
+  "vlogger": [{ "vlog": "Vlog" }],
+  "login": [
+    {
+      "title1": "Phone",
+      "title2": "Password",
+      "placeholder": "Enter Your Password",
+      "btn": "Login",
+      "svp": "Remember Me",
+      "fgt": "Forget Password"
+    }
+  ],
+  "register": [
+    {
+      "title1": "First Name",
+      "title2": "Last Name",
+      "title3": "Email(Optional)",
+      "title4": "Phone",
+      "title5": "Password",
+      "title6": "Confirm Password",
+      "placeholder1": "Enter Your First Name",
+      "placeholder2": "Enter Your Last Name",
+      "placeholder3": "Enter Your Email",
+      "placeholder4": "Enter Your Password",
+      "placeholder5": "Confirm Your Password",
+      "btn": "Register"
     }
   ],
   "scribe": [

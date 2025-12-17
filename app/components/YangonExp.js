@@ -1,12 +1,40 @@
+"use client";
 import React from "react";
-import Link from "next/link";
+import en from "../../messages/en.json";
+import mm from "../../messages/mm.json";
+import { usePathname } from "next/navigation";
 
 export default function YangonExp() {
+  const pathname = usePathname();
+  // detect locale from URL
+  const pathSegments = pathname.split("/").filter(Boolean);
+  const currentLocale = ["en", "mm"].includes(pathSegments[0])
+    ? pathSegments[0]
+    : "en";
+
+  // load translations
+  const experiences = currentLocale === "mm" ? mm.experiences : en.experiences;
   return (
     <section className="mt-10">
-      <h1 className="text-3xl font-bold mb-5 text-center">
-        Yangon Experiences
-      </h1>
+      {/* Banner Section */}
+      <div
+        className="relative top-5 mb-10 bg-center bg-cover opacity-80 bg-no-repeat w-auto max-xl:w-auto max-xl:mx-5 h-100 mx-auto rounded-4xl flex"
+        style={{ backgroundImage: "url('/assets/yangon.jpg')" }}
+      >
+        <div className="m-auto flex flex-col gap-5">
+          <h1 className="font-bold text-white text-center text-4xl max-md:text-3">
+            Yangon Experiences
+          </h1>
+          <p className="text-white text-center text-base">
+            Test Data for this website.
+          </p>
+        </div>
+      </div>
+      {experiences.map((exp, index) => (
+        <h1 key={index} className="text-3xl font-bold mb-5 text-center">
+          {exp.yangon}
+        </h1>
+      ))}
       <div className="grid grid-cols-4 max-md:grid-cols-1 max-lg:grid-cols-2 gap-10 mx-auto">
         <div
           data-aos="fade-up"
@@ -27,7 +55,9 @@ export default function YangonExp() {
             You’ll float above thousands of ancient pagodas, stupas, and the
             Irrawaddy River.
           </p>
-          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">Price - 80$</p>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
           <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
             Book Now
           </button>
@@ -51,7 +81,9 @@ export default function YangonExp() {
             You’ll float above thousands of ancient pagodas, stupas, and the
             Irrawaddy River.
           </p>
-          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">Price - 80$</p>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
           <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
             Book Now
           </button>
@@ -75,7 +107,9 @@ export default function YangonExp() {
             You’ll float above thousands of ancient pagodas, stupas, and the
             Irrawaddy River.
           </p>
-          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">Price - 80$</p>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
           <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
             Book Now
           </button>
@@ -99,7 +133,9 @@ export default function YangonExp() {
             You’ll float above thousands of ancient pagodas, stupas, and the
             Irrawaddy River.
           </p>
-          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">Price - 80$</p>
+          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
+            Price - 80$
+          </p>
           <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
             Book Now
           </button>

@@ -1,10 +1,38 @@
+"use client";
 import React from "react";
-import Link from "next/link";
+import en from "../../messages/en.json";
+import mm from "../../messages/mm.json";
+import { usePathname } from "next/navigation";
 
 export default function ChaungthaExp() {
+  const pathname = usePathname();
+    // detect locale from URL
+    const pathSegments = pathname.split("/").filter(Boolean);
+    const currentLocale = ["en", "mm"].includes(pathSegments[0])
+      ? pathSegments[0]
+      : "en";
+  
+    // load translations
+    const experiences = currentLocale === "mm" ? mm.experiences : en.experiences;
   return (
     <section className="mt-10">
-      <h1 className="text-3xl font-bold mb-5 text-center">Chaungtha Experiences</h1>
+      {/* Banner Section */}
+      <div
+        className="relative top-5 mb-10 bg-center bg-cover opacity-80 bg-no-repeat w-auto max-xl:w-auto h-100 mx-auto rounded-4xl flex"
+        style={{ backgroundImage: "url('/assets/chaungthar.jpg')" }}
+      >
+        <div className="m-auto flex flex-col gap-5">
+          <h1 className="font-bold text-white text-center text-4xl max-md:text-3">
+            Chaungthar Experiences
+          </h1>
+          <p className="text-white text-center text-base">
+            Test Data for this website.
+          </p>
+        </div>
+      </div>
+      {experiences.map((exp, index)=>(
+      <h1 key={index} className="text-3xl font-bold mb-5 text-center">{exp.chaungthar}</h1>
+      ))}
       <div className="grid grid-cols-4 max-md:grid-cols-1 max-lg:grid-cols-2 gap-10 mx-auto">
         <div
           data-aos="fade-up"

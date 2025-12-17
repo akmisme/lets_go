@@ -1,6 +1,20 @@
+"use client";
 import React from "react";
+import en from "../../messages/en.json";
+import mm from "../../messages/mm.json";
+import { usePathname } from "next/navigation";
 
 const VisionMission = () => {
+  const pathname = usePathname();
+    // detect locale from URL
+    const pathSegments = pathname.split("/").filter(Boolean);
+    const currentLocale = ["en", "mm"].includes(pathSegments[0])
+      ? pathSegments[0]
+      : "en";
+  
+    // load translations
+    const aboutus = currentLocale === "mm" ? mm.about : en.about;
+
   const items = [
     {
       title: "Our Vision",
@@ -19,14 +33,16 @@ const VisionMission = () => {
   return (
     <section className="my-20 px-6">
       {/* Section Title */}
-      <div className="text-center mb-14">
+      {aboutus.map((about, index)=>(
+      <div key={index} className="text-center mb-14">
         <h1 className="text-4xl font-extrabold tracking-tight">
-          Our Vision & Mission
+          {about.title5}
         </h1>
         <p className="text-gray-500 mt-2 text-lg">
-          The purpose that guides everything we do
+          {about.subtitle2}
         </p>
       </div>
+      ))}
 
       {/* Cards */}
       <div

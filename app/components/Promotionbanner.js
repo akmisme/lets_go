@@ -18,7 +18,7 @@ const PromotionBanner = () => {
   // load translations
   const promobanner = currentLocale === "mm" ? mm.home : en.home;
   return (
-    <section className="mt-14 px-4">
+    <section className="mt-35 px-4">
       {promobanner.map((promo, index)=>(
       <h1 key={index} className="text-center text-3xl font-bold tracking-wide">
         {promo.title1}

@@ -11,7 +11,7 @@ export default function FilterPage() {
   const passenger = params.get("passenger");
 
   const trips = [
-    { destination: "Bagan, Myanmar", date: "2025-12-16", passenger: "2" },
+    { destination: "Bagan, Myanmar", date: "2025-12-17", passenger: "2" },
     { destination: "Mandalay, Myanmar", date: "2025-12-10", passenger: "1" },
     { destination: "Yangon, Myanmar", date: "2025-12-09", passenger: "3" },
     { destination: "Inle Lake, Myanmar", date: "2025-12-11", passenger: "2" },
@@ -33,9 +33,11 @@ export default function FilterPage() {
   }, [destination, date, passenger]);
 
   return (
-    <main className="mt-50 py-10 bg-gray-100 min-h-screen">
-            {/* Search Section */}
-            <SearchSection />
+    <main className="mt-30 py-10 bg-gray-100 min-h-screen">
+      {/* Search Section */}
+      <div className="pt-20 mx-5">
+        <SearchSection />
+      </div>
       <h1 className="text-gray-500 font-bold text-2xl md:text-3xl text-center mb-10 px-4 mt-5">
         Searched... {destination}, {date}, {passenger}
       </h1>
