@@ -16,20 +16,6 @@ export default function MandalayExp() {
   const experiences = currentLocale === "mm" ? mm.experiences : en.experiences;
   return (
     <section className="mt-10">
-      {/* Banner Section */}
-      <div
-        className="relative top-5 mb-10 bg-center bg-cover opacity-80 bg-no-repeat w-auto max-xl:w-auto h-100 mx-auto rounded-4xl flex"
-        style={{ backgroundImage: "url('/assets/mandalay.jpg')" }}
-      >
-        <div className="m-auto flex flex-col gap-5">
-          <h1 className="font-bold text-white text-center text-4xl max-md:text-3">
-            Mandalay Experiences
-          </h1>
-          <p className="text-white text-center text-base">
-            Test Data for this website.
-          </p>
-        </div>
-      </div>
       {experiences.map((exp, index) => (
         <h1 key={index} className="text-3xl font-bold mb-5 text-center">
           {exp.mandalay}

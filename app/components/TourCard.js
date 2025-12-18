@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import CopyTextButton from "./CopyButton";
 
 export default function TourCard() {
   // ✅ All data extracted here
@@ -42,6 +43,11 @@ export default function TourCard() {
           className="object-cover"
         />
 
+        {/* ✅ Promotion Badge */}
+        <div className="absolute top-4 right-4 bg-red-600 text-white text-sm font-semibold px-4 py-1.5 rounded-lg shadow-lg">
+          {tour.price.discountText}
+        </div>
+
         {/* ✅ Floating Title */}
         <div className="absolute bottom-4 left-4 bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-xl">
           <h2 className="text-xl font-bold">{tour.title}</h2>
@@ -56,14 +62,21 @@ export default function TourCard() {
           <div className="grid grid-cols-2 gap-y-2 text-gray-700 text-sm">
             <p>📍 Destination</p>
             <p className="font-medium">{tour.details.destination}</p>
+
             <p>🗣️ Languages</p>
             <p>{tour.details.languages}</p>
+
             <p>📅 Date</p>
             <p>{tour.details.date}</p>
+
             <p>🎂 Age Range</p>
             <p>{tour.details.ageRange}</p>
+
             <p>👥 Passengers</p>
             <p>{tour.details.passengers}</p>
+
+            <p>📋 Promotion Code</p>
+            <p>BLACKFRIDAY2025</p>
           </div>
 
           {/* ✅ PRICE */}

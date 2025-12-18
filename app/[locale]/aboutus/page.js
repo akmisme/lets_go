@@ -11,7 +11,7 @@ export default function AboutUs() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const pathname = usePathname();
-  
+
   // detect locale from URL
   const pathSegments = pathname.split("/").filter(Boolean);
   const currentLocale = ["en", "mm"].includes(pathSegments[0])
@@ -68,7 +68,6 @@ export default function AboutUs() {
 
       {/* Search Section */}
       <SearchSection />
-
       {/* Staff / About Us Content */}
       <div className="flex flex-col mx-30 text-justify gap-3 mt-10 max-lg:mx-5">
         {aboutus.map((about, index) => (
@@ -98,8 +97,10 @@ export default function AboutUs() {
           data-aos-delay="100"
           className="flex flex-col text-justify gap-5"
         >
-          {aboutus.map((about,index)=>(
-          <h1 key={index} className="font-bold text-2xl">{about.title2}</h1>
+          {aboutus.map((about, index) => (
+            <h1 key={index} className="font-bold text-2xl">
+              {about.title2}
+            </h1>
           ))}
           <p className="indent-10 leading-relaxed text-base">
             Golden Yellow is the Organized Adventure Platform, offering the
@@ -118,10 +119,13 @@ export default function AboutUs() {
       <OurValue />
 
       {/* Executive Team */}
-      {aboutus.map((about, index)=>(
-      <h1 key={index} className="text-3xl font-bold mb-10 mx-20 max-md:mx-5 mt-10 text-center">
-        {about.title4}
-      </h1>
+      {aboutus.map((about, index) => (
+        <h1
+          key={index}
+          className="text-3xl font-bold mb-10 mx-20 max-md:mx-5 mt-10 text-center"
+        >
+          {about.title4}
+        </h1>
       ))}
       <div className="grid grid-cols-4 max-xl:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-10 mx-20 max-md:mx-5">
         {items.map((item, index) => (

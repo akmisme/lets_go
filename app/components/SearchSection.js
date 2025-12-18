@@ -185,7 +185,7 @@ const SearchSection = () => {
                 type="button"
                 onClick={() => adjust(setPassenger, -1)}
                 className="
-                  w-10 h-10 bg-gray-200 rounded-full 
+                  w-10 h-10 bg-gray-200 rounded-full cursor-pointer
                   text-lg font-bold hover:bg-gray-300 transition
                 "
               >
@@ -198,7 +198,7 @@ const SearchSection = () => {
                 type="button"
                 onClick={() => adjust(setPassenger, 1)}
                 className="
-                  w-10 h-10 bg-gray-200 rounded-full 
+                  w-10 h-10 bg-gray-200 rounded-full cursor-pointer
                   text-lg font-bold hover:bg-gray-300 transition
                 "
               >
@@ -211,7 +211,7 @@ const SearchSection = () => {
               onClick={() => setOpen(false)}
               className="
                 mt-4 w-full bg-[#936521] text-white py-2 rounded-xl 
-                hover:bg-[#D8AF53] transition font-semibold
+                hover:bg-[#D8AF53] transition font-semibold cursor-pointer
               "
             >
               Done
@@ -226,7 +226,7 @@ const SearchSection = () => {
           type="submit"
           className="
             w-full bg-[#936521] text-white py-3 rounded-xl 
-            hover:bg-[#D8AF53] transition font-semibold shadow-md
+            hover:bg-[#D8AF53] transition font-semibold shadow-md cursor-pointer
           "
         >
           Search

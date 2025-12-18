@@ -26,7 +26,7 @@ export default function CopyTextButton({ text = "" }) {
         className="flex gap-2 text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 rounded cursor-pointer"
       >
         <Copy />
-        <p>Promo Code - BLACKFRIDAY2025</p>
+        <p className="text-sm">Promo Code - BLACKFRIDAY2025</p>
       </div>
       {/* Success message */}
       {copied && (
@@ -36,7 +36,7 @@ export default function CopyTextButton({ text = "" }) {
       )}
       <div className="flex gap-2 text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 rounded cursor-pointer">
         <CircleDollarSign />
-        <p>Package Fees - 500$</p>
+        <p className="text-sm">Package Fees - 500$</p>
       </div>
       <div className="flex gap-2 justify-center text-[#936521] hover:text-[#D8AF53] transition ease-in-out duration-500 rounded cursor-pointer">
         <button className="text-white bg-[#936521] p-2 hover:bg-[#D8AF53] transition ease-in-out duration-500 rounded-md cursor-pointer">Book Now</button>

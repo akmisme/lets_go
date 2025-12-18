@@ -28,7 +28,7 @@ const AndIOS = () => {
         </div>
 
         {/* ✅ Right: App Buttons */}
-        <div className="flex gap-5 max-md:flex-col max-md:items-center">
+        <div className="flex gap-5 max-lg:flex-col max-md:items-center">
           <img
             src="https://images.assets-landingi.com/uc/e214f160-c333-4c77-9c82-53dba58928e1/badgegoogleplay.png"
             alt="Google Play"

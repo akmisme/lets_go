@@ -11,7 +11,7 @@ export default function FilterPage() {
   const passenger = params.get("passenger");
 
   const trips = [
-    { destination: "Bagan, Myanmar", date: "2025-12-17", passenger: "2" },
+    { destination: "Bagan, Myanmar", date: "2025-12-18", passenger: "2" },
     { destination: "Mandalay, Myanmar", date: "2025-12-10", passenger: "1" },
     { destination: "Yangon, Myanmar", date: "2025-12-09", passenger: "3" },
     { destination: "Inle Lake, Myanmar", date: "2025-12-11", passenger: "2" },

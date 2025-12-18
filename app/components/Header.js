@@ -135,7 +135,7 @@ export default function Header() {
               <div key={index} className="absolute right-0 top-4 mt-2 w-40 bg-white shadow-lg rounded-md py-2 text-sm text-gray-700">
                 {/* ✅ Login Button */}
                 <button
-                  className="block px-4 py-2 hover:bg-gray-100 w-full"
+                  className="block px-4 py-2 hover:bg-gray-100 cursor-pointer w-full"
                   onClick={() => setOpenLogin(true)}
                 >
                   {acc.name1}
@@ -143,7 +143,7 @@ export default function Header() {
 
                 {/* ✅ Register Button */}
                 <button
-                  className="block px-4 py-2 hover:bg-gray-100 w-full"
+                  className="block px-4 py-2 hover:bg-gray-100 cursor-pointer w-full"
                   onClick={() => setOpenRegister(true)}
                 >
                   {acc.name2}

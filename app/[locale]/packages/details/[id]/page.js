@@ -61,32 +61,19 @@ export default function PackageDetails() {
     activeCategory === "All"
       ? categories
       : categories.filter((c) => c.title === activeCategory);
-  const [cardType, setCardType] = useState("mastercard");
-
-  // Mastercard state
-  const [mcNumber, setMcNumber] = useState("");
-  const [mcExpiry, setMcExpiry] = useState("");
-  const [mcCvv, setMcCvv] = useState("");
-
-  // Visa state
-  const [visaNumber, setVisaNumber] = useState("");
-  const [visaExpiry, setVisaExpiry] = useState("");
-  const [visaCvv, setVisaCvv] = useState("");
 
   return (
     <section className="mt-30 py-5 bg-gray-100">
-      <h1 className="text-center text-3xl font-bold mb-5">Package Details</h1>
-
       {/* Swiper Section */}
-      <div className="grid gap-5 mx-auto w-350 h-full grid-cols-2 max-xl:grid-cols-1 max-xl:w-auto max-xl:mx-5 bg-white shadow-md">
-        <div>
+      <div className="grid gap-5 mx-20 h-auto grid-cols-2 max-xl:grid-cols-1 max-xl:w-auto max-xl:mx-5 bg-white shadow-md rounded-md">
+        <div className="flex h-auto w-auto m-6">
           <Swiper
             pagination={{ type: "progressbar" }}
             navigation={true}
             loop={true}
             modules={[Pagination, Navigation, Autoplay]}
             autoplay={{ delay: 2000, disableOnInteraction: false }}
-            className="mySwiper"
+            className="mySwiper max-h-auto w-100"
           >
             <SwiperSlide>
               <img src="/assets/promobanner/bagan.jpg" />
@@ -117,181 +104,32 @@ export default function PackageDetails() {
             </SwiperSlide>
           </Swiper>
         </div>
-        <div className="flex flex-col gap-8 mx-auto my-6 w-full max-w-md">
-          {/* TITLE */}
-          <h1 className="text-center text-3xl font-bold text-[#936521]">
-            Payment Types
-          </h1>
-
-          {/* CARD TYPE SWITCH */}
-          <div className="flex gap-4 justify-center">
-            <button
-              onClick={() => setCardType("mastercard")}
-              className={`px-5 py-2 rounded-3xl font-semibold transition-all duration-300 ${
-                cardType === "mastercard"
-                  ? "bg-[#936521] text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-              }`}
-            >
-              Mastercard
+        <div className="flex flex-col gap-5 mx-20 max-xl:mx-5 my-6 w-full">
+          <h1 className="text-3xl font-bold text-[#936521]">Bagan Package</h1>
+          <p>
+            Duration - <span className="text-yellow-500">12-16-2025</span> to{" "}
+            <span className="text-yellow-500">12-20-2025</span>
+          </p>
+          <div className="grid grid-cols-2 max-md:grid-cols-1 text-sm gap-3 w-fit">
+            <p>📍 Destination - Bagan Myanmar</p>
+            <p>🗣️ Languages - German +3 languages</p>
+            <p>📅 Date - 12-16-2025</p>
+            <p>🎂 Age Range - All Age Welcome</p>
+            <p>👥 Passengers - 20</p>
+            <p>📋 Promotion Code - FRIDAY2025</p>
+          </div>
+          <div className="bg-gray-100 rounded-3xl shadow-md border border-gray-300 flex flex-col p-5 max-w-140">
+            <h1 className="text-base font-bold">My Test Box</h1>
+            <p className="text-sm leading-relaxed indent-10">My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box</p>
+          </div>
+          <div className="flex gap-4 pt-4 w-fit">
+            <button className="bg-yellow-500 text-white px-5 py-2.5 rounded-xl hover:bg-yellow-600 transition font-semibold shadow cursor-pointer">
+              Booking
             </button>
-
-            <button
-              onClick={() => setCardType("visa")}
-              className={`px-5 py-2 rounded-3xl font-semibold transition-all duration-300 ${
-                cardType === "visa"
-                  ? "bg-[#936521] text-white"
-                  : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-              }`}
-            >
-              Visa
+            <button className="border border-yellow-500 text-yellow-600 px-5 py-2.5 rounded-xl hover:bg-yellow-50 transition font-semibold shadow cursor-pointer">
+              Download Brochure
             </button>
           </div>
-
-          {/* ✅ MASTERCARD FORM */}
-          {cardType === "mastercard" && (
-            <form className="bg-gray-100 p-6 rounded-3xl shadow-md border border-gray-300 space-y-5">
-              <h2 className="text-xl font-semibold text-[#936521]">
-                Mastercard Payment
-              </h2>
-
-              {/* CARD NUMBER */}
-              <div className="flex flex-col gap-1">
-                <label className="font-medium text-gray-700">Card Number</label>
-                <input
-                  type="text"
-                  maxLength={19}
-                  value={mcNumber}
-                  onChange={(e) =>
-                    setMcNumber(
-                      e.target.value
-                        .replace(/\D/g, "")
-                        .replace(/(.{4})/g, "$1 ")
-                        .trim()
-                    )
-                  }
-                  placeholder="1234 5678 9012 3456"
-                  className="rounded-3xl p-3 bg-white border border-gray-300 outline-none focus:ring-2 focus:ring-[#936521]"
-                />
-              </div>
-
-              {/* EXPIRY + CVV */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="flex flex-col gap-1">
-                  <label className="font-medium text-gray-700">
-                    Expiry (MM/YY)
-                  </label>
-                  <input
-                    type="text"
-                    maxLength={5}
-                    value={mcExpiry}
-                    onChange={(e) =>
-                      setMcExpiry(
-                        e.target.value
-                          .replace(/\D/g, "")
-                          .replace(/(\d{2})(\d{1,2})/, "$1/$2")
-                      )
-                    }
-                    placeholder="08/27"
-                    className="rounded-3xl p-3 bg-white border border-gray-300 outline-none focus:ring-2 focus:ring-[#936521]"
-                  />
-                </div>
-
-                <div className="flex flex-col gap-1">
-                  <label className="font-medium text-gray-700">CVV</label>
-                  <input
-                    type="password"
-                    maxLength={3}
-                    value={mcCvv}
-                    onChange={(e) =>
-                      setMcCvv(e.target.value.replace(/\D/g, ""))
-                    }
-                    placeholder="123"
-                    className="rounded-3xl p-3 bg-white border border-gray-300 outline-none focus:ring-2 focus:ring-[#936521]"
-                  />
-                </div>
-              </div>
-
-              <button className="w-full bg-[#936521] text-white py-3 rounded-3xl font-semibold hover:bg-[#D8AF53] transition-all duration-300">
-                Pay Now
-              </button>
-            </form>
-          )}
-
-          {/* ✅ VISA FORM */}
-          {cardType === "visa" && (
-            <form className="bg-gray-100 p-6 rounded-3xl shadow-md border border-gray-300 space-y-5">
-              <div className="flex items-center gap-3">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png"
-                  className="w-14"
-                  alt="Visa"
-                />
-                <h2 className="text-xl font-semibold text-[#936521]">
-                  Visa Payment
-                </h2>
-              </div>
-
-              {/* CARD NUMBER */}
-              <div className="flex flex-col gap-1">
-                <label className="font-medium text-gray-700">Card Number</label>
-                <input
-                  type="text"
-                  maxLength={19}
-                  value={visaNumber}
-                  onChange={(e) =>
-                    setVisaNumber(
-                      e.target.value
-                        .replace(/\D/g, "")
-                        .replace(/(.{4})/g, "$1 ")
-                        .trim()
-                    )
-                  }
-                  placeholder="XXXX XXXX XXXX XXXX"
-                  className="rounded-3xl p-3 bg-white border border-gray-300 outline-none focus:ring-2 focus:ring-[#936521]"
-                />
-              </div>
-
-              {/* EXPIRY + CVV */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="flex flex-col gap-1">
-                  <label className="font-medium text-gray-700">Expiry</label>
-                  <input
-                    type="text"
-                    maxLength={5}
-                    value={visaExpiry}
-                    onChange={(e) =>
-                      setVisaExpiry(
-                        e.target.value
-                          .replace(/\D/g, "")
-                          .replace(/(\d{2})(\d{1,2})/, "$1/$2")
-                      )
-                    }
-                    placeholder="MM/YY"
-                    className="rounded-3xl p-3 bg-white border border-gray-300 outline-none focus:ring-2 focus:ring-[#936521]"
-                  />
-                </div>
-
-                <div className="flex flex-col gap-1">
-                  <label className="font-medium text-gray-700">CVV</label>
-                  <input
-                    type="password"
-                    maxLength={3}
-                    value={visaCvv}
-                    onChange={(e) =>
-                      setVisaCvv(e.target.value.replace(/\D/g, ""))
-                    }
-                    placeholder="***"
-                    className="rounded-3xl p-3 bg-white border border-gray-300 outline-none focus:ring-2 focus:ring-[#936521]"
-                  />
-                </div>
-              </div>
-
-              <button className="w-full bg-[#936521] text-white py-3 rounded-3xl font-semibold hover:bg-[#D8AF53] transition-all duration-300">
-                Continue
-              </button>
-            </form>
-          )}
         </div>
       </div>
 

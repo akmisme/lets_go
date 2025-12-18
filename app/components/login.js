@@ -23,7 +23,7 @@ const Log = () => {
     : "en";
 
   // load translations
-  const login = currentLocale === "mm" ? mm.login : en.login;
+  const Citizen = currentLocale === "mm" ? mm.Citizen : en.Citizen;
 
   // ✅ Prevent auto-validation
   const [touched, setTouched] = useState(false);
@@ -138,14 +138,15 @@ const Log = () => {
 
       {/* Remember Me */}
       {login.map((log, index)=>(
-      <div className="flex items-center gap-3">
+      <div key={index} className="flex items-center gap-3">
         <input
           type="checkbox"
           id="remember"
           checked={remember}
           onChange={(e) => setRemember(e.target.checked)}
+          className="cursor-pointer"
         />
-        <label htmlFor="remember">{log.svp}</label>
+        <label className="cursor-pointer" htmlFor="remember">{log.svp}</label>
       </div>
       ))}
 
@@ -157,7 +158,8 @@ const Log = () => {
       {/* Submit */}
       {login.map((log, index)=>(
       <button
-        className="bg-[#936521] text-white px-4 py-2 rounded-md hover:bg-[#D8AF53] transition-all duration-300"
+        key={index}
+        className="bg-[#936521] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-[#D8AF53] transition-all duration-300"
         type="submit"
       >
         {log.btn}

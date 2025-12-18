@@ -16,8 +16,10 @@ export default function BaganExp() {
   const experiences = currentLocale === "mm" ? mm.experiences : en.experiences;
   return (
     <section>
-      {experiences.map((exp,index)=>(
-      <h1 key={index} className="text-3xl font-bold mb-5 text-center">{exp.bagan}</h1>
+      {experiences.map((exp, index) => (
+        <h1 key={index} className="text-3xl font-bold mb-5 text-center">
+          {exp.bagan}
+        </h1>
       ))}
       <div className="grid grid-cols-4 max-md:grid-cols-1 max-lg:grid-cols-2 gap-10 mx-auto">
         <div

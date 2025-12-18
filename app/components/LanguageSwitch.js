@@ -47,7 +47,7 @@ export default function LanguageSwitcher() {
       {/* --- Main Button --- */}
       <button
         onClick={() => setIsLangOpen(!isLangOpen)}
-        className="flex items-center gap-2 px-4 py-2 rounded-md  transition"
+        className="flex items-center cursor-pointer gap-2 px-4 py-2 rounded-md  transition"
       >
         <Image
           src={locales[currentLocale].flag}

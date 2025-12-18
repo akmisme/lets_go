@@ -17,13 +17,18 @@ const PromotionBanner = () => {
 
   // load translations
   const promobanner = currentLocale === "mm" ? mm.home : en.home;
+
   return (
     <section className="mt-35 px-4">
-      {promobanner.map((promo, index)=>(
-      <h1 key={index} className="text-center text-3xl font-bold tracking-wide">
-        {promo.title1}
-      </h1>
+      {promobanner.map((promo, index) => (
+        <h1
+          key={index}
+          className="text-center text-3xl font-bold tracking-wide"
+        >
+          {promo.title1}
+        </h1>
       ))}
+
       <div
         data-aos="fade-up"
         data-aos-duration="1500"
@@ -50,6 +55,7 @@ const PromotionBanner = () => {
           <div
             key={index}
             className="
+              relative
               bg-white 
               rounded-xl 
               shadow-sm 
@@ -63,6 +69,11 @@ const PromotionBanner = () => {
               gap-3
             "
           >
+            {/* ✅ Promotion Badge */}
+            <div className="absolute left-0 top-0 bg-red-600 text-white text-sm font-semibold px-3 py-1 rounded-br-lg shadow-md">
+              20% OFF
+            </div>
+
             <Image
               src={img}
               alt="promo"
@@ -71,7 +82,9 @@ const PromotionBanner = () => {
               className="rounded-lg object-cover"
             />
 
-            <p className="text-gray-500 text-sm mt-1">7days · Private Tour</p>
+            <p className="text-gray-500 text-base mt-1">
+              7days · Private Tour
+            </p>
 
             <CopyTextButton text="BLACKFRIDAY2025" />
           </div>
