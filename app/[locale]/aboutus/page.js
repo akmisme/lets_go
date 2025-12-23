@@ -1,16 +1,84 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SearchSection from "@/app/components/SearchSection";
 import OurValue from "@/app/components/ourvalues";
 import VisionMission from "@/app/components/Vision&Mission";
 import en from "../../../messages/en.json";
 import mm from "../../../messages/mm.json";
 import { usePathname } from "next/navigation";
+import axios from "axios";
+import { ENDPOINT, Image_URL } from "@/app/endpoint/endpoint";
+import { useLocale } from "next-intl";
 
 export default function AboutUs() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   const pathname = usePathname();
+  const [about, setAboutUs] = useState([]);
+  const [exteam, setExTeam] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const locale = useLocale();
+
+  const getAboutUs = async () => {
+    try {
+      const res = await axios.get(ENDPOINT.AboutUs_List);
+      setAboutUs(res.data.data || []);
+    } catch (error) {
+      console.error("About Us fetch error:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  useEffect(() => {
+    getAboutUs();
+  }, []);
+
+  const getExTeam = async () => {
+    try {
+      const res = await axios.get(ENDPOINT.ExTeam_List);
+      setExTeam(res.data.data || []);
+    } catch (error) {
+      console.error("Executive fetch error:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  useEffect(() => {
+    getExTeam();
+  }, []);
+
+  const getTitle = (about) => {
+    switch (locale) {
+      case "mm":
+        return about.title_mm;
+      default:
+        return about.title_en;
+    }
+  };
+  const getDescription = (about) => {
+    switch (locale) {
+      case "mm":
+        return about.description_mm;
+      default:
+        return about.description_en;
+    }
+  };
+  const getSubTitle = (about) => {
+    switch (locale) {
+      case "mm":
+        return about.sub_title_mm;
+      default:
+        return about.sub_title_en;
+    }
+  };
+  const getSubDescription = (about) => {
+    switch (locale) {
+      case "mm":
+        return about.sub_description_mm;
+      default:
+        return about.sub_description_en;
+    }
+  };
 
   // detect locale from URL
   const pathSegments = pathname.split("/").filter(Boolean);
@@ -20,39 +88,6 @@ export default function AboutUs() {
 
   // load translations
   const aboutus = currentLocale === "mm" ? mm.about : en.about;
-
-  const items = [
-    {
-      title: "Travis Pittman, Co-Founder & CE",
-      description:
-        "Originally from Australia, Travis has lived in Europe for the past 15 years and has called Vienna, Austria home for over a decade. In 2010, together with his brother Shawn, he founded TourRadar to help connect people to life-enriching travel experiences. TourRadar’s vision is for its platform to be the epicenter of the $200bn global adventure travel ecosystem, by connecting travelers, operators, and distribution partners like travel advisors, OTAs, GDSs, airlines, influencers, and content providers. Travis' passion for adventure began when he was growing up in the Northern Territory in Australia, so when he's not leading his team, he enjoys spending time mountain biking, wakeboarding, running, and in general outdoors. Under his leadership, TourRadar has grown into a diverse team of 45+ nationalities and is the leading Organized Adventure Platform with 50,000+ organized adventures in more than 160 countries. TourRadar has raised $60m+ from world-class investors such as Cherry Ventures, Endeit Capital, Hoxton Ventures, Speedinvest, and TCV.",
-      image: "/assets/executiveteam/CEO.jpg",
-    },
-    {
-      title: "Travis Pittman, Co-Founder & CEO",
-      description:
-        "Originally from Australia, Travis has lived in Europe for the past 15 years and has called Vienna, Austria home for over a decade. In 2010, together with his brother Shawn, he founded TourRadar to help connect people to life-enriching travel experiences. TourRadar’s vision is for its platform to be the epicenter of the $200bn global adventure travel ecosystem, by connecting travelers, operators, and distribution partners like travel advisors, OTAs, GDSs, airlines, influencers, and content providers. Travis' passion for adventure began when he was growing up in the Northern Territory in Australia, so when he's not leading his team, he enjoys spending time mountain biking, wakeboarding, running, and in general outdoors. Under his leadership, TourRadar has grown into a diverse team of 45+ nationalities and is the leading Organized Adventure Platform with 50,000+ organized adventures in more than 160 countries. TourRadar has raised $60m+ from world-class investors such as Cherry Ventures, Endeit Capital, Hoxton Ventures, Speedinvest, and TCV.",
-      image: "/assets/executiveteam/CEO.jpg",
-    },
-    {
-      title: "Travis Pittman, Co-Founder & CEO",
-      description:
-        "Originally from Australia, Travis has lived in Europe for the past 15 years and has called Vienna, Austria home for over a decade. In 2010, together with his brother Shawn, he founded TourRadar to help connect people to life-enriching travel experiences. TourRadar’s vision is for its platform to be the epicenter of the $200bn global adventure travel ecosystem, by connecting travelers, operators, and distribution partners like travel advisors, OTAs, GDSs, airlines, influencers, and content providers. Travis' passion for adventure began when he was growing up in the Northern Territory in Australia, so when he's not leading his team, he enjoys spending time mountain biking, wakeboarding, running, and in general outdoors. Under his leadership, TourRadar has grown into a diverse team of 45+ nationalities and is the leading Organized Adventure Platform with 50,000+ organized adventures in more than 160 countries. TourRadar has raised $60m+ from world-class investors such as Cherry Ventures, Endeit Capital, Hoxton Ventures, Speedinvest, and TCV.",
-      image: "/assets/executiveteam/CEO.jpg",
-    },
-    {
-      title: "Travis Pittman, Co-Founder & CEO",
-      description:
-        "Originally from Australia, Travis has lived in Europe for the past 15 years and has called Vienna, Austria home for over a decade. In 2010, together with his brother Shawn, he founded TourRadar to help connect people to life-enriching travel experiences. TourRadar’s vision is for its platform to be the epicenter of the $200bn global adventure travel ecosystem, by connecting travelers, operators, and distribution partners like travel advisors, OTAs, GDSs, airlines, influencers, and content providers. Travis' passion for adventure began when he was growing up in the Northern Territory in Australia, so when he's not leading his team, he enjoys spending time mountain biking, wakeboarding, running, and in general outdoors. Under his leadership, TourRadar has grown into a diverse team of 45+ nationalities and is the leading Organized Adventure Platform with 50,000+ organized adventures in more than 160 countries. TourRadar has raised $60m+ from world-class investors such as Cherry Ventures, Endeit Capital, Hoxton Ventures, Speedinvest, and TCV.",
-      image: "/assets/executiveteam/CEO.jpg",
-    },
-    {
-      title: "Travis Pittman, Co-Founder & CEO",
-      description:
-        "Originally from Australia, Travis has lived in Europe for the past 15 years and has called Vienna, Austria home for over a decade. In 2010, together with his brother Shawn, he founded TourRadar to help connect people to life-enriching travel experiences. TourRadar’s vision is for its platform to be the epicenter of the $200bn global adventure travel ecosystem, by connecting travelers, operators, and distribution partners like travel advisors, OTAs, GDSs, airlines, influencers, and content providers. Travis' passion for adventure began when he was growing up in the Northern Territory in Australia, so when he's not leading his team, he enjoys spending time mountain biking, wakeboarding, running, and in general outdoors. Under his leadership, TourRadar has grown into a diverse team of 45+ nationalities and is the leading Organized Adventure Platform with 50,000+ organized adventures in more than 160 countries. TourRadar has raised $60m+ from world-class investors such as Cherry Ventures, Endeit Capital, Hoxton Ventures, Speedinvest, and TCV.",
-      image: "/assets/executiveteam/CEO.jpg",
-    },
-  ];
 
   return (
     <section className="bg-gray-100 pb-10 mt-30">
@@ -69,52 +104,44 @@ export default function AboutUs() {
       {/* Search Section */}
       <SearchSection />
       {/* Staff / About Us Content */}
-      <div className="flex flex-col mx-30 text-justify gap-3 mt-10 max-lg:mx-5">
-        {aboutus.map((about, index) => (
-          <h1 key={index} className="font-bold text-3xl">
-            {about.title1}
-          </h1>
-        ))}
-        <p className="indent-10 leading-relaxed text-base">
-          Brothers Travis and Shawn Pittman left Queensland, Australia, to live
-          and work in London, UK. Their experiences opened their eyes to the
-          power of travel...
-        </p>
-      </div>
-      <div className="grid grid-cols-2 max-xl:grid-cols-1 mx-30 text-justify gap-10 mt-10 max-lg:mx-5">
-        <div data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
-          <img
-            src="/assets/chaungthar.jpg"
-            alt="Chaung Thar"
-            width={600}
-            height={400}
-            className="rounded-4xl hover:opacity-80 transition-transform duration-300 cursor-pointer"
-          />
-        </div>
+      {about.map((about, index) => (
         <div
-          data-aos="fade-up"
-          data-aos-duration="1500"
-          data-aos-delay="100"
-          className="flex flex-col text-justify gap-5"
+          key={index}
+          className="flex flex-col mx-30 text-justify gap-3 mt-10 max-lg:mx-5"
         >
-          {aboutus.map((about, index) => (
-            <h1 key={index} className="font-bold text-2xl">
-              {about.title2}
-            </h1>
-          ))}
+          <h1 className="font-bold text-3xl">{getTitle(about)}</h1>
           <p className="indent-10 leading-relaxed text-base">
-            Golden Yellow is the Organized Adventure Platform, offering the
-            world’s largest selection of multi-day organized adventures
-            worldwide...
-          </p>
-          <p className="indent-10 leading-relaxed text-base">
-            With offices in North America, Europe, and Australia, Golden
-            Yellow’s global travel experts are available online 24/7 to support
-            the entire booking and travel experience...
+            {getDescription(about)}
           </p>
         </div>
-      </div>
-
+      ))}
+      {about.map((a, i) => (
+        <div
+          key={i}
+          className="grid grid-cols-2 max-xl:grid-cols-1 mx-30 text-justify gap-10 mt-10 max-lg:mx-5"
+        >
+          <div data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+            <img
+              src={`${Image_URL}${a.image}`}
+              alt="Chaung Thar"
+              width={600}
+              height={400}
+              className="rounded-4xl hover:opacity-80 transition-transform duration-300 cursor-pointer"
+            />
+          </div>
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            data-aos-delay="100"
+            className="flex flex-col text-justify gap-5"
+          >
+            <h1 className="font-bold text-2xl">{getSubTitle(a)}</h1>
+            <p className="indent-10 leading-relaxed text-base">
+              {getSubDescription(a)}
+            </p>
+          </div>
+        </div>
+      ))}
       {/* Values Section */}
       <OurValue />
 
@@ -128,7 +155,7 @@ export default function AboutUs() {
         </h1>
       ))}
       <div className="grid grid-cols-4 max-xl:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-10 mx-20 max-md:mx-5">
-        {items.map((item, index) => (
+        {exteam.map((ex, index) => (
           <div
             data-aos="fade-up"
             data-aos-duration="1500"
@@ -137,20 +164,20 @@ export default function AboutUs() {
             className="bg-white rounded-2xl shadow-lg p-5 flex flex-col gap-4 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
           >
             <img
-              src={item.image}
+              src={`${Image_URL}${ex.image}`}
               className="rounded-xl w-full h-56 object-cover"
             />
 
-            <h1 className="font-bold text-xl text-gray-800">{item.title}</h1>
+            <h1 className="font-bold text-xl text-gray-800">{getTitle(ex)}</h1>
 
             <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
-              {item.description}
+              {getDescription(ex)}
             </p>
 
             <button
               className="text-[#936521] font-semibold hover:text-[#D8AF53] transition cursor-pointer w-fit"
               onClick={() => {
-                setSelectedItem(item);
+                setSelectedItem(ex);
                 setIsOpen(true);
               }}
             >
@@ -167,10 +194,12 @@ export default function AboutUs() {
             {/* Header */}
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-bold text-gray-800">
-                {selectedItem.title}
+                {locale === "mm"
+                  ? selectedItem.title_mm
+                  : selectedItem.title_en}
               </h2>
               <button
-                className="text-gray-500 hover:text-gray-700 text-xl"
+                className="text-gray-500 hover:text-gray-700 text-xl cursor-pointer"
                 onClick={() => setIsOpen(false)}
               >
                 ✕
@@ -179,13 +208,16 @@ export default function AboutUs() {
 
             {/* Image */}
             <img
-              src={selectedItem.image}
+              src={`${Image_URL}${selectedItem.image}`}
               className="rounded-xl w-full h-64 object-cover"
+              alt=""
             />
 
             {/* Description */}
             <p className="mt-4 text-gray-700 leading-relaxed text-justify">
-              {selectedItem.description}
+              {locale === "mm"
+                ? selectedItem.description_mm
+                : selectedItem.description_en}
             </p>
           </div>
         </div>

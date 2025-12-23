@@ -1,11 +1,47 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import en from "../../messages/en.json";
 import mm from "../../messages/mm.json";
 import { usePathname } from "next/navigation";
+import axios from "axios";
+import { useLocale } from "next-intl";
+import { ENDPOINT, Image_URL } from "../endpoint/endpoint";
 
 const OurValue = () => {
   const pathname = usePathname();
+  const locale = useLocale();
+  const [loading, setLoading] = useState(true);
+  const [values, setValues] = useState([]);
+
+  const getValues = async () => {
+    try {
+      const res = await axios.get(ENDPOINT.OurValue_List);
+      setValues(res.data.data || []);
+    } catch (error) {
+      console.error("Our Value fetch error:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  useEffect(() => {
+    getValues();
+  }, []);
+  const getTitle = (about) => {
+    switch (locale) {
+      case "mm":
+        return about.title_mm;
+      default:
+        return about.title_en;
+    }
+  };
+  const getDescription = (about) => {
+    switch (locale) {
+      case "mm":
+        return about.description_mm;
+      default:
+        return about.description_en;
+    }
+  };
   // detect locale from URL
   const pathSegments = pathname.split("/").filter(Boolean);
   const currentLocale = ["en", "mm"].includes(pathSegments[0])
@@ -14,46 +50,22 @@ const OurValue = () => {
 
   // load translations
   const aboutus = currentLocale === "mm" ? mm.about : en.about;
-  const values = [
-    {
-      title: "Customer Come First",
-      desc: "We believe travel can change lives for the better. That’s why we strive to help customers fulfill their lifelong dreams to discover the joy and beauty of the world.",
-      icon: "/assets/ourvalues/first.svg",
-    },
-    {
-      title: "Embrace the Growth Mindset",
-      desc: "We embrace challenges as opportunities to learn and grow, empowered by our determination to overcome obstacles and achieve greatness together.",
-      icon: "/assets/ourvalues/mind.svg",
-    },
-    {
-      title: "Transparency Above Everything",
-      desc: "Transparency fuels our commitment to excellence, enabling us to learn from each other’s triumphs and setbacks and work together toward a shared vision.",
-      icon: "/assets/ourvalues/transparency.svg",
-    },
-    {
-      title: "Keep Traveling",
-      desc: "Travel expands our horizons and inspires us to create a better world, one organized adventure at a time.",
-      icon: "/assets/ourvalues/globe.svg",
-    },
-    {
-      title: "#LDTS",
-      desc: "Let’s Do This Shit — a reminder of our belief in teamwork and determination, inspiring us to overcome challenges and achieve greatness together.",
-      icon: "/assets/ourvalues/rocket.svg",
-    },
-  ];
-
+  
   return (
     <section className="mt-20">
       {/* Title */}
-      {aboutus.map((about, index)=>(
-      <h1 key={index} className="text-center text-4xl font-extrabold tracking-tight">
-        {about.title3}
-      </h1>
+      {aboutus.map((about, index) => (
+        <h1
+          key={index}
+          className="text-center text-4xl font-extrabold tracking-tight"
+        >
+          {about.title3}
+        </h1>
       ))}
-      {aboutus.map((about, index)=>(
-      <p key={index} className="text-center text-gray-500 mt-2 text-lg">
-        {about.subtitle1}
-      </p>
+      {aboutus.map((about, index) => (
+        <p key={index} className="text-center text-gray-500 mt-2 text-lg">
+          {about.subtitle1}
+        </p>
       ))}
 
       {/* Grid */}
@@ -72,14 +84,16 @@ const OurValue = () => {
           >
             {/* Icon */}
             <div className="w-20 h-20 flex items-center justify-center bg-[#F7E7C1] rounded-2xl shadow-inner mb-6">
-              <img src={v.icon} alt={v.title} className="w-12 h-12" />
+              <img src={`${Image_URL}${v.image}`} alt={getTitle(v)} className="w-12 h-12" />
             </div>
 
             {/* Title */}
-            <h2 className="text-xl font-bold text-gray-800 mb-3">{v.title}</h2>
+            <h2 className="text-xl font-bold text-gray-800 mb-3">
+              {getTitle(v)}
+            </h2>
 
             {/* Description */}
-            <p className="text-gray-600 leading-relaxed text-sm">{v.desc}</p>
+            <p className="text-gray-600 leading-relaxed text-sm">{getDescription(v)}</p>
           </div>
         ))}
       </div>

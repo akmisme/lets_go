@@ -76,7 +76,17 @@ const Booking = () => {
       <h1 className="text-4xl font-semibold text-center mb-12 tracking-tight">
         Booking Form
       </h1>
-
+      <div className="grid grid-cols-2 bg-white mb-5 text-justify mx-auto max-w-2xl p-4 shadow-md rounded-2xl">
+        <div className="flex flex-col gap-5">
+          <h1 className="text-center text-3xl font-bold">Bagan Package</h1>
+          <h1>Destination - Bagan, Myanmar</h1>
+          <h1>Date - 12-23-2025</h1>
+          <h1>Price - 500 MMK</h1>
+        </div>
+        <div>
+          <img src="/assets/promobanner/bagan.jpg" className="rounded-2xl"/>
+        </div>
+      </div>
       <form
         className="max-w-xl mx-auto max-md:mx-5 bg-white shadow-lg rounded-2xl p-10 space-y-6"
         onSubmit={handleSubmit}
@@ -125,7 +135,7 @@ const Booking = () => {
           <select
             value={StateCode}
             onChange={(e) => setStateCode(e.target.value)}
-            className="rounded-xl border border-gray-300 px-4 py-3 bg-gray-50"
+            className="rounded-xl border border-gray-300 px-4 py-3 bg-gray-50 cursor-pointer"
           >
             <option value="">State</option>
             {Object.entries(Citizen.StateCode).map(([code, label]) => (
@@ -139,16 +149,25 @@ const Booking = () => {
           <select
             value={TownShip}
             onChange={(e) => setTownShip(e.target.value)}
-            className="rounded-xl border border-gray-300 px-4 py-3 bg-gray-50"
+            className="rounded-xl border border-gray-300 px-4 py-3 bg-gray-50 cursor-pointer"
           >
             <option value="">District</option>
+            {StateCode &&
+              Citizen.TownShip[StateCode] &&
+              Object.entries(Citizen.TownShip[StateCode]).map(
+                ([code, label]) => (
+                  <option key={code} value={code}>
+                    {label}
+                  </option>
+                )
+              )}
           </select>
 
           {/* ✅ Type */}
           <select
             value={CitizenShipType}
             onChange={(e) => setCitizenShipType(e.target.value)}
-            className="rounded-xl border border-gray-300 px-4 py-3 bg-gray-50"
+            className="rounded-xl border border-gray-300 px-4 py-3 bg-gray-50 cursor-pointer"
           >
             <option value="">Type</option>
             {Object.entries(Citizen.CitizenShipType).map(([code, label]) => (
@@ -171,7 +190,8 @@ const Booking = () => {
 
         {/* Preview */}
         <div className="p-3 bg-gray-100 rounded-xl text-gray-700 text-sm">
-          <span className="font-medium">Preview:</span> {buildNRC() || "—"}
+          <span className="font-medium cursor-pointer">Preview:</span>{" "}
+          {buildNRC() || "—"}
         </div>
 
         {nrcError && <p className="text-red-600 text-sm">{nrcError}</p>}
@@ -180,13 +200,13 @@ const Booking = () => {
         <div className="pt-4 flex gap-4">
           <button
             type="submit"
-            className="flex-1 bg-[#936521] text-white py-3 rounded-xl font-medium hover:bg-[#7a5220] transition"
+            className="flex-1 bg-[#936521] text-white py-3 rounded-xl font-medium hover:bg-[#7a5220] transition cursor-pointer"
           >
             Book
           </button>
           <button
             type="reset"
-            className="flex-1 border border-gray-400 py-3 rounded-xl font-medium hover:bg-gray-200 transition"
+            className="flex-1 border border-gray-400 py-3 rounded-xl font-medium hover:bg-gray-200 transition cursor-pointer"
           >
             Clear
           </button>
