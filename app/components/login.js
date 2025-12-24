@@ -23,7 +23,7 @@ const Log = () => {
     : "en";
 
   // load translations
-  const Citizen = currentLocale === "mm" ? mm.Citizen : en.Citizen;
+  const login = currentLocale === "mm" ? mm.login : en.login;
 
   // ✅ Prevent auto-validation
   const [touched, setTouched] = useState(false);
@@ -84,100 +84,101 @@ const Log = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex flex-col gap-6 w-full max-w-md mx-auto rounded-xl p-8 mt-10"
-    >
-      {/* Phone */}
-      {login.map((log, index) => (
-        <div key={index} className="flex flex-col gap-2 w-full">
-          <label className="font-bold text-base" htmlFor="phone">
-            {log.title1}
-          </label>
+    <div>
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-6 w-full max-w-md mx-auto rounded-xl p-8 mt-10"
+      >
+        {/* Phone */}
+        {login.map((log, index) => (
+          <div key={index} className="flex flex-col gap-2 w-full">
+            <label className="font-bold text-base" htmlFor="phone">
+              {log.title1}
+            </label>
+            <PhoneInput
+              id="phone"
+              className="rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none"
+              value={phone}
+              onChange={handlePhoneChange}
+              onBlur={handleBlur}
+              defaultCountry="MM"
+              international
+              countryCallingCodeEditable={false}
+              focusInputOnCountrySelection
+            />
+          </div>
+        ))}
+        {/* Password */}
+        {login.map((log, index) => (
+          <div key={index} className="flex flex-col gap-2 w-full relative">
+            <label className="font-bold text-base" htmlFor="password">
+              {log.title2}
+            </label>
 
-          <PhoneInput
-            id="phone"
-            className="rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none"
-            value={phone}
-            onChange={handlePhoneChange}
-            onBlur={handleBlur} // ✅ validate only when leaving field
-            defaultCountry="MM"
-            international
-            isValidPhoneNumber={true}
-            countryCallingCodeEditable={false}
-          />
-        </div>
-      ))}
-      {/* Password */}
-      {login.map((log, index) => (
-        <div key={index} className="flex flex-col gap-2 w-full relative">
-          <label className="font-bold text-base" htmlFor="password">
-            {log.title2}
-          </label>
+            <input
+              id="password"
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none"
+              placeholder={log.placeholder}
+              required
+            />
 
-          <input
-            id="password"
-            type={showPassword ? "text" : "password"}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none"
-            placeholder={log.placeholder}
-            required
-          />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-4 top-[43px] text-gray-600"
+            >
+              {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+            </button>
+          </div>
+        ))}
 
+        {/* Remember Me */}
+        {login.map((log, index) => (
+          <div key={index} className="flex items-center gap-3">
+            <input
+              type="checkbox"
+              id="remember"
+              checked={remember}
+              onChange={(e) => setRemember(e.target.checked)}
+              className="cursor-pointer"
+            />
+            <label className="cursor-pointer" htmlFor="remember">
+              {log.svp}
+            </label>
+          </div>
+        ))}
+
+        {/* Error */}
+        {error && (
+          <span className="text-red-500 text-sm text-center">{error}</span>
+        )}
+
+        {/* Submit */}
+        {login.map((log, index) => (
           <button
-            type="button"
-            onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-4 top-[43px] text-gray-600"
+            key={index}
+            className="bg-[#936521] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-[#D8AF53] transition-all duration-300"
+            type="submit"
           >
-            {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+            {log.btn}
           </button>
-        </div>
-      ))}
+        ))}
 
-      {/* Remember Me */}
-      {login.map((log, index) => (
-        <div key={index} className="flex items-center gap-3">
-          <input
-            type="checkbox"
-            id="remember"
-            checked={remember}
-            onChange={(e) => setRemember(e.target.checked)}
-            className="cursor-pointer"
-          />
-          <label className="cursor-pointer" htmlFor="remember">
-            {log.svp}
-          </label>
-        </div>
-      ))}
-
-      {/* Error */}
-      {error && (
-        <span className="text-red-500 text-sm text-center">{error}</span>
-      )}
-
-      {/* Submit */}
-      {login.map((log, index) => (
-        <button
-          key={index}
-          className="bg-[#936521] text-white px-4 py-2 cursor-pointer rounded-md hover:bg-[#D8AF53] transition-all duration-300"
-          type="submit"
-        >
-          {log.btn}
-        </button>
-      ))}
-
-      {login.map((log, index) => (
-        <div className="text-center pt-2">
-          <Link
-            href="#"
-            className="text-[#936521] hover:text-[#D8AF53] cursor-pointer"
-          >
-            {log.fgt}
-          </Link>
-        </div>
-      ))}
-    </form>
+        {login.map((log, index) => (
+          <div key={index} className="text-center pt-2">
+            <Link
+              href="#"
+              className="text-[#936521] hover:text-[#D8AF53] cursor-pointer"
+            >
+              {log.fgt}
+            </Link>
+          </div>
+        ))}
+      </form>
+    </div>
   );
 };
 

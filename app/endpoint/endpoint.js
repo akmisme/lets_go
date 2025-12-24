@@ -14,4 +14,7 @@ export const ENDPOINT = {
   OurValue_List: `${API_BASE_URL}/ourvalue`,
   // Executive Team
   ExTeam_List: `${API_BASE_URL}/executiveteam`,
+  // Our Mission and Vision
+  Mission_List: `${API_BASE_URL}/mission`,
+  Vision_List: `${API_BASE_URL}/vision`,
 };

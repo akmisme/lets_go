@@ -11,7 +11,7 @@ import ChaungthaExp from "@/app/components/ChaungthaExp";
 
 export default function Exp() {
   return (
-    <main className="mt-30 px-10 pt-5 pb-10 bg-gray-100">
+    <main className="mt-25 px-10 pt-5 pb-10 bg-gray-100">
       {/* Banner Section */}
       <div
         className="relative top-5 mb-10 bg-center bg-cover opacity-80 bg-no-repeat w-auto max-xl:w-auto h-100 mx-auto rounded-4xl flex"

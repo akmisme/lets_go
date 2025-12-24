@@ -1,9 +1,23 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import CopyTextButton from "./CopyButton";
+import en from "../../messages/en.json";
+import mm from "../../messages/mm.json";
+import { usePathname } from "next/navigation";
 
 export default function TourCard() {
+  const pathname = usePathname();
+
+  // detect locale from URL
+  const pathSegments = pathname.split("/").filter(Boolean);
+  const currentLocale = ["en", "mm"].includes(pathSegments[0])
+    ? pathSegments[0]
+    : "en";
+
+  // load translations
+  const package_title =
+    currentLocale === "mm" ? mm.package_title : en.package_title;
+
   // ✅ All data extracted here
   const tour = {
     image: "/assets/promobanner/bagan.jpg",
@@ -59,25 +73,30 @@ export default function TourCard() {
       <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* ✅ LEFT SIDE: DETAILS */}
         <div className="space-y-4">
-          <div className="grid grid-cols-2 gap-y-2 text-gray-700 text-sm">
-            <p>📍 Destination</p>
-            <p className="font-medium">{tour.details.destination}</p>
+          {package_title.map((pack, index) => (
+            <div
+              key={index}
+              className="grid grid-cols-2 gap-y-2 text-gray-700 text-sm"
+            >
+              <p>📍 {pack.title1}</p>
+              <p className="font-medium">{tour.details.destination}</p>
 
-            <p>🗣️ Languages</p>
-            <p>{tour.details.languages}</p>
+              <p>🗣️ {pack.title2}</p>
+              <p>{tour.details.languages}</p>
 
-            <p>📅 Date</p>
-            <p>{tour.details.date}</p>
+              <p>📅 {pack.title3}</p>
+              <p>{tour.details.date}</p>
 
-            <p>🎂 Age Range</p>
-            <p>{tour.details.ageRange}</p>
+              <p>🎂 {pack.title4}</p>
+              <p>{tour.details.ageRange}</p>
 
-            <p>👥 Passengers</p>
-            <p>{tour.details.passengers}</p>
+              <p>👥 {pack.title5}</p>
+              <p>{tour.details.passengers}</p>
 
-            <p>📋 Promotion Code</p>
-            <p>BLACKFRIDAY2025</p>
-          </div>
+              <p>📋 {pack.title6}</p>
+              <p>BLACKFRIDAY2025</p>
+            </div>
+          ))}
 
           {/* ✅ PRICE */}
           <div className="pt-2">

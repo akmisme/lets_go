@@ -79,6 +79,7 @@ const Register = () => {
     <section>
       {register.map((reg,index) => (
         <form
+          key={index}
           onSubmit={handleSubmit}
           className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-3xl mx-auto p-8 mt-5"
         >
@@ -122,8 +123,8 @@ const Register = () => {
               onChange={handlePhoneChange}
               defaultCountry="MM"
               international
-              isValidPhoneNumber={true}
               countryCallingCodeEditable={false}
+              focusInputOnCountrySelection
               className="rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none"
               required
             />

@@ -104,8 +104,6 @@
   ],
   "about": [
     {
-      "title1": "Our Origin",
-      "title2": "What is Golden Yellow",
       "title3": "Our Values",
       "subtitle1": "What drives our mission and shapes our culture",
       "title4": "Executive Team",
@@ -634,6 +632,16 @@
       "G": "G"
     }
   },
+  "package_title": [
+    {
+      "title1": "Destination",
+      "title2": "Language",
+      "title3": "Date",
+      "title4": "Age Range",
+      "title5": "Passenger",
+      "title6": "Promotion Code"
+    }
+  ],
   "scribe": [
     {
       "title": "Subscribe For Newsletter",
