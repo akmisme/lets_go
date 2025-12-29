@@ -11,7 +11,7 @@ export default function FilterPage() {
   const passenger = params.get("passenger");
 
   const trips = [
-    { destination: "Bagan, Myanmar", date: "2025-12-18", passenger: "2" },
+    { destination: "Bagan, Myanmar", date: "2025-12-29", passenger: "2" },
     { destination: "Mandalay, Myanmar", date: "2025-12-10", passenger: "1" },
     { destination: "Yangon, Myanmar", date: "2025-12-09", passenger: "3" },
     { destination: "Inle Lake, Myanmar", date: "2025-12-11", passenger: "2" },
@@ -65,7 +65,9 @@ export default function FilterPage() {
 
                 {/* ✅ Floating Title */}
                 <div className="absolute bottom-4 left-4 bg-black/50 backdrop-blur-sm text-white px-4 py-2 rounded-xl">
-                  <h2 className="text-lg sm:text-xl font-bold">Bagan Package</h2>
+                  <h2 className="text-lg sm:text-xl font-bold">
+                    Bagan Package
+                  </h2>
                   <p className="text-xs opacity-90">7 Days · Private Tour</p>
                 </div>
               </div>
@@ -89,6 +91,9 @@ export default function FilterPage() {
 
                     <p>👥 Passengers</p>
                     <p>{r.passenger}</p>
+
+                    <p>📋 Promotion Code</p>
+                    <p>BLACKFRIDAY2025</p>
                   </div>
 
                   {/* ✅ PRICE */}

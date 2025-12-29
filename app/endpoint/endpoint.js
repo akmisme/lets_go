@@ -17,4 +17,12 @@ export const ENDPOINT = {
   // Our Mission and Vision
   Mission_List: `${API_BASE_URL}/mission`,
   Vision_List: `${API_BASE_URL}/vision`,
+  // FAQ
+  FAQ_List: `${API_BASE_URL}/faq`,
+  // Exps
+  Yg_Exp_List: `${API_BASE_URL}/ygnexperience`,
+  Mdy_Exp_List: `${API_BASE_URL}/mdyexperience`,
+  Bg_Exp_List: `${API_BASE_URL}/bgexperience`,
+  Tgi_Exp_List: `${API_BASE_URL}/tgexperience`,
+  Inle_Exp_List: `${API_BASE_URL}/inlexperience`,
 };

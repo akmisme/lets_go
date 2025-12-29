@@ -154,6 +154,10 @@ export default function AboutUs() {
           {about.title4}
         </h1>
       ))}
+      {/* Loading State */}
+      {loading && (
+        <p className="mx-auto w-10 h-10 border-4 border-t-[#D8AF53] border-gray-300 rounded-full animate-spin"></p>
+      )}
       <div className="grid grid-cols-4 max-xl:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 gap-10 mx-20 max-md:mx-5">
         {exteam.map((ex, index) => (
           <div

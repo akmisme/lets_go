@@ -50,7 +50,7 @@ const OurValue = () => {
 
   // load translations
   const aboutus = currentLocale === "mm" ? mm.about : en.about;
-  
+
   return (
     <section className="mt-20">
       {/* Title */}
@@ -69,34 +69,46 @@ const OurValue = () => {
       ))}
 
       {/* Grid */}
-      <div
-        data-aos="fade-up"
-        data-aos-duration="1500"
-        className="grid grid-cols-3 max-xl:grid-cols-2 max-md:grid-cols-1 gap-10 mx-auto mt-14 px-6 max-w-6xl"
-      >
-        {values.map((v, i) => (
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1500"
-            data-aos-delay="100"
-            key={i}
-            className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col items-center text-center"
-          >
-            {/* Icon */}
-            <div className="w-20 h-20 flex items-center justify-center bg-[#F7E7C1] rounded-2xl shadow-inner mb-6">
-              <img src={`${Image_URL}${v.image}`} alt={getTitle(v)} className="w-12 h-12" />
+      {/* Loading State */}
+      {loading && (
+        <p className="mx-auto w-10 h-10 border-4 border-t-[#D8AF53] border-gray-300 rounded-full animate-spin"></p>
+      )}
+      {!loading && values.length > 0 && (
+        <div
+          data-aos="fade-up"
+          data-aos-duration="1500"
+          className="grid grid-cols-3 max-xl:grid-cols-2 max-md:grid-cols-1 gap-10 mx-auto mt-14 px-6 max-w-6xl"
+        >
+          {values.map((v, i) => (
+            <div
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              data-aos-delay="100"
+              key={i}
+              className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col items-center text-center"
+            >
+              {/* Icon */}
+              <div className="w-20 h-20 flex items-center justify-center bg-[#F7E7C1] rounded-2xl shadow-inner mb-6">
+                <img
+                  src={`${Image_URL}${v.image}`}
+                  alt={getTitle(v)}
+                  className="w-12 h-12"
+                />
+              </div>
+
+              {/* Title */}
+              <h2 className="text-xl font-bold text-gray-800 mb-3">
+                {getTitle(v)}
+              </h2>
+
+              {/* Description */}
+              <p className="text-gray-600 leading-relaxed text-sm">
+                {getDescription(v)}
+              </p>
             </div>
-
-            {/* Title */}
-            <h2 className="text-xl font-bold text-gray-800 mb-3">
-              {getTitle(v)}
-            </h2>
-
-            {/* Description */}
-            <p className="text-gray-600 leading-relaxed text-sm">{getDescription(v)}</p>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </section>
   );
 };
