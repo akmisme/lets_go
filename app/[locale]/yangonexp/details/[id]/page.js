@@ -1,5 +1,9 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useParams } from "next/navigation";
+import { ENDPOINT, Image_URL } from "@/app/endpoint/endpoint";
+import { useLocale } from "next-intl";
 
 const experiences = [
   {
@@ -20,6 +24,41 @@ const experiences = [
 ];
 
 export default function BaganExpDetail() {
+  const { id } = useParams(); // dynamic route param
+  const [ygnexp, setYgExp] = useState(null);
+  const locale = useLocale();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(ENDPOINT.Yg_Exp_Id);
+        setYgExp(res.data);
+      } catch (err) {
+        console.error("Error fetching detail:", err);
+      }
+    };
+    fetchData();
+  }, [id]);
+
+  const getTitle = (ygnexp) => {
+    switch (locale) {
+      case "mm":
+        return ygnexp.title_mm;
+      default:
+        return ygnexp.title_en;
+    }
+  };
+  const getParagraph = (ygnexp) => {
+    switch (locale) {
+      case "mm":
+        return ygnexp.para_mm;
+      default:
+        return ygnexp.para_en;
+    }
+  };
+
+  if (!ygnexp) return <p>Loading...</p>;
+
   return (
     <section className="text-base bg-gray-100 mt-30 py-5">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mx-20 bg-white rounded-md p-5 max-xl:mx-5">
@@ -34,7 +73,7 @@ export default function BaganExpDetail() {
 
         {/* RIGHT SIDE */}
         <div className="flex flex-col w-fit text-justify gap-5">
-          <h1 className="text-3xl">Riding hot air balloons in Bagan</h1>
+          <h1 className="text-3xl">{getTitle(ygnexp)}</h1>
           <p className="indent-10 leading-relaxed">
             Floating above Bagan in a hot‑air balloon feels like slipping into
             another world. As the sun rises, the mist slowly lifts to reveal
@@ -49,7 +88,17 @@ export default function BaganExpDetail() {
           </p>
           <div className="bg-gray-100 rounded-3xl shadow-md border border-gray-300 flex flex-col p-5 max-w-140">
             <h1 className="text-base font-bold">My Test Box</h1>
-            <p className="text-sm leading-relaxed indent-10">Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box My Test Box</p>
+            <p className="text-sm leading-relaxed indent-10">
+              Box My Test Box My Test Box My Test Box My Test Box My Test Box My
+              Test Box My Test Box My Test Box My Test Box My Test Box My Test
+              Box My Test Box My Test Box My Test Box My Test Box My Test Box My
+              Test Box My Test Box My Test Box My Test Box My Test Box My Test
+              Box My Test Box My Test Box My Test Box My Test Box My Test Box My
+              Test Box My Test Box My Test Box My Test Box My Test Box My Test
+              Box My Test Box My Test Box My Test Box My Test Box My Test Box My
+              Test Box My Test Box My Test Box My Test Box My Test Box My Test
+              Box My Test Box My Test Box My Test Box My Test Box
+            </p>
           </div>
           <div className="flex gap-4 pt-4 w-fit">
             <button className="bg-yellow-500 text-white px-5 py-2.5 rounded-xl hover:bg-yellow-600 transition font-semibold shadow cursor-pointer">

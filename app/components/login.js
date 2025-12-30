@@ -5,9 +5,11 @@ import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
 import Link from "next/link";
 import { isValidPhoneNumber } from "libphonenumber-js";
+import axios from "axios";
 import en from "../../messages/en.json";
 import mm from "../../messages/mm.json";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { ENDPOINT } from "../endpoint/endpoint";
 
 const Log = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -16,6 +18,8 @@ const Log = () => {
   const [remember, setRemember] = useState(false);
   const [error, setError] = useState("");
   const pathname = usePathname();
+  const router = useRouter();
+
   // detect locale from URL
   const pathSegments = pathname.split("/").filter(Boolean);
   const currentLocale = ["en", "mm"].includes(pathSegments[0])
@@ -25,10 +29,7 @@ const Log = () => {
   // load translations
   const login = currentLocale === "mm" ? mm.login : en.login;
 
-  // ✅ Prevent auto-validation
-  const [touched, setTouched] = useState(false);
-
-  // ✅ Load saved login
+  // load saved login
   useEffect(() => {
     const savedPhone = localStorage.getItem("rememberedPhone");
     const savedPassword = localStorage.getItem("rememberedPassword");
@@ -42,45 +43,48 @@ const Log = () => {
     }
   }, []);
 
-  // ✅ Validate only when needed
-  const validatePhone = () => {
-    if (!phone || !isValidPhoneNumber(phone)) {
-      setError("Invalid phone number");
-    } else {
-      setError("");
-    }
-  };
-
-  // ✅ When typing or changing country
   const handlePhoneChange = (value) => {
     setPhone(value);
-    if (touched) validatePhone(); // ✅ validate only after first blur
   };
 
-  // ✅ When leaving the field
-  const handleBlur = () => {
-    setTouched(true);
-    validatePhone();
-  };
-
-  // ✅ Submit
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setTouched(true);
-    validatePhone();
 
-    if (!isValidPhoneNumber(phone)) return;
-
-    // ✅ Save login if checked
-    if (remember) {
-      localStorage.setItem("rememberedPhone", phone);
-      localStorage.setItem("rememberedPassword", password);
-    } else {
-      localStorage.removeItem("rememberedPhone");
-      localStorage.removeItem("rememberedPassword");
+    if (!isValidPhoneNumber(phone)) {
+      setError("Invalid phone number");
+      return;
     }
 
-    alert(`Logging in as ${phone}`);
+    try {
+      const res = await axios.post(ENDPOINT.Login, {
+        phone: phone,
+        password: password,
+      }, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      // ✅ Save login if checked
+      if (remember) {
+        localStorage.setItem("rememberedPhone", phone);
+        localStorage.setItem("rememberedPassword", password);
+      } else {
+        localStorage.removeItem("rememberedPhone");
+        localStorage.removeItem("rememberedPassword");
+      }
+
+      // ✅ Handle success
+      if (res.status === 200) {
+        // Example: store token
+        localStorage.setItem("authToken", res.data.token);
+        alert("Login successful!");
+        router.push("/dashboard"); // redirect after login
+      }
+    } catch (err) {
+      console.error("Login failed:", err);
+      setError("Invalid credentials. Please try again.");
+    }
   };
 
   return (
@@ -100,31 +104,30 @@ const Log = () => {
               className="rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none"
               value={phone}
               onChange={handlePhoneChange}
-              onBlur={handleBlur}
               defaultCountry="MM"
               international
               countryCallingCodeEditable={false}
               focusInputOnCountrySelection
+              required
             />
           </div>
         ))}
+
         {/* Password */}
         {login.map((log, index) => (
           <div key={index} className="flex flex-col gap-2 w-full relative">
             <label className="font-bold text-base" htmlFor="password">
               {log.title2}
             </label>
-
             <input
               id="password"
               type={showPassword ? "text" : "password"}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none"
+              className="rounded-3xl p-3 w-full bg-gray-100 focus:ring-2 focus:ring-[#936521] outline-none pr-10"
               placeholder={log.placeholder}
               required
             />
-
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}

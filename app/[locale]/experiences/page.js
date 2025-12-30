@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import BaganExp from "@/app/components/BaganExp";
 import MandalayExp from "@/app/components/MandalayExp";

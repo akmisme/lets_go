@@ -1,5 +1,8 @@
 "use client";
 import React from "react";
+import axios from "axios";
+import { ENDPOINT, Image_URL } from "@/app/endpoint/endpoint";
+
 
 const experiences = [
   {

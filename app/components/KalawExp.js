@@ -1,11 +1,48 @@
 "use client";
-import React from "react";
+import React, {useState, useEffect} from "react";
 import en from "../../messages/en.json"
 import mm from "../../messages/mm.json"
 import { usePathname } from "next/navigation";
+import { useLocale } from "next-intl";
+import axios from "axios";
+import { ENDPOINT, Image_URL } from "../endpoint/endpoint";
 
 export default function KalawExp() {
   const pathname = usePathname();
+  const locale = useLocale();
+  const [loading, setLoading] = useState(true);
+  const [kalawexp, setKalawexp] = useState([]);
+
+  const getKalawexp = async () => {
+    try {
+      const res = await axios.get(ENDPOINT.Kalaw_Exp_List);
+      setKalawexp(res.data.data || []);
+    } catch (error) {
+      console.error("Kalaw Experiences fetch error:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  useEffect(() => {
+    getKalawexp();
+  }, []);
+
+  const getTitle = (kalawexp) => {
+    switch (locale) {
+      case "mm":
+        return kalawexp.title_mm;
+      default:
+        return kalawexp.title_en;
+    }
+  };
+  const getParagraph = (kalawexp) => {
+    switch (locale) {
+      case "mm":
+        return kalawexp.para_mm;
+      default:
+        return kalawexp.para_en;
+    }
+  }
   // detect locale from URL
   const pathSegments = pathname.split("/").filter(Boolean);
   const currentLocale = ["en", "mm"].includes(pathSegments[0])
@@ -19,112 +56,42 @@ export default function KalawExp() {
       {experiences.map((exp, index)=>(
       <h1 key={index} className="text-3xl font-bold mb-5 text-center">{exp.kalaw}</h1>
       ))}
+       {/* Loading State */}
+      {loading && (
+        <p className="mx-auto w-10 h-10 border-4 border-t-[#D8AF53] border-gray-300 rounded-full animate-spin"></p>
+      )}
+      {!loading && kalawexp.length > 0 && (
       <div className="grid grid-cols-4 max-md:grid-cols-1 max-lg:grid-cols-2 gap-10 mx-auto">
+        {kalawexp.map((ka, i)=>(
         <div
+          key={i}
           data-aos="fade-up"
           data-aos-duration="1500"
           data-aos-delay="100"
           className="flex flex-col gap-2 bg-white rounded-md shadow-md"
         >
           <img
-            src="/assets/promobanner/kalaw.jpg"
-            alt="#"
+            src={`${Image_URL}${ka.image}`}
+            alt={getTitle(ka)}
             width={300}
             className="w-full rounded-t-md"
           />
           <h1 className="text-base font-bold px-2">
-            Hot Air Ballooning over Bagan
+            {getTitle(ka)}
           </h1>
           <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
-            You’ll float above thousands of ancient pagodas, stupas, and the
-            Irrawaddy River.
+            {getParagraph(ka)}
           </p>
           <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
-            Price - 80$
+            Price - {ka.price} MMK
           </p>
           <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
             Book Now
           </button>
         </div>
-        <div
-          data-aos="fade-up"
-          data-aos-duration="1500"
-          data-aos-delay="100"
-          className="flex flex-col gap-2 bg-white rounded-md shadow-md"
-        >
-          <img
-            src="/assets/promobanner/kalaw.jpg"
-            alt="#"
-            width={300}
-            className="w-full rounded-t-md"
-          />
-          <h1 className="text-base font-bold px-2">
-            Hot Air Ballooning over Bagan
-          </h1>
-          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
-            You’ll float above thousands of ancient pagodas, stupas, and the
-            Irrawaddy River.
-          </p>
-          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
-            Price - 80$
-          </p>
-          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
-            Book Now
-          </button>
-        </div>
-        <div
-          data-aos="fade-up"
-          data-aos-duration="1500"
-          data-aos-delay="100"
-          className="flex flex-col gap-2 bg-white rounded-md shadow-md"
-        >
-          <img
-            src="/assets/promobanner/kalaw.jpg"
-            alt="#"
-            width={300}
-            className="w-full rounded-t-md"
-          />
-          <h1 className="text-base font-bold px-2">
-            Hot Air Ballooning over Bagan
-          </h1>
-          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
-            You’ll float above thousands of ancient pagodas, stupas, and the
-            Irrawaddy River.
-          </p>
-          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
-            Price - 80$
-          </p>
-          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
-            Book Now
-          </button>
-        </div>
-        <div
-          data-aos="fade-up"
-          data-aos-duration="1500"
-          data-aos-delay="100"
-          className="flex flex-col gap-2 bg-white rounded-md shadow-md"
-        >
-          <img
-            src="/assets/promobanner/kalaw.jpg"
-            alt="#"
-            width={300}
-            className="w-full rounded-t-md"
-          />
-          <h1 className="text-base font-bold px-2">
-            Hot Air Ballooning over Bagan
-          </h1>
-          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
-            You’ll float above thousands of ancient pagodas, stupas, and the
-            Irrawaddy River.
-          </p>
-          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
-            Price - 80$
-          </p>
-          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
-            Book Now
-          </button>
-        </div>
+        ))}
       </div>
+      )}
     </section>
   );
 }
