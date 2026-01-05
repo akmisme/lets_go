@@ -33,7 +33,7 @@ export const ENDPOINT = {
   Ch_Exp_List: `${API_BASE_URL}/ctexperience`,
   Hpa_Exp_List: `${API_BASE_URL}/hpanexperience`,
   Kalaw_Exp_List: `${API_BASE_URL}/kalawexperience`,
-
-  // Exp Details
-  Yg_Exp_Id: `${API_BASE_URL}/ygnexperience/<uuid=pk>/`,
+  
+  // Vlogger
+  TikTok_List: `${API_BASE_URL}/vlog`
 };

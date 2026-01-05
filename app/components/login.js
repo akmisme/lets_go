@@ -79,7 +79,7 @@ const Log = () => {
         // Example: store token
         localStorage.setItem("authToken", res.data.token);
         alert("Login successful!");
-        router.push("/dashboard"); // redirect after login
+        router.push("/"); // redirect after login
       }
     } catch (err) {
       console.error("Login failed:", err);

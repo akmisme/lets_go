@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
@@ -18,6 +18,15 @@ const Register = () => {
   const [confirm_password, setConfirmPassword] = useState("");
 
   const [error, setError] = useState("");
+
+  // ✅ Check localStorage on refresh
+  useEffect(() => {
+    const loginSuccess = localStorage.getItem("loginSuccess");
+    if (loginSuccess === "true") {
+      alert("OK ✅"); // show alert after refresh
+      localStorage.removeItem("loginSuccess"); // clear flag
+    }
+  }, []);
 
   const handlePhoneChange = (value) => {
     setPhone(value);
@@ -63,16 +72,19 @@ const Register = () => {
 
     try {
       const res = await axios.post(ENDPOINT.Register, {
-        first_name:first_name,
-        last_name: last_name,
-        email: email,
-        phone: phone,
-        password: password,
-        confirm_password: confirm_password,
+        first_name,
+        last_name,
+        email,
+        phone,
+        password,
+        confirm_password,
       });
 
       if (res.status === 201) {
-        alert("Registration successful!");
+        // ✅ Save flag so alert shows after refresh
+        localStorage.setItem("loginSuccess", "true");
+        alert("Registration successful!"); // immediate alert
+        window.location.reload(); // refresh page
       }
     } catch (err) {
       console.error("Error registering:", err);

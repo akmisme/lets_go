@@ -1,6 +1,6 @@
 "use client";
+import LogoutButton from "@/app/components/logout";
 import React, { useState } from "react";
-import Popup from "@/app/components/popup";
 
 export default function Accounts() {
   const [openLogin, setOpenLogin] = useState(false);
@@ -51,65 +51,75 @@ export default function Accounts() {
             Edit Profile
           </button>
 
-          <button className="w-full sm:w-auto px-5 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-all duration-200">
-            Logout
-          </button>
+          <LogoutButton/>
         </div>
       </div>
 
-      {/* Popup */}
-      <Popup isOpen={openLogin} onClose={() => setOpenLogin(false)}>
-        <div className="p-4 sm:p-6 relative z-1001">
-          <h3 className="text-xl font-bold mb-6 text-gray-800">Edit Profile</h3>
-          <form className="space-y-5">
-            {/* Profile Image */}
-            <div>
-              <label className="block text-sm font-medium text-gray-600 mb-2">
-                Profile Image
-              </label>
-              <input
-                type="file"
-                className="w-full border rounded px-3 py-2 bg-gray-50 focus:ring-2 focus:ring-[#936521] outline-none"
-              />
-            </div>
-
-            {/* First & Last Name side by side */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <input
-                type="text"
-                placeholder="First Name"
-                className="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-[#936521] outline-none"
-              />
-              <input
-                type="text"
-                placeholder="Last Name"
-                className="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-[#936521] outline-none"
-              />
-            </div>
-
-            {/* Email */}
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-[#936521] outline-none"
-            />
-
-            {/* Address */}
-            <textarea
-              placeholder="Address"
-              className="w-full border rounded px-3 py-2 resize-none h-24 focus:ring-2 focus:ring-[#936521] outline-none"
-            />
-
-            {/* Save Button */}
+      {/* Custom Popup */}
+      {openLogin && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white rounded-xl shadow-lg w-full max-w-lg p-6 relative">
+            {/* Close Button */}
             <button
-              type="submit"
-              className="w-full bg-[#936521] text-white py-2 rounded-lg hover:bg-[#D8AF53] transition-colors duration-200"
+              onClick={() => setOpenLogin(false)}
+              className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
             >
-              Save Changes
+              ✕
             </button>
-          </form>
+
+            <h3 className="text-xl font-bold mb-6 text-gray-800">
+              Edit Profile
+            </h3>
+            <form className="space-y-5">
+              {/* Profile Image */}
+              <div>
+                <label className="block text-sm font-medium text-gray-600 mb-2">
+                  Profile Image
+                </label>
+                <input
+                  type="file"
+                  className="w-full border rounded px-3 py-2 bg-gray-50 focus:ring-2 focus:ring-[#936521] outline-none"
+                />
+              </div>
+
+              {/* First & Last Name side by side */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  className="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-[#936521] outline-none"
+                />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  className="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-[#936521] outline-none"
+                />
+              </div>
+
+              {/* Email */}
+              <input
+                type="email"
+                placeholder="Email"
+                className="w-full border rounded px-3 py-2 focus:ring-2 focus:ring-[#936521] outline-none"
+              />
+
+              {/* Address */}
+              <textarea
+                placeholder="Address"
+                className="w-full border rounded px-3 py-2 resize-none h-24 focus:ring-2 focus:ring-[#936521] outline-none"
+              />
+
+              {/* Save Button */}
+              <button
+                type="submit"
+                className="w-full bg-[#936521] text-white py-2 rounded-lg hover:bg-[#D8AF53] transition-colors duration-200"
+              >
+                Save Changes
+              </button>
+            </form>
+          </div>
         </div>
-      </Popup>
+      )}
     </section>
   );
 }

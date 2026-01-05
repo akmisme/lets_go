@@ -19,6 +19,8 @@ export default function Header() {
   const pathname = usePathname();
   const [openLogin, setOpenLogin] = useState(false);
   const [openRegister, setOpenRegister] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userData, setUserData] = useState(null);
 
   // detect scroll
   useEffect(() => {
@@ -99,11 +101,8 @@ export default function Header() {
                   <div className="absolute top-full left-0 bg-white shadow-lg w-130 py-3 flex flex-col text-gray-600">
                     <div className="grid grid-cols-4 mx-auto gap-4 mt-10 justify-center">
                       {item.dropdown.map((sub, i) => (
-                        <Link href={sub.href}>
-                          <div
-                            key={i}
-                            className="bg-white flex flex-col justify-center items-center hover:shadow-md rounded-4xl p-1 gap-2 hover:-mt-1 hover:mb-1 transition-transform ease-in-out duration-500 delay-300 cursor-pointer"
-                          >
+                        <Link href={sub.href} key={i}>
+                          <div className="bg-white flex flex-col justify-center items-center hover:shadow-md rounded-4xl p-1 gap-2 hover:-mt-1 hover:mb-1 transition-transform ease-in-out duration-500 delay-300 cursor-pointer">
                             <img
                               src={sub.image}
                               className="rounded-4xl"
@@ -121,6 +120,7 @@ export default function Header() {
               </div>
             );
           })}
+
           <LanguageSwitcher />
 
           {/* User icon with dropdown */}
@@ -129,27 +129,59 @@ export default function Header() {
             onMouseEnter={() => setUserMenuOpen(true)}
             onMouseLeave={() => setUserMenuOpen(false)}
           >
-            <CircleUserRound className="w-6 h-6 text-gray-700 cursor-pointer hover:text-[#936521]" />
+            {isLoggedIn ? (
+              // ✅ Show user photo when logged in
+              <img
+                src={userData?.photo || "/default-avatar.png"}
+                alt="User"
+                className="w-8 h-8 rounded-full cursor-pointer border hover:border-[#936521]"
+              />
+            ) : (
+              // ✅ Show default icon when not logged in
+              <CircleUserRound className="w-6 h-6 text-gray-700 cursor-pointer hover:text-[#936521]" />
+            )}
 
-            {userMenuOpen && accountData.map((acc, index)=> (
-              <div key={index} className="absolute right-0 top-4 mt-2 w-40 bg-white shadow-lg rounded-md py-2 text-sm text-gray-700">
-                {/* ✅ Login Button */}
-                <button
-                  className="block px-4 py-2 hover:bg-gray-100 cursor-pointer w-full"
-                  onClick={() => setOpenLogin(true)}
-                >
-                  {acc.name1}
-                </button>
-
-                {/* ✅ Register Button */}
-                <button
-                  className="block px-4 py-2 hover:bg-gray-100 cursor-pointer w-full"
-                  onClick={() => setOpenRegister(true)}
-                >
-                  {acc.name2}
-                </button>
+            {userMenuOpen && (
+              <div className="absolute right-0 top-4 mt-2 w-40 bg-white shadow-lg rounded-md py-2 text-sm text-gray-700">
+                {isLoggedIn ? (
+                  <>
+                    <Link
+                      href="/account"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      Account
+                    </Link>
+                    <Link
+                      href="/history"
+                      className="block px-4 py-2 hover:bg-gray-100"
+                    >
+                      History
+                    </Link>
+                    <button
+                      className="block px-4 py-2 hover:bg-gray-100 w-full text-left"
+                      onClick={handleLogout}
+                    >
+                      Logout
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <button
+                      className="block px-4 py-2 hover:bg-gray-100 cursor-pointer w-full"
+                      onClick={() => setOpenLogin(true)}
+                    >
+                      Login
+                    </button>
+                    <button
+                      className="block px-4 py-2 hover:bg-gray-100 cursor-pointer w-full"
+                      onClick={() => setOpenRegister(true)}
+                    >
+                      Register
+                    </button>
+                  </>
+                )}
               </div>
-            ))}
+            )}
 
             {/* ✅ Login Popup */}
             <Popup isOpen={openLogin} onClose={() => setOpenLogin(false)}>
