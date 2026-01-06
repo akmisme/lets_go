@@ -1,6 +1,4 @@
 import React from "react";
-import AboutUs from "../[locale]/aboutus/page";
-import OurValue from "../components/ourvalues";
 
 // Base URLs
 export const API_BASE_URL = "http://localhost:8000/api";
@@ -12,6 +10,8 @@ export const ENDPOINT = {
   Register: `${API_BASE_URL}/register/`,
   // Login
   Login: `${API_BASE_URL}/login/`,
+  // Home Page
+  Why_List: `${API_BASE_URL}/chooseus`,
   // About Us
   AboutUs_List: `${API_BASE_URL}/aboutus`,
   // Our Value
@@ -35,5 +35,5 @@ export const ENDPOINT = {
   Kalaw_Exp_List: `${API_BASE_URL}/kalawexperience`,
   
   // Vlogger
-  TikTok_List: `${API_BASE_URL}/vlog`
+  TikTok_List: `${API_BASE_URL}/vlog`,
 };

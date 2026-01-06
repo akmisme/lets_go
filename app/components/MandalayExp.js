@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import axios from "axios";
 import { ENDPOINT, Image_URL } from "../endpoint/endpoint";
 import { useLocale } from "next-intl";
+import Link from "next/link";
 
 export default function MandalayExp() {
   const pathname = usePathname();
@@ -43,7 +44,7 @@ export default function MandalayExp() {
       default:
         return mdyexp.para_en;
     }
-  }
+  };
   // detect locale from URL
   const pathSegments = pathname.split("/").filter(Boolean);
   const currentLocale = ["en", "mm"].includes(pathSegments[0])
@@ -61,39 +62,46 @@ export default function MandalayExp() {
       ))}
       {/* Loading State */}
       {loading && (
-        <p className="mx-auto w-10 h-10 border-4 border-t-[#D8AF53] border-gray-300 rounded-full animate-spin"></p>
+        <p className="mx-auto w-10 h-10 border-t-[#D8AF53] border-gray-300 rounded-full animate-spin"></p>
       )}
       {!loading && mdyexp.length > 0 && (
-      <div className="grid grid-cols-4 max-md:grid-cols-1 max-lg:grid-cols-2 gap-10 mx-auto">
-        {mdyexp.map((m,i)=>(
-        <div
-          key={i}
-          data-aos="fade-up"
-          data-aos-duration="1500"
-          data-aos-delay="100"
-          className="flex flex-col gap-2 bg-white rounded-md shadow-md"
-        >
-          <img
-            src={`${Image_URL}${m.image}`}
-            alt={getTitle(m)}
-            width={300}
-            className="w-full rounded-t-md"
-          />
-          <h1 className="text-base font-bold px-2">
-            {getTitle(m)}
-          </h1>
-          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
-            {getParagraph(m)}
-          </p>
-          <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
-            Price - {m.price} MMK
-          </p>
-          <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
-            Book Now
-          </button>
+        <div className="grid grid-cols-4 max-md:grid-cols-1 max-lg:grid-cols-2 gap-10 mx-auto">
+          {mdyexp.map((m, i) => (
+            <div
+              key={i}
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              data-aos-delay="100"
+              className="flex flex-col gap-2 bg-white rounded-md shadow-md"
+            >
+              <div class="w-full max-w-sm bg-neutral-primary-soft p-6 border-default rounded-base shadow-xs">
+                <img
+                  class="rounded-base mb-6"
+                  src={`${Image_URL}${m.image}`}
+                  alt="product image"
+                />
+                <div>
+                  <h5 class="text-xl text-heading font-semibold tracking-tight line-clamp-2">
+                    {getTitle(m)}
+                  </h5>
+                  <div class="flex flex-col gap-3 mt-6">
+                    <span class="text-base font-extrabold text-heading">
+                      {m.price} MMK
+                    </span>
+                    <Link href={`/mandalayexp/details/${m.id}`}>
+                      <button
+                        type="button"
+                        class="inline-flex text-white bg-[#936521] hover:bg-[#D8AF53] cursor-pointer transition-all ease-in-out duration-300 items-center font-medium leading-5 rounded-base text-sm px-3 py-2"
+                      >
+                        Detail & Book Now
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-        ))}
-      </div>
       )}
     </section>
   );

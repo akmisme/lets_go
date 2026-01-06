@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import { ENDPOINT, Image_URL } from "@/app/endpoint/endpoint";
 import { useLocale } from "next-intl";
 
-export default function BaganexpDetail() {
+export default function InleexpDetail() {
   const { id } = useParams();
   const [inleexp, setinleexp] = useState(null);
   const locale = useLocale(); // "en" or "mm"

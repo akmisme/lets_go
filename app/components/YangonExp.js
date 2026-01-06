@@ -73,24 +73,31 @@ export default function YangonExp() {
               data-aos-delay="100"
               className="flex flex-col gap-2 bg-white rounded-md shadow-md"
             >
-              <img
-                src={`${Image_URL}${y.image}`}
-                alt={getTitle(y)}
-                width={300}
-                className="w-full rounded-t-md"
-              />
-              <h1 className="text-base font-bold px-2">{getTitle(y)}</h1>
-              <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify indent-10">
-                {getParagraph(y)}
-              </p>
-              <p className="text-base line-clamp-2 px-2 leading-relaxed text-justify">
-                Price - {y.price} MMK
-              </p>
-              <Link href={`/yangonexp/details/${y.id}`}>
-                <button className="text-white mx-auto bg-[#936521] hover:bg-[#D8AF53] mb-5 transition ease-in-out duration-500 cursor-pointer p-2 rounded-md">
-                  Book Now
-                </button>
-              </Link>
+              <div class="w-full max-w-sm bg-neutral-primary-soft p-6 border-default rounded-base shadow-xs">
+                <img
+                  class="rounded-base mb-6"
+                  src={`${Image_URL}${y.image}`}
+                  alt="product image"
+                />
+                <div>
+                  <h5 class="text-xl text-heading font-semibold tracking-tight line-clamp-2">
+                    {getTitle(y)}
+                  </h5>
+                  <div class="flex flex-col gap-3 mt-6">
+                    <span class="text-base font-extrabold text-heading">
+                      {y.price} MMK
+                    </span>
+                    <Link href={`/yangonexp/details/${y.id}`}>
+                      <button
+                        type="button"
+                        class="inline-flex text-white bg-[#936521] hover:bg-[#D8AF53] cursor-pointer transition-all ease-in-out duration-300 items-center font-medium leading-5 rounded-base text-sm px-3 py-2"
+                      >
+                        Detail & Book Now
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
         </div>

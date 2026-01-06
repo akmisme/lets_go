@@ -91,7 +91,7 @@ export default function TikTokPlayer() {
           >
             <iframe
               ref={(el) => (refs.current[idx] = el)}
-              src={`https://www.tiktok.com/player/v1/${id}?player_api=1&music_info=1&description=1`}
+              src={`https://www.tiktok.com/player/v1/${id.vedio_id}?player_api=1&music_info=1&description=1`}
               allow="fullscreen"
               title={`TikTok Player ${idx}`}
               className="w-full h-full"
